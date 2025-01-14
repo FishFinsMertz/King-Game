@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     private float fallMultiplier = 2.5f; 
     private bool isFacingRight = true;
 
-    private int doubleJumpCounter;
+    private int jumpCounter;
+    private int maxJumpCap = 5;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        doubleJumpCounter = 0;
+        jumpCounter = 0;
     }
 
     // Update is called once per frame
@@ -33,9 +34,9 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-        if (Input.GetButtonDown("Jump") && !IsGrounded() && doubleJumpCounter < 1) {
+        if (Input.GetButtonDown("Jump") && !IsGrounded() && jumpCounter < maxJumpCap - 1) {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            doubleJumpCounter++;
+            jumpCounter++;
         }
 
 
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
 
         if (grounded) {
-            doubleJumpCounter = 0; // Reset jump counter when grounded
+            jumpCounter = 0; // Reset jump counter when grounded
         }
 
         return grounded;
