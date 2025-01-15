@@ -5,14 +5,14 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform Player;
-    public float smoothing = 0.125f;
-    public Vector3 offset = new Vector3(0, 0, -10);
+    private float smoothing = 0.125f;
+    private Vector3 offset = new Vector3(0, 0, -10);
     private Vector3 velocity = Vector3.zero;
 
     private Vector3 shakeOffset = Vector3.zero;
     private bool isShaking = false;
 
-        // Enum for shake levels
+    // Enum for shake levels
     public enum ShakeLevel
     {
         light,

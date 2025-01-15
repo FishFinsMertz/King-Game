@@ -389,8 +389,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1458981077}
-  smoothing: 0.125
-  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &912684378
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +696,7 @@ GameObject:
   - component: {fileID: 1458981075}
   - component: {fileID: 1458981074}
   - component: {fileID: 1458981078}
+  - component: {fileID: 1458981079}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -862,6 +861,22 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1458981079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458981072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9d8d0b69aeb14ab5334bf92eb6a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 20
+  dashDuration: 0.2
+  dashCooldown: 1
+  rb: {fileID: 1458981075}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
