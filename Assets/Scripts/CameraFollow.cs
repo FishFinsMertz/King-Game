@@ -16,4 +16,8 @@ public class CameraController : MonoBehaviour
         // Smoothly move the camera to the target position
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothing);
     }
+
+    void Update() {
+        
+    }
 }
