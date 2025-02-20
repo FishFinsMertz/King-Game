@@ -6,7 +6,7 @@ public class PlayerIdleState : PlayerState
 
     public override void Enter()
     {
-        player.rb.velocity = new Vector2(0, player.rb.velocity.y);
+        player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y);
     }
 
     public override void Update()

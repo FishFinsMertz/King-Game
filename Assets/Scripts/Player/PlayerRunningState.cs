@@ -15,6 +15,6 @@ public class PlayerRunningState : PlayerState
 
     public override void FixedUpdate()
     {
-        player.rb.velocity = new Vector2(player.InputX * player.speed, player.rb.velocity.y);
+        player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.rb.linearVelocity.y);
     }
 }

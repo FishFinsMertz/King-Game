@@ -10,7 +10,7 @@ public class PlayerJumpingState : PlayerState
     {
         if (player.IsGrounded() || player.jumpCounter < player.maxJumpCap - 1)
         {
-            player.rb.velocity = new Vector2(player.rb.velocity.x, player.jumpingPower);
+            player.rb.linearVelocity = new Vector2(player.rb.linearVelocity.x, player.jumpingPower);
             player.jumpCounter++;
             hasJumped = true;
         }
@@ -25,12 +25,12 @@ public class PlayerJumpingState : PlayerState
     public override void FixedUpdate()
     {
         // Apply horizontal movement in the air
-        player.rb.velocity = new Vector2(player.InputX * player.speed, player.rb.velocity.y);
+        player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.rb.linearVelocity.y);
 
         // Apply stronger gravity when falling
-        if (player.rb.velocity.y < 0)
+        if (player.rb.linearVelocity.y < 0)
         {
-            player.rb.velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.fixedDeltaTime;
+            player.rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.fixedDeltaTime;
         }
     }
 }
