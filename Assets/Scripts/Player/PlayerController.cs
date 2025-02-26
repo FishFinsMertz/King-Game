@@ -3,19 +3,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [HideInInspector] public Rigidbody2D rb;
-    public float speed = 8f;
-    public float jumpingPower = 16f;
-    public float fallMultiplier = 4f;
-    public int maxJumpCap = 5;
-    public int jumpCounter = 0;
-    public float airControlSpeed = 6f; 
 
+    // Player movement speed
+    public float speed;
+    public float jumpingPower;
+    public float fallMultiplier;
+    public int maxJumpCap;
+    public float dashPower;
 
+    // Other stuff
     public Transform groundCheck;
     public LayerMask groundLayer;
 
     private PlayerState currentState;
-    private bool isFacingRight = true;
+    public int isFacingRight = 1;
 
     public float InputX => Input.GetAxisRaw("Horizontal");
 
@@ -48,15 +49,14 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded()
     {
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-        if (grounded) jumpCounter = 0;
         return grounded;
     }
 
     private void Flip()
     {
-        if (isFacingRight && InputX < 0f || !isFacingRight && InputX > 0f)
+        if ((isFacingRight == 1) && InputX < 0f || (isFacingRight == -1) && InputX > 0f)
         {
-            isFacingRight = !isFacingRight;
+            isFacingRight *= (-1);
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
     }

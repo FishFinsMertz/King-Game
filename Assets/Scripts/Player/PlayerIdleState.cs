@@ -11,10 +11,16 @@ public class PlayerIdleState : PlayerState
 
     public override void Update()
     {
-        if (player.InputX != 0)
+        if (player.InputX != 0) {
             player.ChangeState(new PlayerRunningState(player));
+        }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump")) {
             player.ChangeState(new PlayerJumpingState(player));
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            player.ChangeState(new PlayerDashState(player));
+        }
     }
 }

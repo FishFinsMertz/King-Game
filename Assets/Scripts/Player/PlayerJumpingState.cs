@@ -2,24 +2,34 @@ using UnityEngine;
 
 public class PlayerJumpingState : PlayerState
 {
-    private bool hasJumped;
-
+    public int jumpCounter = 0;
     public PlayerJumpingState(PlayerController player) : base(player) { }
 
     public override void Enter()
     {
-        if (player.IsGrounded() || player.jumpCounter < player.maxJumpCap - 1)
+        if (player.IsGrounded() || jumpCounter < (player.maxJumpCap - 1))
         {
-            player.rb.linearVelocity = new Vector2(player.rb.linearVelocity.x, player.jumpingPower);
-            player.jumpCounter++;
-            hasJumped = true;
+            player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.jumpingPower);
+            jumpCounter++;
         }
     }
 
     public override void Update()
     {
         if (player.IsGrounded())
+        {
+            jumpCounter = 0;
             player.ChangeState(new PlayerIdleState(player));
+        }
+
+        else if (jumpCounter < (player.maxJumpCap - 1) && Input.GetButtonDown("Jump")) {
+            player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.jumpingPower);
+            jumpCounter++;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            player.ChangeState(new PlayerDashState(player));
+        }
     }
 
     public override void FixedUpdate()
@@ -27,10 +37,9 @@ public class PlayerJumpingState : PlayerState
         // Apply horizontal movement in the air
         player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.rb.linearVelocity.y);
 
-        // Apply stronger gravity when falling
-        if (player.rb.linearVelocity.y < 0)
-        {
-            player.rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.fixedDeltaTime;
+        // Faster fall
+        if (!player.IsGrounded() && player.rb.linearVelocity.y < 0) {
+            player.rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1.5f) * Time.fixedDeltaTime;
         }
     }
 }
