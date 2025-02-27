@@ -19,7 +19,7 @@ public class PlayerIdleState : PlayerState
             player.ChangeState(new PlayerJumpingState(player));
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && player.IsGrounded()) {
             player.ChangeState(new PlayerDashState(player));
         }
     }

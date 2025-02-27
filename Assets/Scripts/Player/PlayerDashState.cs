@@ -6,19 +6,19 @@ public class PlayerDashState : PlayerState
     private float dashTimer;
     private Vector2 slideForce;
 
+    private float lessGravityAmt = 0.5f;
+
     public PlayerDashState(PlayerController player) : base(player) { }
 
     public override void Enter()
     {
-        Debug.Log("DASH!");
         dashTimer = dashTime;
         
         // Set dash velocity
-
-        player.rb.linearVelocity = new Vector2(player.isFacingRight * player.dashPower, player.rb.linearVelocity.y);
+        player.rb.linearVelocity = new Vector2(player.isFacingRight * player.dashPower, player.rb.linearVelocity.y * lessGravityAmt);
 
         // Calculate slide force for later use
-        slideForce = new Vector2(player.isFacingRight * player.dashPower * 0.5f, player.rb.linearVelocity.y);
+        slideForce = new Vector2(player.isFacingRight * player.dashPower * 0.5f, player.rb.linearVelocity.y * lessGravityAmt);
     }
 
     public override void Update()
@@ -27,13 +27,11 @@ public class PlayerDashState : PlayerState
 
         if (dashTimer <= 0)
         {
-            if (Mathf.Abs(player.InputX) > 0) {
-                player.ChangeState(new PlayerRunningState(player));
-            }
-
-            else {
                 player.ChangeState(new PlayerSlidingState(player, slideForce));
-            }
+        }
+
+        if (Input.GetButtonDown("Jump")) {
+            player.ChangeState(new PlayerJumpingState(player));
         }
     }
 }

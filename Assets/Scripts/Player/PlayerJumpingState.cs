@@ -26,10 +26,6 @@ public class PlayerJumpingState : PlayerState
             player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.jumpingPower);
             jumpCounter++;
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            player.ChangeState(new PlayerDashState(player));
-        }
     }
 
     public override void FixedUpdate()

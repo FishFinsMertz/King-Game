@@ -1144,7 +1144,7 @@ MonoBehaviour:
   speed: 8
   jumpingPower: 17
   fallMultiplier: 4
-  maxJumpCap: 3
+  maxJumpCap: 2
   dashPower: 50
   groundCheck: {fileID: 166607437}
   groundLayer:

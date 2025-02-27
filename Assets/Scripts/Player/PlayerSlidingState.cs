@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerSlidingState : PlayerState
 {
-    private float slideTimer = 0.5f; // Duration of the slide
+    private float slideTimer = 0.4f; // Duration of the slide
     private float slideFriction = 0.85f; // Multiplier applied per frame for damping
     private Vector2 slideForce; // Initial force applied to the player
 
@@ -13,7 +13,6 @@ public class PlayerSlidingState : PlayerState
 
     public override void Enter()
     {
-        Debug.Log("SLIDE!");
         player.rb.linearVelocity = slideForce; // Apply initial force
     }
 
@@ -23,6 +22,10 @@ public class PlayerSlidingState : PlayerState
 
         // Apply exponential friction
         player.rb.linearVelocity = new Vector2(player.rb.linearVelocity.x * slideFriction, player.rb.linearVelocity.y);
+
+        if (Input.GetButtonDown("Jump")) {
+            player.ChangeState(new PlayerJumpingState(player));
+        }
 
         // Transition to idle or running when slide is over or speed is very low
         if (slideTimer <= 0 || Mathf.Abs(player.rb.linearVelocity.x) < 0.5f)
