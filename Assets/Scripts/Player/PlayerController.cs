@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         rb = GetComponent<Rigidbody2D>();
         ChangeState(new PlayerIdleState(this));
     }
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     {
         currentState.Update();
         Flip();
+        //Debug.Log(currentState);
+        //Debug.Log("Is grounded: " + IsGrounded());
     }
 
     void FixedUpdate()
