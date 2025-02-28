@@ -14,8 +14,9 @@ public class BasicEnemySlashState : BasicEnemyState
     }
 
     private IEnumerator PerformSlash() {
-        //Debug.Log("Charging up my slash");
-        yield return new WaitForSeconds(enemy.slashTimer); // Delay before attack hitbox activates
+        float delay = Random.Range(0.3f, 1.2f);
+        //Debug.Log("Charging up my slash, delay: " + delay);
+        yield return new WaitForSeconds(delay); // Delay before attack hitbox activates
         
         /* ADD WHEN IMPLEMENTED
         if (enemy.IsPlayerInFront())
@@ -25,7 +26,7 @@ public class BasicEnemySlashState : BasicEnemyState
         */
         //Debug.Log("Slash!");
         enemy.cameraController.StartShake(CameraController.ShakeLevel.light);
-        yield return new WaitForSeconds(0.5f); // Wait for the attack animation to finish
+        yield return new WaitForSeconds(enemy.slashTimer); // Wait for the attack animation to finish
         enemy.isAttacking = false;
 
         // next states
