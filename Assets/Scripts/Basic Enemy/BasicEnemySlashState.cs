@@ -24,6 +24,7 @@ public class BasicEnemySlashState : BasicEnemyState
         }
         */
         //Debug.Log("Slash!");
+        enemy.cameraController.StartShake(CameraController.ShakeLevel.light);
         yield return new WaitForSeconds(0.5f); // Wait for the attack animation to finish
         enemy.isAttacking = false;
 

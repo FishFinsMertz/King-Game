@@ -19,6 +19,8 @@ public class BasicEnemyController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    public CameraController cameraController;
+
     private BasicEnemyState currentState;
 
     // Where enemy is facing
@@ -29,6 +31,7 @@ public class BasicEnemyController : MonoBehaviour
     public float distanceFromPlayer; // Store the distance
     public Vector2 vectorFromPlayer;
 
+    [System.Obsolete]
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +40,7 @@ public class BasicEnemyController : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
         }
+        cameraController = FindObjectOfType<CameraController>();
 
          ChangeState(new BasicEnemyIdleState(this));
     }
