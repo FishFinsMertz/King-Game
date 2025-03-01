@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
-public class HealthManager : MonoBehaviour
+public class PlayerHealthManager : MonoBehaviour
 {
     public Image mainHealthBar;
     public Image sideHealthBar;
 
     public float healthAmount = 100f;
     private float targetHealth; // Target health value for smooth animation
-    public float sideBarDelay = 0.5f; // Delay before side bar starts to slide
     public float sideBarSpeed = 2f; // Speed of the side bar animation
+
+    public GameObject player;
 
     void Start()
     {
         targetHealth = healthAmount;
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -28,7 +31,7 @@ public class HealthManager : MonoBehaviour
 
         // TESTING PURPOSES
         if (Input.GetKeyDown(KeyCode.Return)) {
-            TakeDamage(20);
+            TakeDamage(20, Vector2.up, 15f);
         }
 
         if (Input.GetKeyDown(KeyCode.H)) {
@@ -41,13 +44,19 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage) {
+    public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce) {
         healthAmount -= damage;
         targetHealth = healthAmount;
         mainHealthBar.fillAmount = targetHealth / 100f;
 
-        // Delay before the side bar starts to slide down
-        StartCoroutine(UpdateSideHealthBar());
+        // Apply Knockback
+        if (healthAmount > 0)
+        {
+            player.GetComponent<PlayerController>().ChangeState(new PlayerKnockbackState(
+                player.GetComponent<PlayerController>(), 
+                hitDirection.normalized * knockbackForce
+            ));
+        }
     }
 
     public void Heal(float healingAmount) {
@@ -56,13 +65,5 @@ public class HealthManager : MonoBehaviour
         targetHealth = healthAmount;
         mainHealthBar.fillAmount = targetHealth / 100f;
         sideHealthBar.fillAmount = mainHealthBar.fillAmount; // Heal instantly updates both
-    }
-
-    private IEnumerator UpdateSideHealthBar() {
-        yield return new WaitForSeconds(sideBarDelay);
-        while (sideHealthBar.fillAmount > mainHealthBar.fillAmount) {
-            sideHealthBar.fillAmount = Mathf.Lerp(sideHealthBar.fillAmount, mainHealthBar.fillAmount, Time.deltaTime * sideBarSpeed);
-            yield return null;
-        }
     }
 }

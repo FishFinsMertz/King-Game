@@ -1613,6 +1613,9 @@ MonoBehaviour:
   mainHealthBar: {fileID: 1832123473}
   sideHealthBar: {fileID: 504193710}
   healthAmount: 100
+  sideBarSpeed: 2
+  player: {fileID: 0}
+  knockbackDuration: 5
 --- !u!1 &1541663379
 GameObject:
   m_ObjectHideFlags: 0
