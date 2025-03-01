@@ -8,6 +8,7 @@ public class BasicEnemySlashState : BasicEnemyState
 
     public override void Enter()
     {
+        // Perform attack
         enemy.rb.linearVelocity = new Vector2(0, enemy.rb.linearVelocity.y);
         enemy.isAttacking = true;
         enemy.StartCoroutine(PerformSlash());
@@ -18,13 +19,12 @@ public class BasicEnemySlashState : BasicEnemyState
         //Debug.Log("Charging up my slash, delay: " + delay);
         yield return new WaitForSeconds(delay); // Delay before attack hitbox activates
         
-        /* ADD WHEN IMPLEMENTED
-        if (enemy.IsPlayerInFront())
-        {
-            enemy.ActivateAttackHitbox();
-        }
-        */
-        //Debug.Log("Slash!");
+        // Enabling hitbox and attack
+        enemy.slashHitbox.enabled = true;
+
+        // Check for player collision after enabling hitbox
+        DealDamageToPlayer();
+
         enemy.cameraController.StartShake(CameraController.ShakeLevel.light);
         yield return new WaitForSeconds(enemy.slashTimer); // Wait for the attack animation to finish
         enemy.isAttacking = false;
@@ -45,4 +45,27 @@ public class BasicEnemySlashState : BasicEnemyState
         }
     }
     
+    private void DealDamageToPlayer() {
+        // Checks all collider for player
+        Collider2D[] hits = Physics2D.OverlapBoxAll(enemy.slashHitbox.bounds.center, enemy.slashHitbox.bounds.size, 0);
+        
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                //Debug.Log("Player hit by slash!");
+                PlayerHealthManager playerHealth = hit.GetComponent<PlayerHealthManager>();
+
+                if (playerHealth != null)
+                {
+                    Vector2 hitDirection = (hit.transform.position - enemy.transform.position).normalized;
+                    playerHealth.TakeDamage(30, hitDirection, 10f);
+                }
+            }
+        }
+    }
+
+    public override void Exit() {
+        enemy.slashHitbox.enabled = false;
+    }
 }

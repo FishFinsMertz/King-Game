@@ -6,8 +6,10 @@ public class BasicEnemyController : MonoBehaviour
 
     // Attack
     public bool isAttacking = false;
-    public float slashDelay = 5f;
     public float slashTimer = 1f;
+
+    // Hitboxes
+    public Collider2D slashHitbox;
 
     // Movement and detection
     public float chaseSpeed;
@@ -42,7 +44,7 @@ public class BasicEnemyController : MonoBehaviour
         }
         cameraController = FindObjectOfType<CameraController>();
 
-         ChangeState(new BasicEnemyIdleState(this));
+        ChangeState(new BasicEnemyIdleState(this));
     }
 
     void Update()
