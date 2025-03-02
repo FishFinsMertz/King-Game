@@ -13,6 +13,11 @@ public class BasicEnemyChaseState : BasicEnemyState
         if (enemy.distanceFromPlayer > enemy.detectionRange) {
             enemy.ChangeState(new BasicEnemyIdleState(enemy));
         }
+
+        // Add a probability thing later so the enemy doesn't always jump!!!!!!!
+        if (enemy.playerInLeapRange() && enemy.ShouldLeap()) {
+            enemy.ChangeState(new BasicEnemyLeapState(enemy));
+        }
     }
 
     public override void FixedUpdate()

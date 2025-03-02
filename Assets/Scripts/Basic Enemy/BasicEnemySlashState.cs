@@ -23,7 +23,7 @@ public class BasicEnemySlashState : BasicEnemyState
         enemy.slashHitbox.enabled = true;
 
         // Check for player collision after enabling hitbox
-        DealDamageToPlayer();
+        enemy.DealDamageToPlayer(30, Vector2.right, 10f, enemy.slashHitbox);
 
         enemy.cameraController.StartShake(CameraController.ShakeLevel.light);
         yield return new WaitForSeconds(enemy.slashTimer); // Wait for the attack animation to finish
@@ -42,26 +42,6 @@ public class BasicEnemySlashState : BasicEnemyState
         if (enemy.distanceFromPlayer > enemy.detectionRange) {
             enemy.isAttacking = false;
             enemy.ChangeState(new BasicEnemyIdleState(enemy));
-        }
-    }
-    
-    private void DealDamageToPlayer() {
-        // Checks all collider for player
-        Collider2D[] hits = Physics2D.OverlapBoxAll(enemy.slashHitbox.bounds.center, enemy.slashHitbox.bounds.size, 0);
-        
-        foreach (Collider2D hit in hits)
-        {
-            if (hit.CompareTag("Player"))
-            {
-                //Debug.Log("Player hit by slash!");
-                PlayerHealthManager playerHealth = hit.GetComponent<PlayerHealthManager>();
-
-                if (playerHealth != null)
-                {
-                    Vector2 hitDirection = (hit.transform.position - enemy.transform.position).normalized;
-                    playerHealth.TakeDamage(30, hitDirection, 10f);
-                }
-            }
         }
     }
 
