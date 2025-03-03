@@ -5,33 +5,34 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
-public class PlayerHealthManager : MonoBehaviour
-{
+public class EnemyHealthManager : MonoBehaviour {
     public Image mainHealthBar;
     public Image sideHealthBar;
 
-    public float healthAmount = 100f;
+    public float maxHealth; // Set max health dynamically
+    public float healthAmount;
     private float targetHealth; // Target health value for smooth animation
     public float sideBarSpeed = 2f; // Speed of the side bar animation
 
-    public GameObject player;
+    public GameObject enemy;
 
     void Start()
     {
+        healthAmount = maxHealth;  // Initialize health
         targetHealth = healthAmount;
-        player = GameObject.FindWithTag("Player");
+        UpdateHealthBar(); // Ensure the bar starts full
     }
 
     void Update()
     {
         // When health reaches 0
         if (healthAmount <= 0) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+             Destroy(gameObject);
         }
 
         // TESTING PURPOSES
-        if (Input.GetKeyDown(KeyCode.H)) {
-            Heal(50);
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            TakeDamage(50);
         }
 
         // Smoothly slide the side health bar down to match the main health bar
@@ -40,26 +41,22 @@ public class PlayerHealthManager : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce) {
+    public void TakeDamage(float damage) {
         healthAmount -= damage;
-        targetHealth = healthAmount;
-        mainHealthBar.fillAmount = targetHealth / 100f;
-
-        // Apply Knockback
-        if (healthAmount > 0)
-        {
-            player.GetComponent<PlayerController>().ChangeState(new PlayerKnockbackState(
-                player.GetComponent<PlayerController>(), 
-                hitDirection.normalized * knockbackForce
-            ));
-        }
+        targetHealth = Mathf.Clamp(healthAmount, 0, maxHealth);
+        UpdateHealthBar();
     }
 
     public void Heal(float healingAmount) {
         healthAmount += healingAmount;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 100f);
+        healthAmount = Mathf.Clamp(healthAmount, 0, maxHealth);
         targetHealth = healthAmount;
-        mainHealthBar.fillAmount = targetHealth / 100f;
-        sideHealthBar.fillAmount = mainHealthBar.fillAmount; // Heal instantly updates both
+        UpdateHealthBar();
+    }
+
+    private void UpdateHealthBar() {
+        mainHealthBar.fillAmount = targetHealth / maxHealth;
     }
 }
+
+

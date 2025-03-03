@@ -58,6 +58,7 @@ public class BasicEnemyLeapState : BasicEnemyState
 
         // Ensure enemy has landed
         enemy.leapHitbox.enabled = true;
+        enemy.cameraController.StartShake(CameraController.ShakeLevel.medium);
         enemy.DealDamageToPlayer(40, Vector2.right, 15f, enemy.leapHitbox);
 
         yield return new WaitForSeconds(0.4f); // Damage window

@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentState.Update();
-        Flip();
+        if (!(currentState is PlayerKnockbackState)) {
+            Flip();
+        }
         //Debug.Log(currentState);
         //Debug.Log("Is grounded: " + IsGrounded());
     }
