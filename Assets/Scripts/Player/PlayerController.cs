@@ -11,6 +11,15 @@ public class PlayerController : MonoBehaviour
     public int maxJumpCap;
     public float dashPower;
 
+    // Combat Stats
+    public float atkDamage;
+    public float atkChargeTime;
+    public float atkSpeed;
+    public float critChance;
+
+    // Hitboxes
+    public Collider2D attackHitbox;
+
     // Other stuff
     public Transform groundCheck;
     public LayerMask groundLayer;
@@ -24,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         rb = GetComponent<Rigidbody2D>();
+        attackHitbox.enabled = false;
         ChangeState(new PlayerIdleState(this));
     }
 
@@ -63,6 +73,27 @@ public class PlayerController : MonoBehaviour
         {
             isFacingRight *= (-1);
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+    }
+
+    public void DealDamageToEnemy() {
+        Collider2D[] hits = Physics2D.OverlapBoxAll(attackHitbox.bounds.center, attackHitbox.bounds.size, 0);
+
+        // Calculate crit damage
+        if (Random.value <= critChance) {
+            atkDamage *= 2.5f;
+        }
+
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy")) 
+            {
+                EnemyHealthManager enemyHealth = hit.GetComponent<EnemyHealthManager>();
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(atkDamage);
+                }
+            }
         }
     }
 }

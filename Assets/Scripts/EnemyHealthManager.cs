@@ -1,38 +1,45 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class EnemyHealthManager : MonoBehaviour {
-    public Image mainHealthBar;
-    public Image sideHealthBar;
-
     public float maxHealth; // Set max health dynamically
     public float healthAmount;
     private float targetHealth; // Target health value for smooth animation
     public float sideBarSpeed = 2f; // Speed of the side bar animation
 
+    public Canvas enemyHealth;
+    private Image mainHealthBar;
+    private Image sideHealthBar;
+
     public GameObject enemy;
+    public Vector3 healthBarOffset = new Vector3(0, 2.0f, 0); // Adjust height above the enemy
 
     void Start()
     {
+        mainHealthBar = enemyHealth.transform.Find("Health").GetComponent<Image>();
+        sideHealthBar = enemyHealth.transform.Find("SideHealth").GetComponent<Image>();
         healthAmount = maxHealth;  // Initialize health
         targetHealth = healthAmount;
         UpdateHealthBar(); // Ensure the bar starts full
+
+        // Ensure health bar canvas is in world space
+        enemyHealth.renderMode = RenderMode.WorldSpace;
     }
 
     void Update()
     {
-        // When health reaches 0
-        if (healthAmount <= 0) {
-             Destroy(gameObject);
+        // Make health bar follow the enemy in world space
+        if (enemy != null)
+        {
+            enemyHealth.transform.position = enemy.transform.position + healthBarOffset;
         }
 
-        // TESTING PURPOSES
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            TakeDamage(50);
+        // When health reaches 0
+        if (healthAmount <= 0) {
+             Destroy(enemy);  // Destroy the enemy object instead of just the health script
+             Destroy(enemyHealth.gameObject); // Also remove the health bar
         }
 
         // Smoothly slide the side health bar down to match the main health bar
@@ -58,5 +65,3 @@ public class EnemyHealthManager : MonoBehaviour {
         mainHealthBar.fillAmount = targetHealth / maxHealth;
     }
 }
-
-

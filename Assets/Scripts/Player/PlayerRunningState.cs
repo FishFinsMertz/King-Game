@@ -17,6 +17,10 @@ public class PlayerRunningState : PlayerState
         if (Input.GetKeyDown(KeyCode.LeftShift) && player.IsGrounded()) {
             player.ChangeState(new PlayerDashState(player));
         }
+
+        if (Input.GetMouseButtonDown(0) && player.IsGrounded()) {
+            player.ChangeState(new PlayerAttackState(player));
+        }
     }
 
     public override void FixedUpdate()

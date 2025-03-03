@@ -27,9 +27,7 @@ public class BasicEnemyController : MonoBehaviour
     // Other stuff
     public Transform groundCheck;
     public LayerMask groundLayer;
-
     public CameraController cameraController;
-
     private BasicEnemyState currentState;
 
     // Where enemy is facing
@@ -129,13 +127,13 @@ public class BasicEnemyController : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.gameObject.layer == LayerMask.NameToLayer("Player")) // Check layer instead of tag
+            if (hit.gameObject.layer == LayerMask.NameToLayer("Player")) 
             {
                 PlayerHealthManager playerHealth = hit.GetComponent<PlayerHealthManager>();
 
                 if (playerHealth != null)
                 {
-                    if (hit.gameObject.layer == LayerMask.NameToLayer("Invulnerable")) // Don't deal damage if invulnerable
+                    if (hit.gameObject.layer == LayerMask.NameToLayer("Invulnerable")) // Don't deal damage if invulnerable (future purposes)
                         continue;
 
                     if (hitDirection == Vector2.left || hitDirection == Vector2.right)
