@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentState.Update();
-        if (!(currentState is PlayerKnockbackState)) {
+        if (!(currentState is PlayerKnockbackState) && !(currentState is PlayerAttackState)) {
             Flip();
         }
         //Debug.Log(currentState);
@@ -80,8 +80,9 @@ public class PlayerController : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapBoxAll(attackHitbox.bounds.center, attackHitbox.bounds.size, 0);
 
         // Calculate crit damage
+        float finalDmg = atkDamage;
         if (Random.value <= critChance) {
-            atkDamage *= 2.5f;
+            finalDmg *= 2.5f;
         }
 
         foreach (Collider2D hit in hits)
@@ -91,7 +92,8 @@ public class PlayerController : MonoBehaviour
                 EnemyHealthManager enemyHealth = hit.GetComponent<EnemyHealthManager>();
                 if (enemyHealth != null)
                 {
-                    enemyHealth.TakeDamage(atkDamage);
+                    //Debug.Log("Attack damage: " + finalDmg);
+                    enemyHealth.TakeDamage(finalDmg);
                 }
             }
         }
