@@ -47,6 +47,10 @@ public class BasicEnemyController : MonoBehaviour
         ChangeState(new BasicEnemyIdleState(this));
 
         StartCoroutine(DetermineLeapBehavior());
+
+        // Add slight variance to enemy chaseSpeed
+        //float multiplier = Random.value;
+        //chaseSpeed += multiplier;
     }
 
     void Update()
@@ -60,9 +64,6 @@ public class BasicEnemyController : MonoBehaviour
         {
             distanceFromPlayer = Vector2.Distance(transform.position, player.transform.position);
             vectorFromPlayer = player.transform.position - transform.position;
-            //Debug.Log("Vector from player: " + vectorFromPlayer);
-            //Debug.Log("BasicEnemyController.cs: Distance from Player: " + distanceFromPlayer);
-            //Debug.Log(isFacingRight);
         }
     }
 

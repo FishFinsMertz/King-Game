@@ -14,7 +14,6 @@ public class BasicEnemyLeapState : BasicEnemyState
     public override void Enter()
     {
         if (enemy.player == null) return;
-
         // Determine leap target position
         float targetDistance = (enemy.minLeapRange + enemy.maxLeapRange) / 3f;
         float leapX = enemy.transform.position.x + Mathf.Sign(enemy.vectorFromPlayer.x) * targetDistance;
