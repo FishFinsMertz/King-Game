@@ -9,6 +9,9 @@ public class PlayerJumpingState : PlayerState
     {
         if (player.IsGrounded() || jumpCounter < (player.maxJumpCap - 1))
         {
+            // Stamina cost
+            player.staminaManager.DecreaseStamina(player.jumpCost);
+
             player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.jumpingPower);
             jumpCounter++;
         }
@@ -22,7 +25,7 @@ public class PlayerJumpingState : PlayerState
             player.ChangeState(new PlayerIdleState(player));
         }
 
-        else if (jumpCounter < (player.maxJumpCap - 1) && Input.GetButtonDown("Jump")) {
+        else if (jumpCounter < (player.maxJumpCap - 1) && Input.GetButtonDown("Jump") && player.staminaManager.staminaAmount > 0) {
             player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.jumpingPower);
             jumpCounter++;
         }

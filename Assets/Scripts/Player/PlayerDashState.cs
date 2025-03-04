@@ -12,6 +12,9 @@ public class PlayerDashState : PlayerState
 
     public override void Enter()
     {
+        // Decrease Stamina
+        player.staminaManager.DecreaseStamina(player.dashCost);
+
         dashTimer = dashTime;
         
         // Set dash velocity

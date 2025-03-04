@@ -15,15 +15,15 @@ public class PlayerIdleState : PlayerState
             player.ChangeState(new PlayerRunningState(player));
         }
 
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerJumpingState(player));
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && player.IsGrounded()) {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerDashState(player));
         }
 
-        if (Input.GetMouseButtonDown(0) && player.IsGrounded()) {
+        if (Input.GetMouseButtonDown(0) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerAttackState(player));
         }
     }

@@ -37,6 +37,11 @@ public class BasicEnemyController : MonoBehaviour
     public GameObject player; // Declare player as a private field
     public float distanceFromPlayer; // Store the distance
     public Vector2 vectorFromPlayer;
+
+    [Header("Stamina Costs")]
+    public float dashCost;
+    public float jumpCost;
+    public float atkCost;
       
     void Start()
     {

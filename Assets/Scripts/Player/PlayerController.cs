@@ -26,11 +26,20 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState currentState;
     public int isFacingRight = 1;
+    public PlayerStaminaManager staminaManager;
 
     public float InputX => Input.GetAxisRaw("Horizontal");
 
+    [Header("Stamina Costs")]
+    public float dashCost;
+    public float jumpCost;
+    public float atkCost;
+
     void Start()
     {
+        // Get stamina
+        staminaManager = GetComponent<PlayerStaminaManager>();
+
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         rb = GetComponent<Rigidbody2D>();
         attackHitbox.enabled = false;
@@ -82,7 +91,7 @@ public class PlayerController : MonoBehaviour
         // Calculate crit damage
         float finalDmg = atkDamage;
         if (Random.value <= critChance) {
-            finalDmg *= 2.5f;
+            finalDmg *= 2f;
         }
 
         foreach (Collider2D hit in hits)

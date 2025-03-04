@@ -23,7 +23,7 @@ public class PlayerSlidingState : PlayerState
         // Apply exponential friction
         player.rb.linearVelocity = new Vector2(player.rb.linearVelocity.x * slideFriction, player.rb.linearVelocity.y);
 
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerJumpingState(player));
         }
 
