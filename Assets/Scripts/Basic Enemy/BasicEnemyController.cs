@@ -6,16 +6,19 @@ public class BasicEnemyController : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
 
     // Attack
-    public bool isAttacking = false;
+    [Header ("Attack Info")]
+    [HideInInspector] public bool isAttacking = false;
     public float slashTimer = 1f;
     public float leapChance;
     private float leapCheckInterval = 3f;
     private bool shouldLeap = false;
 
     // Hitboxes
+    [Header ("Hitboxes")]
     public Collider2D slashHitbox;
     public Collider2D leapHitbox;
 
+    [Header ("Movement & Detection")]
     // Movement and detection
     public float chaseSpeed;
     public float detectionRange;
@@ -23,6 +26,9 @@ public class BasicEnemyController : MonoBehaviour
     public float minThreshold;
     public float minLeapRange;
     public float maxLeapRange;
+
+    [Header("Attack Warning")]
+    public GameObject nonParryWarning;
 
     // Other stuff
     public Transform groundCheck;
@@ -37,14 +43,12 @@ public class BasicEnemyController : MonoBehaviour
     public GameObject player; // Declare player as a private field
     public float distanceFromPlayer; // Store the distance
     public Vector2 vectorFromPlayer;
-
-    [Header("Stamina Costs")]
-    public float dashCost;
-    public float jumpCost;
-    public float atkCost;
       
     void Start()
     {
+        nonParryWarning.SetActive(false);
+        slashHitbox.enabled = false;
+        leapHitbox.enabled = false;
         rb = GetComponent<Rigidbody2D>();
 
         cameraController = FindAnyObjectByType<CameraController>();
@@ -133,15 +137,13 @@ public class BasicEnemyController : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.gameObject.layer == LayerMask.NameToLayer("Player")) 
+            if (hit.gameObject.layer == LayerMask.NameToLayer("Player") || 
+            (hit.gameObject.layer == LayerMask.NameToLayer("Invulnerable") && !hitbox.CompareTag("ParryableAttack"))) 
             {
                 PlayerHealthManager playerHealth = hit.GetComponent<PlayerHealthManager>();
 
                 if (playerHealth != null)
                 {
-                    if (hit.gameObject.layer == LayerMask.NameToLayer("Invulnerable")) // Don't deal damage if invulnerable (future purposes)
-                        continue;
-
                     if (hitDirection == Vector2.left || hitDirection == Vector2.right)
                     {
                         hitDirection = (hit.transform.position - transform.position).normalized;

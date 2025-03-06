@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,34 +12,45 @@ public class PlayerController : MonoBehaviour
     public int maxJumpCap;
     public float dashPower;
 
-    // Combat Stats
-    public float atkDamage;
-    public float atkChargeTime;
-    public float atkSpeed;
-    public float critChance;
-
-    // Hitboxes
-    public Collider2D attackHitbox;
-
     // Other stuff
     public Transform groundCheck;
     public LayerMask groundLayer;
 
-    private PlayerState currentState;
-    public int isFacingRight = 1;
-    public PlayerStaminaManager staminaManager;
+    public PlayerState currentState;
+    [HideInInspector] public int isFacingRight = 1;
+    [HideInInspector] public PlayerStaminaManager staminaManager;
+    [HideInInspector] public PlayerEnergyManager energyManager;
+    [HideInInspector] public PlayerHealthManager healthManager;
+    [HideInInspector] public bool canParry = true;
 
     public float InputX => Input.GetAxisRaw("Horizontal");
+
+    // Combat Stats
+    [Header("Combat Stats")]
+    public float atkDamage;
+    public float atkChargeTime;
+    public float atkSpeed;
+    public float critChance;
+    public float parryChargeTime;
+    public float parryInvulnerableTime;
+    public float parryCoolDownTime;
+
+    [Header("Hitboxes")]
+    public Collider2D attackHitbox;
+    public Collider2D parryHitbox;
 
     [Header("Stamina Costs")]
     public float dashCost;
     public float jumpCost;
     public float atkCost;
+    public float parryCost;
 
     void Start()
     {
         // Get stamina
         staminaManager = GetComponent<PlayerStaminaManager>();
+        energyManager = GetComponent<PlayerEnergyManager>();
+        healthManager = GetComponent<PlayerHealthManager>();
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         rb = GetComponent<Rigidbody2D>();
@@ -49,11 +61,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentState.Update();
-        if (!(currentState is PlayerKnockbackState) && !(currentState is PlayerAttackState)) {
+        if ((currentState is PlayerIdleState) || (currentState is PlayerRunningState) || (currentState is PlayerJumpingState)) {
             Flip();
         }
-        //Debug.Log(currentState);
-        //Debug.Log("Is grounded: " + IsGrounded());
     }
 
     void FixedUpdate()
@@ -106,5 +116,15 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public IEnumerator StartParryCoolDown() {
+        canParry = false;
+        yield return new WaitForSeconds(parryCoolDownTime);
+        canParry = true;
+    }
+
+    public bool CanParry() {
+        return canParry;
     }
 }

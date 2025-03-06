@@ -32,22 +32,23 @@ public class PlayerAttackState : PlayerState
     {
         if (!attackFinished) return; // Ensure attack finishes before checking inputs
 
-        if (Input.GetButtonDown("Jump") && player.staminaManager.staminaAmount > 0)
-        {
+        if (Input.GetButtonDown("Jump") && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerJumpingState(player));
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && player.IsGrounded() && player.staminaManager.staminaAmount > 0)
-        {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerDashState(player));
             return;
         }
 
-        if (player.InputX != 0 && player.staminaManager.staminaAmount > 0)
-        {
+        if (player.InputX != 0 && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerRunningState(player));
             return;
+        }
+
+        if (Input.GetMouseButtonDown(1) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
+            player.ChangeState(new PlayerParryState(player));
         }
 
         player.ChangeState(new PlayerIdleState(player)); // Default to idle

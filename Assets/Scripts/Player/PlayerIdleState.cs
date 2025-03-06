@@ -26,5 +26,9 @@ public class PlayerIdleState : PlayerState
         if (Input.GetMouseButtonDown(0) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerAttackState(player));
         }
+
+        if (Input.GetMouseButtonDown(1) && player.IsGrounded() && player.staminaManager.staminaAmount > 0 && player.CanParry()) {
+            player.ChangeState(new PlayerParryState(player));
+        }
     }
 }

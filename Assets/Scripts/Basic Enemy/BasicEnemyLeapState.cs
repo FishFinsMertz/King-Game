@@ -13,6 +13,7 @@ public class BasicEnemyLeapState : BasicEnemyState
 
     public override void Enter()
     {
+        enemy.nonParryWarning.SetActive(true);
         if (enemy.player == null) return;
         // Determine leap target position
         float targetDistance = (enemy.minLeapRange + enemy.maxLeapRange) / 3f;
@@ -91,6 +92,7 @@ public class BasicEnemyLeapState : BasicEnemyState
 
     public override void Exit()
     {
+        enemy.nonParryWarning.SetActive(false);
         enemy.leapHitbox.enabled = false; // Ensure hitbox is off
     }
 }

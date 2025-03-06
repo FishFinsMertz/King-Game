@@ -14,7 +14,7 @@ public class EnemyHealthManager : MonoBehaviour {
     private Image sideHealthBar;
 
     public GameObject enemy;
-    public Vector3 healthBarOffset = new Vector3(0, 2.0f, 0); // Adjust height above the enemy
+    public Vector3 healthBarOffset = new Vector3(0, 2f, 0); // Adjust height above the enemy
 
     void Start()
     {
