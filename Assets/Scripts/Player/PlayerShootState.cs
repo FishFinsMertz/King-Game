@@ -25,7 +25,7 @@ public class PlayerShootState : PlayerState
         float damage = player.energyManager.energyAmount;
         player.DealDamageToEnemy(damage, player.shootHitbox);
         player.energyManager.DecreaseEnergy(damage);
-        player.healthManager.Heal(damage / 1.5f);
+        player.healthManager.Heal(damage / 2f);
         
         yield return new WaitForSeconds(player.shootSpeed);
         attackFinished = true;

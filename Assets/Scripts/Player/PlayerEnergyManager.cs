@@ -34,11 +34,11 @@ public class PlayerEnergyManager : MonoBehaviour
 
         // TESTING PURPOSES
         if (Input.GetKeyDown(KeyCode.G)) {
-            ChargeEnergy(50);
+            ChargeEnergy(20);
         }
 
         if (Input.GetKeyDown(KeyCode.F)) {
-            DecreaseEnergy(50); 
+            DecreaseEnergy(20); 
         }
 
         // Smoothly slide the side health bar down to match the main health bar

@@ -75,16 +75,16 @@ public class BasicEnemyLeapState : BasicEnemyState
 
     public override void Update() {
         if (isLeaping == false) {
-            if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront())
-            {
+            if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront()) {
                 enemy.ChangeState(new BasicEnemySlashState(enemy)); // Attack if close
             }
-            else if (enemy.distanceFromPlayer <= enemy.detectionRange)
-            {
+            if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {
+                enemy.ChangeState(new BasicEnemyBackState(enemy));
+            }
+            if (enemy.distanceFromPlayer <= enemy.detectionRange) {
                 enemy.ChangeState(new BasicEnemyChaseState(enemy)); // Chase if in range
             }
-            else
-            {
+            else {
                 enemy.ChangeState(new BasicEnemyIdleState(enemy)); // Go idle
             }
         }

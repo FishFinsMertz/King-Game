@@ -12,11 +12,17 @@ public class BasicEnemyController : MonoBehaviour
     public float leapChance;
     private float leapCheckInterval = 3f;
     private bool shouldLeap = false;
+    public float backAtkChance;
+    private float backCheckInterval = 3f;
+    private bool shouldBackAtk = false;
+    public float backAtkDelay;
+    public float backAtkTimer;
 
     // Hitboxes
     [Header ("Hitboxes")]
     public Collider2D slashHitbox;
     public Collider2D leapHitbox;
+    public Collider2D backHitbox;
 
     [Header ("Movement & Detection")]
     // Movement and detection
@@ -26,6 +32,7 @@ public class BasicEnemyController : MonoBehaviour
     public float minThreshold;
     public float minLeapRange;
     public float maxLeapRange;
+    public float backRange;
 
     [Header("Attack Warning")]
     public GameObject nonParryWarning;
@@ -44,8 +51,7 @@ public class BasicEnemyController : MonoBehaviour
     public float distanceFromPlayer; // Store the distance
     public Vector2 vectorFromPlayer;
       
-    void Start()
-    {
+    void Start() {
         nonParryWarning.SetActive(false);
         slashHitbox.enabled = false;
         leapHitbox.enabled = false;
@@ -56,16 +62,17 @@ public class BasicEnemyController : MonoBehaviour
         ChangeState(new BasicEnemyIdleState(this));
 
         StartCoroutine(DetermineLeapBehavior());
+        StartCoroutine(DetermineBackBehavior());
 
         // Add slight variance to enemy chaseSpeed
         //float multiplier = Random.value;
         //chaseSpeed += multiplier;
     }
 
-    void Update()
-    {
+    void Update() {
+        //Debug.Log(currentState);
         currentState.Update();
-        if (!isAttacking) {
+        if (!isAttacking && !(currentState is BasicEnemyBackState)) {
             Flip();
         }
 
@@ -76,13 +83,11 @@ public class BasicEnemyController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         currentState.FixedUpdate();
     }
 
-    public void ChangeState(BasicEnemyState newState)
-    {
+    public void ChangeState(BasicEnemyState newState) {
         if (currentState != null)
             currentState.Exit();
 
@@ -90,8 +95,7 @@ public class BasicEnemyController : MonoBehaviour
         currentState.Enter();
     }
 
-    public bool IsGrounded()
-    {
+    public bool IsGrounded() {
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         return grounded;
     }
@@ -105,23 +109,31 @@ public class BasicEnemyController : MonoBehaviour
         return distanceFromPlayer <= maxLeapRange && distanceFromPlayer >= minLeapRange;
     }
 
-    private IEnumerator DetermineLeapBehavior()
-    {
-        while (true)
-        {
+    private IEnumerator DetermineLeapBehavior() {
+        while (true) {
             shouldLeap = Random.value < leapChance; 
             //Debug.Log("Should Leap: " + shouldLeap);
             yield return new WaitForSeconds(leapCheckInterval);
         }
     }
 
-    public bool ShouldLeap()
-    {
+    public bool ShouldLeap() {
         return shouldLeap;
     }
 
-    private void Flip()
-    {
+    private IEnumerator DetermineBackBehavior() {
+        while (true) {
+            shouldBackAtk = Random.value < backAtkChance; 
+            //Debug.Log("Should Back Atk: " + shouldBackAtk);
+            yield return new WaitForSeconds(backCheckInterval);
+        }
+    }
+    
+    public bool ShouldBackAtk() {
+        return shouldBackAtk;
+    }
+
+    private void Flip() {
         if (distanceFromPlayer > minThreshold) {
             if ((isFacingRight == 1 && vectorFromPlayer.x < 0f) || (isFacingRight == -1 && vectorFromPlayer.x > 0f))
             {
@@ -131,9 +143,10 @@ public class BasicEnemyController : MonoBehaviour
         }
     }
 
-    public void DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox)
-    {
+    public void DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox) {
         Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
+        Debug.Log(hitbox.name);
+        Debug.Log(damage);
 
         foreach (Collider2D hit in hits)
         {

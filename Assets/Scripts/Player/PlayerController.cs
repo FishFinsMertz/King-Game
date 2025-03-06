@@ -102,8 +102,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void DealDamageToEnemy(float damage, Collider2D hitbox) {
-        Debug.Log(hitbox.name);
-        Debug.Log(damage);
+        //Debug.Log(hitbox.name);
+        //Debug.Log(damage);
         Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
 
         // Calculate crit damage
@@ -116,6 +116,9 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy")) 
             {
+                if (hitbox.name == "AttackHitbox") {
+                    energyManager.ChargeEnergy(2f);
+                }
                 EnemyHealthManager enemyHealth = hit.GetComponent<EnemyHealthManager>();
                 if (enemyHealth != null)
                 {

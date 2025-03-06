@@ -13,6 +13,10 @@ public class BasicEnemyChaseState : BasicEnemyState
             enemy.ChangeState(new BasicEnemySlashState(enemy));
         }
 
+        if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront()) {
+            enemy.ChangeState(new BasicEnemyBackState(enemy));
+        }
+
         if (enemy.distanceFromPlayer > enemy.detectionRange) {
             enemy.ChangeState(new BasicEnemyIdleState(enemy));
         }
