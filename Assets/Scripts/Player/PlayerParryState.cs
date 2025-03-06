@@ -17,7 +17,7 @@ public class PlayerParryState : PlayerState
 
     private IEnumerator PerformParry() {
         yield return new WaitForSeconds(player.parryChargeTime);
-        Debug.Log("Invincible!!!");
+        //Debug.Log("Invincible!!!");
         // Stamina cost
         player.staminaManager.DecreaseStamina(player.parryCost);
         player.gameObject.layer = LayerMask.NameToLayer("Invulnerable");
@@ -33,28 +33,26 @@ public class PlayerParryState : PlayerState
         if (inParry) return; 
 
 
-        if (Input.GetButtonDown("Jump") && player.staminaManager.staminaAmount > 0)
-        {
+        if (Input.GetButtonDown("Jump") && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerJumpingState(player));
-            return;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && player.IsGrounded() && player.staminaManager.staminaAmount > 0)
-        {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerDashState(player));
-            return;
         }
 
-        if (player.InputX != 0 && player.staminaManager.staminaAmount > 0)
-        {
+        if (player.InputX != 0 && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerRunningState(player));
-            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
+            player.ChangeState(new PlayerShootState(player));
         }
     }
 
     public override void Exit()
     {
-        Debug.Log("Weak again");
+        //Debug.Log("Weak again");
         player.gameObject.layer = LayerMask.NameToLayer("Player");
         player.parryHitbox.enabled = false;
     }

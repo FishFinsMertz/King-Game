@@ -34,16 +34,20 @@ public class PlayerController : MonoBehaviour
     public float parryChargeTime;
     public float parryInvulnerableTime;
     public float parryCoolDownTime;
+    public float shootChargeTime;
+    public float shootSpeed;
 
     [Header("Hitboxes")]
     public Collider2D attackHitbox;
     public Collider2D parryHitbox;
+    public Collider2D shootHitbox;
 
     [Header("Stamina Costs")]
     public float dashCost;
     public float jumpCost;
     public float atkCost;
     public float parryCost;
+    public float shootCost;
 
     void Start()
     {
@@ -54,7 +58,9 @@ public class PlayerController : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         rb = GetComponent<Rigidbody2D>();
+        shootHitbox.gameObject.SetActive(false);
         attackHitbox.enabled = false;
+        parryHitbox.enabled = false;
         ChangeState(new PlayerIdleState(this));
     }
 
@@ -95,11 +101,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void DealDamageToEnemy() {
-        Collider2D[] hits = Physics2D.OverlapBoxAll(attackHitbox.bounds.center, attackHitbox.bounds.size, 0);
+    public void DealDamageToEnemy(float damage, Collider2D hitbox) {
+        Debug.Log(hitbox.name);
+        Debug.Log(damage);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
 
         // Calculate crit damage
-        float finalDmg = atkDamage;
+        float finalDmg = damage;
         if (Random.value <= critChance) {
             finalDmg *= 2f;
         }

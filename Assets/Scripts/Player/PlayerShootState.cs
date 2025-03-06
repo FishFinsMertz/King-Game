@@ -1,30 +1,33 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerAttackState : PlayerState
+public class PlayerShootState : PlayerState
 {
     private bool attackFinished = false;
 
-    public PlayerAttackState(PlayerController player) : base(player) { }
+    public PlayerShootState(PlayerController player) : base(player) { }
 
     public override void Enter()
     {
-        player.attackHitbox.enabled = true;
+        player.shootHitbox.gameObject.SetActive(true);
         player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y); // Stop movement
         attackFinished = false;
-        player.StartCoroutine(PerformAttack());
+        player.StartCoroutine(Blast());
     }
 
-    private IEnumerator PerformAttack()
+    private IEnumerator Blast()
     {
-        yield return new WaitForSeconds(player.atkChargeTime);
-        
-        // Stamina cost
-        player.staminaManager.DecreaseStamina(player.atkCost);
+        yield return new WaitForSeconds(player.shootChargeTime);
 
-        player.DealDamageToEnemy(player.atkDamage, player.attackHitbox);
+        // Stamina cost
+        player.staminaManager.DecreaseStamina(player.shootCost);
+
+        float damage = player.energyManager.energyAmount;
+        player.DealDamageToEnemy(damage, player.shootHitbox);
+        player.energyManager.DecreaseEnergy(damage);
+        player.healthManager.Heal(damage / 1.5f);
         
-        yield return new WaitForSeconds(player.atkSpeed);
+        yield return new WaitForSeconds(player.shootSpeed);
         attackFinished = true;
     }
 
@@ -47,12 +50,12 @@ public class PlayerAttackState : PlayerState
             return;
         }
 
-        if (Input.GetMouseButtonDown(1) && player.IsGrounded() && player.staminaManager.staminaAmount > 0 && player.CanParry()) {
-            player.ChangeState(new PlayerParryState(player));
+        if (Input.GetMouseButtonDown(0) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
+            player.ChangeState(new PlayerAttackState(player));
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
-            player.ChangeState(new PlayerShootState(player));
+        if (Input.GetMouseButtonDown(1) && player.IsGrounded() && player.staminaManager.staminaAmount > 0 && player.CanParry()) {
+            player.ChangeState(new PlayerParryState(player));
         }
 
         player.ChangeState(new PlayerIdleState(player)); // Default to idle
@@ -60,6 +63,6 @@ public class PlayerAttackState : PlayerState
 
     public override void Exit()
     {
-        player.attackHitbox.enabled = false;
+        player.shootHitbox.gameObject.SetActive(false);
     }
 }
