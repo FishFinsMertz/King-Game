@@ -15,7 +15,7 @@ public class ParryHitbox : MonoBehaviour
         other.CompareTag("ParryableAttack"))
         {
             Debug.Log("Parry Successful!");
-            player.energyManager.ChargeEnergy(20);
+            player.energyManager.ChargeEnergy(30);
         }
     }
 }

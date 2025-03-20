@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -66,6 +67,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Kill player if falling off void
+        if (math.abs(rb.linearVelocityY) > 100) {
+            healthManager.TakeDamage(1000, Vector2.zero, 0);
+        }
+
         currentState.Update();
         if ((currentState is PlayerIdleState) || (currentState is PlayerRunningState) || (currentState is PlayerJumpingState)) {
             Flip();
@@ -108,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
         // Calculate crit damage
         float finalDmg = damage;
-        if (Random.value <= critChance) {
+        if (UnityEngine.Random.value <= critChance) {
             finalDmg *= 2f;
         }
 
@@ -117,7 +123,7 @@ public class PlayerController : MonoBehaviour
             if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy")) 
             {
                 if (hitbox.name == "AttackHitbox") {
-                    energyManager.ChargeEnergy(2f);
+                    energyManager.ChargeEnergy(4f);
                 }
                 EnemyHealthManager enemyHealth = hit.GetComponent<EnemyHealthManager>();
                 if (enemyHealth != null)

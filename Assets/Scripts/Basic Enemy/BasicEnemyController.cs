@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -70,6 +71,7 @@ public class BasicEnemyController : MonoBehaviour
     }
 
     void Update() {
+
         //Debug.Log(currentState);
         currentState.Update();
         if (!isAttacking && !(currentState is BasicEnemyBackState)) {
@@ -111,7 +113,7 @@ public class BasicEnemyController : MonoBehaviour
 
     private IEnumerator DetermineLeapBehavior() {
         while (true) {
-            shouldLeap = Random.value < leapChance; 
+            shouldLeap = UnityEngine.Random.value < leapChance; 
             //Debug.Log("Should Leap: " + shouldLeap);
             yield return new WaitForSeconds(leapCheckInterval);
         }
@@ -123,7 +125,7 @@ public class BasicEnemyController : MonoBehaviour
 
     private IEnumerator DetermineBackBehavior() {
         while (true) {
-            shouldBackAtk = Random.value < backAtkChance; 
+            shouldBackAtk = UnityEngine.Random.value < backAtkChance; 
             //Debug.Log("Should Back Atk: " + shouldBackAtk);
             yield return new WaitForSeconds(backCheckInterval);
         }
@@ -145,8 +147,8 @@ public class BasicEnemyController : MonoBehaviour
 
     public void DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox) {
         Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
-        Debug.Log(hitbox.name);
-        Debug.Log(damage);
+        //Debug.Log(hitbox.name);
+        //Debug.Log(damage);
 
         foreach (Collider2D hit in hits)
         {
