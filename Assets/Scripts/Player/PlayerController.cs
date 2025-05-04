@@ -1,4 +1,5 @@
 using System.Collections;
+using JetBrains.Annotations;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -50,6 +51,9 @@ public class PlayerController : MonoBehaviour
     public float parryCost;
     public float shootCost;
 
+    // Animation
+    public Animator animator;
+
     void Start()
     {
         // Get stamina
@@ -67,6 +71,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(currentState);
+
         // Kill player if falling off void
         if (math.abs(rb.linearVelocityY) > 100) {
             healthManager.TakeDamage(1000, Vector2.zero, 0);

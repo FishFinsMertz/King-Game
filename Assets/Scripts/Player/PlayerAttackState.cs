@@ -9,6 +9,9 @@ public class PlayerAttackState : PlayerState
 
     public override void Enter()
     {
+        //Animation
+        player.animator.SetTrigger("Attack");
+
         player.attackHitbox.enabled = true;
         player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y); // Stop movement
         attackFinished = false;

@@ -4,6 +4,11 @@ public class PlayerRunningState : PlayerState
 {
     public PlayerRunningState(PlayerController player) : base(player) { }
 
+    public override void Enter()
+    {
+        player.animator.SetBool("isRunning", true);
+    }
+
     public override void Update()
     {
         if (player.InputX == 0) {
@@ -34,5 +39,10 @@ public class PlayerRunningState : PlayerState
     public override void FixedUpdate()
     {
         player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.rb.linearVelocity.y);
+    }
+
+    public override void Exit()
+    {
+        player.animator.SetBool("isRunning", false);
     }
 }

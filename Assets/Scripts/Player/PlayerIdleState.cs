@@ -7,6 +7,9 @@ public class PlayerIdleState : PlayerState
     public override void Enter()
     {
         player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y);
+
+        // Animation
+        player.animator.SetBool("isIdle", true);
     }
 
     public override void Update()
@@ -34,5 +37,10 @@ public class PlayerIdleState : PlayerState
         if (Input.GetKeyDown(KeyCode.E) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
             player.ChangeState(new PlayerShootState(player));
         }
+    }
+
+    public override void Exit()
+    {
+        player.animator.SetBool("IsIdle", false);
     }
 }
