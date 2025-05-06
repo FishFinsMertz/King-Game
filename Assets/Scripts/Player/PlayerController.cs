@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currentState);
+        //Debug.Log(currentState);
 
         // Kill player if falling off void
         if (math.abs(rb.linearVelocityY) > 100) {

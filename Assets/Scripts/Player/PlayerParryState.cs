@@ -12,6 +12,10 @@ public class PlayerParryState : PlayerState
         player.parryHitbox.enabled = true;
         player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y); // Stop movement
         inParry = true;
+
+        //Animation
+        player.animator.SetTrigger("Parry");
+
         player.StartCoroutine(PerformParry());  
     }
 
