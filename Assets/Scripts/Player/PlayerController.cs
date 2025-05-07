@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     [HideInInspector] public Rigidbody2D rb;
 
-    // Player movement speed
+    // Player movement 
     public float speed;
     public float jumpingPower;
     public float fallMultiplier;
     public int maxJumpCap;
     public float dashPower;
+
+    [HideInInspector] public int jumpCounter;
 
     // Other stuff
     public Transform groundCheck;
