@@ -5,6 +5,7 @@ public class PlayerDashState : PlayerState
     private float dashTime = 0.1f; // Duration of the dash
     private float dashTimer;
     private Vector2 slideForce;
+    private float afterImageTimer;
 
     private float lessGravityAmt = 0.5f;
 
@@ -12,6 +13,10 @@ public class PlayerDashState : PlayerState
 
     public override void Enter()
     {
+        // After image
+        afterImageTimer = player.afterImageCooldown;
+        CreateAfterImage();
+
         // Decrease Stamina
         player.staminaManager.DecreaseStamina(player.dashCost);
 
@@ -27,6 +32,13 @@ public class PlayerDashState : PlayerState
     public override void Update()
     {
         dashTimer -= Time.deltaTime;
+        afterImageTimer -= Time.deltaTime;
+
+        if (afterImageTimer <= 0f)
+        {
+            CreateAfterImage();
+            afterImageTimer = player.afterImageCooldown;
+        }
 
         if (dashTimer <= 0)
         {
@@ -36,5 +48,15 @@ public class PlayerDashState : PlayerState
         if (Input.GetButtonDown("Jump")) {
             player.ChangeState(new PlayerJumpingState(player));
         }
+    }
+
+    public void CreateAfterImage() {
+        GameObject afterImage = Object.Instantiate(player.afterImagePrefab, player.transform.position, Quaternion.identity);
+
+        SpriteRenderer afterImageSR = afterImage.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer playerSR = player.GetComponentInChildren<SpriteRenderer>();
+
+        afterImageSR.sprite = playerSR.sprite;
+        afterImageSR.flipX = player.isFacingRight == -1;
     }
 }

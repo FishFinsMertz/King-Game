@@ -3725,6 +3725,8 @@ MonoBehaviour:
   fallMultiplier: 4
   maxJumpCap: 2
   dashPower: 50
+  afterImageCooldown: 0.04
+  afterImagePrefab: {fileID: 6533651474987976005, guid: 59999e3ffd7b9b64298f6d585a390bd0, type: 3}
   jumpCounter: 0
   groundCheck: {fileID: 166607437}
   groundLayer:

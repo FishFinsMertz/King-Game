@@ -7,12 +7,16 @@ public class PlayerController : MonoBehaviour
 {
     [HideInInspector] public Rigidbody2D rb;
 
+    [Header("Movement stats")]
     // Player movement 
     public float speed;
     public float jumpingPower;
     public float fallMultiplier;
     public int maxJumpCap;
     public float dashPower;
+    public float afterImageCooldown;
+    public GameObject afterImagePrefab;
+
 
     [HideInInspector] public int jumpCounter;
 
