@@ -3727,6 +3727,7 @@ MonoBehaviour:
   dashPower: 50
   afterImageCooldown: 0.04
   afterImagePrefab: {fileID: 6533651474987976005, guid: 59999e3ffd7b9b64298f6d585a390bd0, type: 3}
+  jumpVFXPrefab: {fileID: 3098556280633746471, guid: e266152ba4ec3f44da1eb6c974c4683d, type: 3}
   jumpCounter: 0
   groundCheck: {fileID: 166607437}
   groundLayer:
@@ -3743,7 +3744,7 @@ MonoBehaviour:
   critChance: 0.1
   parryChargeTime: 0.2
   parryInvulnerableTime: 0.2
-  parryCoolDownTime: 2
+  parryCoolDownTime: 1
   shootChargeTime: 0.1
   shootSpeed: 0.2
   attackHitbox: {fileID: 938385846}
@@ -4695,9 +4696,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 912684379}
+  - {fileID: 1458981077}
   - {fileID: 104274475}
   - {fileID: 1055524834}
-  - {fileID: 1458981077}
   - {fileID: 634771468}
   - {fileID: 1902135723}
   - {fileID: 1347898783}

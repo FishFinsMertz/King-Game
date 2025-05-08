@@ -20,7 +20,6 @@ public class PlayerJumpingState : PlayerState
         // For Animation
         player.animator.SetBool("isJumping", !player.IsGrounded());
 
-
         // Coyote Time: Wait a short grace period before switching to idle
         if (player.IsGrounded())
         {
@@ -55,7 +54,9 @@ public class PlayerJumpingState : PlayerState
         player.staminaManager.DecreaseStamina(player.jumpCost);
 
         // Animation
-
+        if (player.jumpCounter > 0) {
+            CreateJumpVFX();
+        }
 
         // Physics
         player.rb.linearVelocity = new Vector2(player.InputX * player.speed, player.jumpingPower);
@@ -72,5 +73,14 @@ public class PlayerJumpingState : PlayerState
         {
             player.rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1.5f) * Time.fixedDeltaTime;
         }
+    }
+
+    public void CreateJumpVFX() {
+          // Spawn offset under player's feet
+        Vector3 spawnOffset = new Vector3(0, -0.5f, 0); 
+        Vector3 spawnPosition = player.transform.position + spawnOffset;
+
+        // Instantiate VFX
+        Object.Instantiate(player.jumpVFXPrefab, spawnPosition, Quaternion.identity);
     }
 }

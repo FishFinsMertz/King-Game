@@ -6,6 +6,9 @@ public class PlayerSlidingState : PlayerState
     private float slideFriction = 0.85f; // Multiplier applied per frame for damping
     private Vector2 slideForce; // Initial force applied to the player
 
+    // After image
+    private float afterImageTimer;
+
     public PlayerSlidingState(PlayerController player, Vector2 force) : base(player)
     {
         slideForce = force;
@@ -14,6 +17,10 @@ public class PlayerSlidingState : PlayerState
     public override void Enter()
     {
         player.rb.linearVelocity = slideForce; // Apply initial force
+
+        // After image
+        afterImageTimer = player.afterImageCooldown;
+        CreateAfterImage();
     }
 
     public override void FixedUpdate()
@@ -33,4 +40,15 @@ public class PlayerSlidingState : PlayerState
             player.ChangeState(player.InputX != 0 ? new PlayerRunningState(player) : new PlayerIdleState(player));
         }
     }
+
+    public void CreateAfterImage() {
+        GameObject afterImage = Object.Instantiate(player.afterImagePrefab, player.transform.position, Quaternion.identity);
+
+        SpriteRenderer afterImageSR = afterImage.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer playerSR = player.GetComponentInChildren<SpriteRenderer>();
+        
+        afterImageSR.sprite = playerSR.sprite;
+        afterImageSR.flipX = player.isFacingRight == -1;
+    }
 }
+

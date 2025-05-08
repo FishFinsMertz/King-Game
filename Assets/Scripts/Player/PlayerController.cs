@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public float dashPower;
     public float afterImageCooldown;
     public GameObject afterImagePrefab;
-
+    public GameObject jumpVFXPrefab;
 
     [HideInInspector] public int jumpCounter;
 
