@@ -75,6 +75,12 @@ public class PlayerJumpingState : PlayerState
         }
     }
 
+    public override void Exit()
+    {
+        player.jumpCounter = 0;
+        player.animator.SetBool("isJumping", false);
+    }
+
     public void CreateJumpVFX() {
           // Spawn offset under player's feet
         Vector3 spawnOffset = new Vector3(0, -0.5f, 0); 

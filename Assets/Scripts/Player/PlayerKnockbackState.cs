@@ -7,12 +7,14 @@ public class PlayerKnockbackState : PlayerState
     private float slideTimer;
     private float stunTimer;
 
-    private float knockbackDuration = 0.3f; // Time spent in knockback phase
-    private float slideDuration = 0.5f;     // Time spent sliding before stopping
-    private float stunDuration = 0.7f;      // Time spent stunned before regaining control
+    private float knockbackDuration = 0.3f;
+    private float slideDuration = 0.5f;
+    private float stunDuration = 1f;
 
     private bool isVerticalKnockback;
     private bool waitingForGround;
+
+    private float originalDamping;
 
     private enum KnockbackPhase { Knockback, Slide, Stun, WaitForGround }
     private KnockbackPhase phase;
@@ -21,19 +23,26 @@ public class PlayerKnockbackState : PlayerState
     {
         this.knockbackForce = knockbackForce;
         isVerticalKnockback = Mathf.Abs(knockbackForce.y) > Mathf.Abs(knockbackForce.x);
-
-        knockbackTimer = 0;
-        slideTimer = 0;
-        stunTimer = 0;
-        waitingForGround = false;
-
         phase = KnockbackPhase.Knockback;
     }
 
     public override void Enter()
     {
+        originalDamping = player.rb.linearDamping;
+        player.rb.linearDamping = 0f; // Remove drag
+
         player.rb.linearVelocity = knockbackForce;
-        player.rb.linearDamping = 0; // No damping during knockback
+
+        // Animation
+        player.animator.SetBool("isDamaged", true);
+        player.animator.SetTrigger("Knockback");
+    }
+
+    public override void Exit()
+    {
+        // Restore damping
+        player.rb.linearDamping = originalDamping;
+        player.animator.SetBool("isDamaged", false);
     }
 
     public override void Update()
@@ -46,13 +55,13 @@ public class PlayerKnockbackState : PlayerState
                 {
                     if (isVerticalKnockback)
                     {
-                        phase = KnockbackPhase.WaitForGround; // Wait until player lands
+                        phase = KnockbackPhase.WaitForGround;
                         waitingForGround = true;
                     }
                     else
                     {
                         phase = KnockbackPhase.Slide;
-                        knockbackTimer = 0;
+                        slideTimer = 0f;
                     }
                 }
                 break;
@@ -62,8 +71,10 @@ public class PlayerKnockbackState : PlayerState
                 if (slideTimer >= slideDuration)
                 {
                     phase = KnockbackPhase.Stun;
-                    slideTimer = 0;
-                    player.rb.linearVelocity = Vector2.zero; // Stop completely
+                    stunTimer = 0f;
+                    player.rb.linearVelocity = Vector2.zero;
+                    // Animation
+                    player.animator.SetTrigger("Recover");
                 }
                 break;
 
@@ -71,7 +82,7 @@ public class PlayerKnockbackState : PlayerState
                 stunTimer += Time.deltaTime;
                 if (stunTimer >= stunDuration)
                 {
-                    player.ChangeState(new PlayerIdleState(player)); // Allow movement again
+                    player.ChangeState(new PlayerIdleState(player));
                 }
                 break;
 
@@ -79,7 +90,11 @@ public class PlayerKnockbackState : PlayerState
                 if (player.IsGrounded())
                 {
                     phase = KnockbackPhase.Stun;
-                    stunTimer = 0;
+                    stunTimer = 0f;
+                    player.rb.linearVelocity = Vector2.zero;
+                    
+                    // Animation
+                    player.animator.SetTrigger("Recover");
                 }
                 break;
         }
@@ -89,10 +104,6 @@ public class PlayerKnockbackState : PlayerState
     {
         switch (phase)
         {
-            case KnockbackPhase.Knockback:
-                player.rb.linearVelocity = knockbackForce;
-                break;
-
             case KnockbackPhase.Slide:
                 player.rb.linearVelocity = new Vector2(player.rb.linearVelocity.x * 0.9f, player.rb.linearVelocity.y);
                 break;
@@ -101,8 +112,9 @@ public class PlayerKnockbackState : PlayerState
                 player.rb.linearVelocity = Vector2.zero;
                 break;
 
+            case KnockbackPhase.Knockback:
             case KnockbackPhase.WaitForGround:
-                // Don't apply any extra force, just wait for the player to land
+                // Do nothing; let natural fall happen
                 break;
         }
     }
