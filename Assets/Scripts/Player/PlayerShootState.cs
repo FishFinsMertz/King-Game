@@ -9,7 +9,6 @@ public class PlayerShootState : PlayerState
 
     public override void Enter()
     {
-        player.shootHitbox.gameObject.SetActive(true);
         player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y); // Stop movement
         attackFinished = false;
         player.StartCoroutine(Blast());
@@ -18,6 +17,9 @@ public class PlayerShootState : PlayerState
     private IEnumerator Blast()
     {
         yield return new WaitForSeconds(player.shootChargeTime);
+
+        // Shoot
+        player.shootHitbox.gameObject.SetActive(true);
 
         // Stamina cost
         player.staminaManager.DecreaseStamina(player.shootCost);

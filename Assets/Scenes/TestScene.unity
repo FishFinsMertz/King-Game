@@ -3745,7 +3745,7 @@ MonoBehaviour:
   parryChargeTime: 0.2
   parryInvulnerableTime: 0.2
   parryCoolDownTime: 1
-  shootChargeTime: 0.1
+  shootChargeTime: 1
   shootSpeed: 0.2
   attackHitbox: {fileID: 938385846}
   parryHitbox: {fileID: 621130138}
