@@ -24,6 +24,9 @@ public class PlayerShootState : PlayerState
         // Stamina cost
         player.staminaManager.DecreaseStamina(player.shootCost);
 
+        // Camera shake
+        player.cameraController.StartShake(CameraController.ShakeLevel.light);
+
         float damage = player.energyManager.energyAmount;
         player.DealDamageToEnemy(damage, player.shootHitbox);
         player.energyManager.DecreaseEnergy(damage);

@@ -896,6 +896,7 @@ GameObject:
   - component: {fileID: 219426153}
   - component: {fileID: 219426155}
   - component: {fileID: 219426154}
+  - component: {fileID: 219426156}
   m_Layer: 6
   m_Name: ShootHitbox
   m_TagString: Untagged
@@ -912,8 +913,8 @@ Transform:
   m_GameObject: {fileID: 219426152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.36, y: -0.02, z: 0}
-  m_LocalScale: {x: 1.9838401, y: 0.08761264, z: 1}
+  m_LocalPosition: {x: 10.67, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1458981077}
@@ -952,17 +953,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.07}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.8, y: 10.8}
-    newSize: {x: 10.8, y: 10.8}
+    oldSize: {x: 20, y: 10}
+    newSize: {x: 20.039137, y: 10}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 10.8, y: 10.8}
+  m_Size: {x: 20.05, y: 3.07}
   m_EdgeRadius: 0
 --- !u!212 &219426155
 SpriteRenderer:
@@ -1008,17 +1009,39 @@ SpriteRenderer:
   m_SortingLayerID: 1527628289
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7121153706957392049, guid: e406683903d4e184cb309e3942726d26, type: 3}
-  m_Color: {r: 1, g: 0.83426154, b: 0.24842751, a: 1}
+  m_Sprite: {fileID: 9215800577156876855, guid: 202c448246713864c9bc21f240c3a1c0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.8, y: 10.8}
+  m_Size: {x: 20.039137, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &219426156
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219426152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72431e7bc0b9be340b67eab866ab6074, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &281183696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,8 +3768,8 @@ MonoBehaviour:
   parryChargeTime: 0.2
   parryInvulnerableTime: 0.2
   parryCoolDownTime: 1
-  shootChargeTime: 1
-  shootSpeed: 0.2
+  shootChargeTime: 0.4
+  shootSpeed: 0.4
   attackHitbox: {fileID: 938385846}
   parryHitbox: {fileID: 621130138}
   shootHitbox: {fileID: 219426154}
@@ -3755,6 +3778,7 @@ MonoBehaviour:
   atkCost: 15
   parryCost: 7
   shootCost: 20
+  cameraController: {fileID: 0}
   animator: {fileID: 1192022451}
 --- !u!114 &1458981080
 MonoBehaviour:

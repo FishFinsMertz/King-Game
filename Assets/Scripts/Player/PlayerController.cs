@@ -57,15 +57,21 @@ public class PlayerController : MonoBehaviour
     public float parryCost;
     public float shootCost;
 
+    [Header("Camera")]
+    public CameraController cameraController;
+
     // Animation
     public Animator animator;
 
     void Start()
     {
-        // Get stamina
+        // Get stats
         staminaManager = GetComponent<PlayerStaminaManager>();
         energyManager = GetComponent<PlayerEnergyManager>();
         healthManager = GetComponent<PlayerHealthManager>();
+
+        //Camera
+        cameraController = FindAnyObjectByType<CameraController>();
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         rb = GetComponent<Rigidbody2D>();

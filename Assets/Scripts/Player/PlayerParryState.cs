@@ -61,7 +61,7 @@ public class PlayerParryState : PlayerState
             player.ChangeState(new PlayerRunningState(player));
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && player.IsGrounded() && player.staminaManager.staminaAmount > 0)
+        if (Input.GetKeyDown(KeyCode.E) && player.IsGrounded() && player.staminaManager.staminaAmount > 0 && player.energyManager.energyAmount >= 100)
         {
             player.ChangeState(new PlayerShootState(player));
         }

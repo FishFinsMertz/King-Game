@@ -1,0 +1,703 @@
+fileFormatVersion: 2
+guid: 202c448246713864c9bc21f240c3a1c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3651175838973279525
+    second: Knight_beam_0
+  - first:
+      213: 6537274969887568733
+    second: Knight_beam_1
+  - first:
+      213: -7774546408933864274
+    second: Knight_beam_2
+  - first:
+      213: -4871018789617401383
+    second: Knight_beam_3
+  - first:
+      213: -36138882574511075
+    second: Knight_beam_4
+  - first:
+      213: 3239918405365433549
+    second: Knight_beam_5
+  - first:
+      213: -1334807816448105896
+    second: Knight_beam_6
+  - first:
+      213: 9215800577156876855
+    second: Knight_beam_7
+  - first:
+      213: 5996072307154257222
+    second: Knight_beam_8
+  - first:
+      213: -9182225745945743056
+    second: Knight_beam_9
+  - first:
+      213: -4124685325199819635
+    second: Knight_beam_10
+  - first:
+      213: -1468766614936602960
+    second: Knight_beam_11
+  - first:
+      213: 7480613786856140128
+    second: Knight_beam_12
+  - first:
+      213: 8341826014782991542
+    second: Knight_beam_13
+  - first:
+      213: 5860566674921602001
+    second: Knight_beam_14
+  - first:
+      213: -6422021668172238364
+    second: Knight_beam_15
+  - first:
+      213: 589493339989041867
+    second: Knight_beam_16
+  - first:
+      213: -5052057953418735509
+    second: Knight_beam_17
+  - first:
+      213: -7146919532193330648
+    second: Knight_beam_18
+  - first:
+      213: -4104976262355985730
+    second: Knight_beam_19
+  - first:
+      213: -9177207430830238594
+    second: Knight_beam_20
+  - first:
+      213: 1190345476874357181
+    second: Knight_beam_21
+  - first:
+      213: 6602139855857899971
+    second: Knight_beam_22
+  - first:
+      213: 800878208280652240
+    second: Knight_beam_23
+  - first:
+      213: -5787767195579077139
+    second: Knight_beam_24
+  - first:
+      213: 8013551189366848196
+    second: Knight_beam_25
+  - first:
+      213: 8814721384686371236
+    second: Knight_beam_26
+  - first:
+      213: -2143348663682011645
+    second: Knight_beam_27
+  - first:
+      213: 7165422344662473308
+    second: Knight_beam_28
+  - first:
+      213: 1250151607552412708
+    second: Knight_beam_29
+  - first:
+      213: -4070749637653746055
+    second: Knight_beam_30
+  - first:
+      213: 9019746003119134834
+    second: Knight_beam_31
+  - first:
+      213: -8319381442466881675
+    second: Knight_beam_32
+  - first:
+      213: -2881412560370997843
+    second: Knight_beam_33
+  - first:
+      213: 1490635927380520837
+    second: Knight_beam_34
+  - first:
+      213: 6253681498052507066
+    second: Knight_beam_35
+  - first:
+      213: 5335911865596502887
+    second: Knight_beam_36
+  - first:
+      213: -693297202463166531
+    second: Knight_beam_37
+  - first:
+      213: -8288073779484379082
+    second: Knight_beam_38
+  - first:
+      213: 4449539193479469738
+    second: Knight_beam_39
+  - first:
+      213: 649024257075070671
+    second: Knight_beam_40
+  - first:
+      213: 1759753435157828623
+    second: Knight_beam_41
+  - first:
+      213: 6642861747803430272
+    second: Knight_beam_42
+  - first:
+      213: 3738523146414119207
+    second: Knight_beam_43
+  - first:
+      213: 1616519820744358276
+    second: Knight_beam_44
+  - first:
+      213: 3239216789864194838
+    second: Knight_beam_45
+  - first:
+      213: 1519291679323552480
+    second: Knight_beam_46
+  - first:
+      213: 1771177143295856888
+    second: Knight_beam_47
+  - first:
+      213: -7614037363238147893
+    second: Knight_beam_48
+  - first:
+      213: 645182692994351409
+    second: Knight_beam_49
+  - first:
+      213: -3527622265640535864
+    second: Knight_beam_50
+  - first:
+      213: 737676751027688604
+    second: Knight_beam_51
+  - first:
+      213: 7095236974596748407
+    second: Knight_beam_52
+  - first:
+      213: 2296904512326651593
+    second: Knight_beam_53
+  - first:
+      213: -2582966972225621825
+    second: Knight_beam_54
+  - first:
+      213: 7886332058427744105
+    second: Knight_beam_55
+  - first:
+      213: -6830634015557437530
+    second: Knight_beam_56
+  - first:
+      213: 3928632392198347402
+    second: Knight_beam_57
+  - first:
+      213: 3086659985381490173
+    second: Knight_beam_58
+  - first:
+      213: 8342907177229640229
+    second: Knight_beam_59
+  - first:
+      213: -8611488161489984353
+    second: Knight_beam_60
+  - first:
+      213: -6970089754374076353
+    second: Knight_beam_61
+  - first:
+      213: 257482727917370721
+    second: Knight_beam_62
+  - first:
+      213: 7217880905050825320
+    second: Knight_beam_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Knight_beam_0
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52dbd7ea4159ba230800000000000000
+      internalID: 3651175838973279525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_1
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53733bf2f019ba50800000000000000
+      internalID: 6537274969887568733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_4
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d141195b0eb9f7ff0800000000000000
+      internalID: -36138882574511075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc48e05bf9086fc20800000000000000
+      internalID: 3239918405365433549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8522231fc5fc97de0800000000000000
+      internalID: -1334807816448105896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_7
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a864a2cc915ef70800000000000000
+      internalID: 9215800577156876855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_17
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b601acdee0c73e9b0800000000000000
+      internalID: -5052057953418735509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eba5cd6a6d13807c0800000000000000
+      internalID: -4104976262355985730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_20
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e74d94fe67204a080800000000000000
+      internalID: -9177207430830238594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_21
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db9c61d87e4f48010800000000000000
+      internalID: 1190345476874357181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_30
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e2916b5cac187c0800000000000000
+      internalID: -4070749637653746055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_32
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fd8c2f7ae9b8c80800000000000000
+      internalID: -8319381442466881675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_43
+      rect:
+        serializedVersion: 2
+        x: 3393
+        y: 83
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729d69e7ef6e1e330800000000000000
+      internalID: 3738523146414119207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_50
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c8bcb25d3e5b0fc0800000000000000
+      internalID: -3527622265640535864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_beam_59
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 400
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52264d400e5f7c370800000000000000
+      internalID: 8342907177229640229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e3cf65613736ec049aa4bf3fe1801f75
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Knight_beam_0: 3651175838973279525
+      Knight_beam_1: 6537274969887568733
+      Knight_beam_10: -4124685325199819635
+      Knight_beam_11: -1468766614936602960
+      Knight_beam_12: 7480613786856140128
+      Knight_beam_13: 8341826014782991542
+      Knight_beam_14: 5860566674921602001
+      Knight_beam_15: -6422021668172238364
+      Knight_beam_16: 589493339989041867
+      Knight_beam_17: -5052057953418735509
+      Knight_beam_18: -7146919532193330648
+      Knight_beam_19: -4104976262355985730
+      Knight_beam_2: -7774546408933864274
+      Knight_beam_20: -9177207430830238594
+      Knight_beam_21: 1190345476874357181
+      Knight_beam_22: 6602139855857899971
+      Knight_beam_23: 800878208280652240
+      Knight_beam_24: -5787767195579077139
+      Knight_beam_25: 8013551189366848196
+      Knight_beam_26: 8814721384686371236
+      Knight_beam_27: -2143348663682011645
+      Knight_beam_28: 7165422344662473308
+      Knight_beam_29: 1250151607552412708
+      Knight_beam_3: -4871018789617401383
+      Knight_beam_30: -4070749637653746055
+      Knight_beam_31: 9019746003119134834
+      Knight_beam_32: -8319381442466881675
+      Knight_beam_33: -2881412560370997843
+      Knight_beam_34: 1490635927380520837
+      Knight_beam_35: 6253681498052507066
+      Knight_beam_36: 5335911865596502887
+      Knight_beam_37: -693297202463166531
+      Knight_beam_38: -8288073779484379082
+      Knight_beam_39: 4449539193479469738
+      Knight_beam_4: -36138882574511075
+      Knight_beam_40: 649024257075070671
+      Knight_beam_41: 1759753435157828623
+      Knight_beam_42: 6642861747803430272
+      Knight_beam_43: 3738523146414119207
+      Knight_beam_44: 1616519820744358276
+      Knight_beam_45: 3239216789864194838
+      Knight_beam_46: 1519291679323552480
+      Knight_beam_47: 1771177143295856888
+      Knight_beam_48: -7614037363238147893
+      Knight_beam_49: 645182692994351409
+      Knight_beam_5: 3239918405365433549
+      Knight_beam_50: -3527622265640535864
+      Knight_beam_51: 737676751027688604
+      Knight_beam_52: 7095236974596748407
+      Knight_beam_53: 2296904512326651593
+      Knight_beam_54: -2582966972225621825
+      Knight_beam_55: 7886332058427744105
+      Knight_beam_56: -6830634015557437530
+      Knight_beam_57: 3928632392198347402
+      Knight_beam_58: 3086659985381490173
+      Knight_beam_59: 8342907177229640229
+      Knight_beam_6: -1334807816448105896
+      Knight_beam_60: -8611488161489984353
+      Knight_beam_61: -6970089754374076353
+      Knight_beam_62: 257482727917370721
+      Knight_beam_63: 7217880905050825320
+      Knight_beam_7: 9215800577156876855
+      Knight_beam_8: 5996072307154257222
+      Knight_beam_9: -9182225745945743056
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

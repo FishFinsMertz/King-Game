@@ -34,7 +34,7 @@ public class PlayerIdleState : PlayerState
             player.ChangeState(new PlayerParryState(player));
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && player.IsGrounded() && player.staminaManager.staminaAmount > 0) {
+        if (Input.GetKeyDown(KeyCode.E) && player.IsGrounded() && player.staminaManager.staminaAmount > 0 && player.energyManager.energyAmount >= 100) {
             player.ChangeState(new PlayerShootState(player));
         }
     }
