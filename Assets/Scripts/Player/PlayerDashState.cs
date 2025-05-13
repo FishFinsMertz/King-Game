@@ -55,7 +55,7 @@ public class PlayerDashState : PlayerState
 
         SpriteRenderer afterImageSR = afterImage.GetComponentInChildren<SpriteRenderer>();
         SpriteRenderer playerSR = player.GetComponentInChildren<SpriteRenderer>();
-
+        
         afterImageSR.sprite = playerSR.sprite;
         afterImageSR.flipX = player.isFacingRight == -1;
     }

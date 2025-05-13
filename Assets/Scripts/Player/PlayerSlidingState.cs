@@ -16,6 +16,9 @@ public class PlayerSlidingState : PlayerState
 
     public override void Enter()
     {
+        // Animation
+        player.animator.SetBool("inDash", true);
+
         player.rb.linearVelocity = slideForce; // Apply initial force
 
         // After image
@@ -39,6 +42,12 @@ public class PlayerSlidingState : PlayerState
         {
             player.ChangeState(player.InputX != 0 ? new PlayerRunningState(player) : new PlayerIdleState(player));
         }
+    }
+
+    public override void Exit()
+    {
+        // Animation
+        player.animator.SetBool("inDash", false);
     }
 
     public void CreateAfterImage() {

@@ -3769,7 +3769,7 @@ MonoBehaviour:
   parryInvulnerableTime: 0.2
   parryCoolDownTime: 1
   shootChargeTime: 0.4
-  shootSpeed: 0.4
+  shootSpeed: 1
   attackHitbox: {fileID: 938385846}
   parryHitbox: {fileID: 621130138}
   shootHitbox: {fileID: 219426154}
