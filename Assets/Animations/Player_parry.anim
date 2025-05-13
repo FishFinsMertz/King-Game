@@ -32,11 +32,11 @@ AnimationClip:
       value: {fileID: 711928554938412645, guid: 3cffe3e71c7c5314fbb10b8d46b5c9e3, type: 3}
     - time: 0.35
       value: {fileID: -634093944033159754, guid: 3cffe3e71c7c5314fbb10b8d46b5c9e3, type: 3}
-    - time: 0.4
+    - time: 0.41666666
       value: {fileID: 5279594765486948318, guid: 3cffe3e71c7c5314fbb10b8d46b5c9e3, type: 3}
-    - time: 0.45
+    - time: 0.5
       value: {fileID: 5912749320037569350, guid: 3cffe3e71c7c5314fbb10b8d46b5c9e3, type: 3}
-    - time: 0.53333336
+    - time: 0.5833333
       value: {fileID: 4746190314043674739, guid: 3cffe3e71c7c5314fbb10b8d46b5c9e3, type: 3}
     - time: 0.6666667
       value: {fileID: -3563789131293671210, guid: 3cffe3e71c7c5314fbb10b8d46b5c9e3, type: 3}

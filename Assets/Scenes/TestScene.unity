@@ -3764,10 +3764,12 @@ MonoBehaviour:
   atkDamage: 20
   atkChargeTime: 0.2
   atkSpeed: 0.2
+  atkChargeAmt: 10
   critChance: 0.1
   parryChargeTime: 0.2
   parryInvulnerableTime: 0.2
   parryCoolDownTime: 1
+  parryChargeAmt: 50
   shootChargeTime: 0.4
   shootSpeed: 1
   attackHitbox: {fileID: 938385846}

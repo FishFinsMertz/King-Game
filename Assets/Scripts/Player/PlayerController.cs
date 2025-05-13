@@ -38,10 +38,12 @@ public class PlayerController : MonoBehaviour
     public float atkDamage;
     public float atkChargeTime;
     public float atkSpeed;
+    public float atkChargeAmt;
     public float critChance;
     public float parryChargeTime;
     public float parryInvulnerableTime;
     public float parryCoolDownTime;
+    public float parryChargeAmt;
     public float shootChargeTime;
     public float shootSpeed;
 
@@ -142,7 +144,7 @@ public class PlayerController : MonoBehaviour
             if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy")) 
             {
                 if (hitbox.name == "AttackHitbox") {
-                    energyManager.ChargeEnergy(4f);
+                    energyManager.ChargeEnergy(atkChargeAmt);
                 }
                 EnemyHealthManager enemyHealth = hit.GetComponent<EnemyHealthManager>();
                 if (enemyHealth != null)
