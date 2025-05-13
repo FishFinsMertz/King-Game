@@ -913,7 +913,7 @@ Transform:
   m_GameObject: {fileID: 219426152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.67, y: 0.15, z: 0}
+  m_LocalPosition: {x: 13.83, y: 1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3770,7 +3770,7 @@ MonoBehaviour:
   parryInvulnerableTime: 0.2
   parryCoolDownTime: 1
   parryChargeAmt: 50
-  shootChargeTime: 0.4
+  shootChargeTime: 0.6
   shootSpeed: 1
   attackHitbox: {fileID: 938385846}
   parryHitbox: {fileID: 621130138}

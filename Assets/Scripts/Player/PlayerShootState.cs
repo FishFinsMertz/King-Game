@@ -11,6 +11,10 @@ public class PlayerShootState : PlayerState
     {
         player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y); // Stop movement
         attackFinished = false;
+
+        // Animation
+        player.animator.SetTrigger("Shoot");
+
         player.StartCoroutine(Blast());
     }
 
