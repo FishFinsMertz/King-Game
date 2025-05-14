@@ -19,7 +19,7 @@ public class BasicEnemyBackState : BasicEnemyState
         yield return new WaitForSeconds(enemy.backAtkDelay); // Delay before attack hitbox activates
         
         // Enabling hitbox and attack
-        enemy.slashHitbox.enabled = true;
+        enemy.backHitbox.enabled = true;
 
         // Check for player collision after enabling hitbox
         enemy.DealDamageToPlayer(20, Vector2.right, 10f, enemy.backHitbox);

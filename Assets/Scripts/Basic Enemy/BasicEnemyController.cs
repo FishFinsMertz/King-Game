@@ -73,6 +73,7 @@ public class BasicEnemyController : MonoBehaviour
     void Update() {
 
         //Debug.Log(currentState);
+        Debug.Log(IsPlayerInFront());
         currentState.Update();
         if (!isAttacking && !(currentState is BasicEnemyBackState)) {
             Flip();
@@ -152,6 +153,7 @@ public class BasicEnemyController : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
+
             if (hit.gameObject.layer == LayerMask.NameToLayer("Player") || 
             (hit.gameObject.layer == LayerMask.NameToLayer("Invulnerable") && !hitbox.CompareTag("ParryableAttack"))) 
             {
