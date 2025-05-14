@@ -1146,7 +1146,7 @@ RectTransform:
   m_GameObject: {fileID: 335070904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0084, y: 0.02963, z: 1}
+  m_LocalScale: {x: 0.004340028, y: 0.0162965, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519107802}
@@ -1156,7 +1156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 20.159002, y: 8.43}
+  m_AnchoredPosition: {x: 20.27, y: 8.43}
   m_SizeDelta: {x: 200, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &368634362
@@ -1512,6 +1512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 495699480}
   - component: {fileID: 495699481}
+  - component: {fileID: 495699482}
   m_Layer: 7
   m_Name: BasicEnemySpriteRender
   m_TagString: Untagged
@@ -1578,17 +1579,39 @@ SpriteRenderer:
   m_SortingLayerID: -746627181
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2484065716378619533, guid: 61fc6031247811d4393f4c86aaaea27a, type: 3}
+  m_Sprite: {fileID: -6053841534157957923, guid: 6705e11e67f26ad4a8477afc1d93e72d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.2, y: 4.1}
+  m_Size: {x: 2.62, y: 1.83}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &495699482
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495699479}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bbb035c322732ed4e8b5466e97ef4cbd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &504193708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,7 +3099,7 @@ MonoBehaviour:
   atkChargeAmt: 10
   critChance: 0.1
   parryChargeTime: 0.2
-  parryInvulnerableTime: 0.2
+  parryInvulnerableTime: 0.3
   parryCoolDownTime: 1
   parryChargeAmt: 50
   shootChargeTime: 0.6
@@ -3402,8 +3425,8 @@ Transform:
   m_GameObject: {fileID: 1729621576}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 4.45, z: 0.049021825}
-  m_LocalScale: {x: 0.3139085, y: 0.3139085, z: 0.3139085}
+  m_LocalPosition: {x: 0.32, y: 3.7232, z: 0.049021825}
+  m_LocalScale: {x: 0.17195907, y: 0.17195907, z: 0.17195907}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104274475}

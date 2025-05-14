@@ -15,9 +15,8 @@ public class BasicEnemySlashState : BasicEnemyState
     }
 
     private IEnumerator PerformSlash() {
-        float delay = Random.Range(0.3f, 1.2f);
         //Debug.Log("Charging up my slash, delay: " + delay);
-        yield return new WaitForSeconds(delay); // Delay before attack hitbox activates
+        yield return new WaitForSeconds(0.5f); // Delay before attack hitbox activates
         
         // Enabling hitbox and attack
         enemy.slashHitbox.enabled = true;
