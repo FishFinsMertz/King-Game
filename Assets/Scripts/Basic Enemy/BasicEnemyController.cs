@@ -51,6 +51,9 @@ public class BasicEnemyController : MonoBehaviour
     public GameObject player; // Declare player as a private field
     public float distanceFromPlayer; // Store the distance
     public Vector2 vectorFromPlayer;
+
+    [Header("Animation")]
+    public Animator animator;
       
     void Start() {
         nonParryWarning.SetActive(false);

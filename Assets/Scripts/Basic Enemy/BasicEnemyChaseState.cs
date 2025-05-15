@@ -7,13 +7,18 @@ public class BasicEnemyChaseState : BasicEnemyState
     private float repulsionStrength = 50f;  // Strength of the repulsive force
     public BasicEnemyChaseState(BasicEnemyController enemy) : base(enemy) { }
 
+    public override void Enter()
+    {
+        enemy.animator.SetBool("isWalking", true);
+    }
+
     public override void Update()
     {
         if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront()) {
             enemy.ChangeState(new BasicEnemySlashState(enemy));
         }
 
-        if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront()) {
+        if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {
             enemy.ChangeState(new BasicEnemyBackState(enemy));
         }
 
@@ -68,5 +73,10 @@ public class BasicEnemyChaseState : BasicEnemyState
                 }
             }
         }
+    }
+
+    public override void Exit() 
+    {
+        enemy.animator.SetBool("isWalking", false);
     }
 }

@@ -556,6 +556,7 @@ MonoBehaviour:
   player: {fileID: 1458981072}
   distanceFromPlayer: 0
   vectorFromPlayer: {x: 0, y: 0}
+  animator: {fileID: 495699482}
 --- !u!114 &104274477
 MonoBehaviour:
   m_ObjectHideFlags: 0
