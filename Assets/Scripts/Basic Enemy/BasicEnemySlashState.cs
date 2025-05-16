@@ -15,8 +15,11 @@ public class BasicEnemySlashState : BasicEnemyState
     }
 
     private IEnumerator PerformSlash() {
+        // Animation
+        enemy.animator.SetTrigger("Thrust");
+
         //Debug.Log("Charging up my slash, delay: " + delay);
-        yield return new WaitForSeconds(0.5f); // Delay before attack hitbox activates
+        yield return new WaitForSeconds(enemy.slashChargeTime); // Delay before attack hitbox activates
         
         // Enabling hitbox and attack
         enemy.slashHitbox.enabled = true;
@@ -29,8 +32,11 @@ public class BasicEnemySlashState : BasicEnemyState
         enemy.isAttacking = false;
 
         // next states
-        if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront()) {
-            enemy.ChangeState(new BasicEnemySlashState(enemy));
+        if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront())
+        {
+            // SCUFFED FIX FOR WHEN ENEMY ATTACKS 2 TIMES IN A ROW AND THE THRUST ANIMATION TRIGGER DOESNT RESET
+            enemy.isAttacking = false;
+            enemy.ChangeState(new BasicEnemyChaseState(enemy));
         }
 
         if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {

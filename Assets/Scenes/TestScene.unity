@@ -3101,7 +3101,7 @@ MonoBehaviour:
   critChance: 0.1
   parryChargeTime: 0.2
   parryInvulnerableTime: 0.3
-  parryCoolDownTime: 1
+  parryCoolDownTime: 0.5
   parryChargeAmt: 50
   shootChargeTime: 0.6
   shootSpeed: 1

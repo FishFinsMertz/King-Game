@@ -10,6 +10,7 @@ public class BasicEnemyController : MonoBehaviour
     [Header ("Attack Info")]
     [HideInInspector] public bool isAttacking = false;
     public float slashTimer = 1f;
+    public float slashChargeTime = 0.5f;
     public float leapChance;
     private float leapCheckInterval = 3f;
     private bool shouldLeap = false;
