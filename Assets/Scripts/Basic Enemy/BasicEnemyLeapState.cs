@@ -5,7 +5,7 @@ public class BasicEnemyLeapState : BasicEnemyState
 {
     private Vector2 leapTarget;
     private float jumpHeight = 6f; // Controlled jump height
-    private float gravityScale = 2f; // Stronger gravity for better arc
+    private float gravityScale = 4f; // Stronger gravity for better arc
     private float leapTimeout = 3f; // Fail-safe to prevent infinite loops
     private bool isLeaping = false;
 
@@ -37,7 +37,7 @@ public class BasicEnemyLeapState : BasicEnemyState
         yield return new WaitForSeconds(0.5f); // Charging animation
 
         // Calculate leap velocity
-        float timeToTarget = 0.5f;
+        float timeToTarget = 0.3f;
         float horizontalSpeed = (leapTarget.x - enemy.transform.position.x) / timeToTarget;
         float verticalSpeed = Mathf.Sqrt(2 * adjustedJumpHeight * Mathf.Abs(Physics.gravity.y) * enemy.rb.gravityScale);
 

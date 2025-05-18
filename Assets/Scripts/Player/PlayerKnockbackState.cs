@@ -6,11 +6,6 @@ public class PlayerKnockbackState : PlayerState
     private float knockbackTimer;
     private float slideTimer;
     private float stunTimer;
-
-    private float knockbackDuration = 0.3f;
-    private float slideDuration = 0.5f;
-    private float stunDuration = 1f;
-
     private bool isVerticalKnockback;
     private bool waitingForGround;
 
@@ -51,7 +46,7 @@ public class PlayerKnockbackState : PlayerState
         {
             case KnockbackPhase.Knockback:
                 knockbackTimer += Time.deltaTime;
-                if (knockbackTimer >= knockbackDuration)
+                if (knockbackTimer >= player.knockbackDuration)
                 {
                     if (isVerticalKnockback)
                     {
@@ -68,7 +63,7 @@ public class PlayerKnockbackState : PlayerState
 
             case KnockbackPhase.Slide:
                 slideTimer += Time.deltaTime;
-                if (slideTimer >= slideDuration)
+                if (slideTimer >= player.slideDuration)
                 {
                     phase = KnockbackPhase.Stun;
                     stunTimer = 0f;
@@ -80,7 +75,7 @@ public class PlayerKnockbackState : PlayerState
 
             case KnockbackPhase.Stun:
                 stunTimer += Time.deltaTime;
-                if (stunTimer >= stunDuration)
+                if (stunTimer >= player.stunDuration)
                 {
                     player.ChangeState(new PlayerIdleState(player));
                 }

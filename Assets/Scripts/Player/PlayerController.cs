@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public float afterImageCooldown;
     public GameObject afterImagePrefab;
     public GameObject jumpVFXPrefab;
+    public float knockbackDuration;
+    public float slideDuration;
+    public float stunDuration;
 
     [HideInInspector] public int jumpCounter;
 
@@ -130,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
     public void DealDamageToEnemy(float damage, Collider2D hitbox) {
         //Debug.Log(hitbox.name);
-        //Debug.Log(damage);
+        Debug.Log(damage);
         Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
 
         // Calculate crit damage

@@ -19,8 +19,8 @@ public class BasicEnemyIdleState : BasicEnemyState
             enemy.ChangeState(new BasicEnemySlashState(enemy));
         }
 
-        if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {
-            enemy.ChangeState(new BasicEnemyBackState(enemy));
-        }
+        //if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {
+        //    enemy.ChangeState(new BasicEnemyBackState(enemy));
+        //}
     }
 }

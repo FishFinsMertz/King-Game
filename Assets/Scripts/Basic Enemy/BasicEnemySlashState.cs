@@ -25,9 +25,12 @@ public class BasicEnemySlashState : BasicEnemyState
         enemy.slashHitbox.enabled = true;
 
         // Check for player collision after enabling hitbox
-        enemy.DealDamageToPlayer(30, Vector2.right, 10f, enemy.slashHitbox);
+        int success = enemy.DealDamageToPlayer(30, Vector2.right, 10f, enemy.slashHitbox);
 
-        enemy.cameraController.StartShake(CameraController.ShakeLevel.light);
+        if (success == 0) {
+            enemy.cameraController.StartShake(CameraController.ShakeLevel.light);
+        }
+        
         yield return new WaitForSeconds(enemy.slashTimer); // Wait for the attack animation to finish
         enemy.isAttacking = false;
 

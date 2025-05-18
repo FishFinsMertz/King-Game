@@ -12,10 +12,10 @@ public class BasicEnemyController : MonoBehaviour
     public float slashTimer = 1f;
     public float slashChargeTime = 0.5f;
     public float leapChance;
-    private float leapCheckInterval = 3f;
+    public float leapCheckInterval;
     private bool shouldLeap = false;
     public float backAtkChance;
-    private float backCheckInterval = 3f;
+    public float backCheckInterval;
     private bool shouldBackAtk = false;
     public float backAtkDelay;
     public float backAtkTimer;
@@ -78,7 +78,8 @@ public class BasicEnemyController : MonoBehaviour
 
         //Debug.Log(currentState);
         //Debug.Log(IsPlayerInFront());
-        Debug.Log(ShouldBackAtk());
+        //Debug.Log(ShouldBackAtk());
+        //Debug.Log(ShouldLeap());
         currentState.Update();
         if (!isAttacking && !(currentState is BasicEnemyBackState)) {
             Flip();
@@ -113,7 +114,11 @@ public class BasicEnemyController : MonoBehaviour
         return (isFacingRight == 1 && directionToPlayer > 0) || (isFacingRight == -1 && directionToPlayer < 0);
     }
 
-    public bool playerInLeapRange() {
+
+    // LEAPING BEHAVIOUR 
+
+    public bool playerInLeapRange()
+    {
         return distanceFromPlayer <= maxLeapRange && distanceFromPlayer >= minLeapRange;
     }
 
@@ -151,16 +156,19 @@ public class BasicEnemyController : MonoBehaviour
         }
     }
 
-    public void DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox) {
+    public int DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox)
+    {
         Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
         //Debug.Log(hitbox.name);
         //Debug.Log(damage);
 
+        bool hitPlayer = false;
+
         foreach (Collider2D hit in hits)
         {
 
-            if (hit.gameObject.layer == LayerMask.NameToLayer("Player") || 
-            (hit.gameObject.layer == LayerMask.NameToLayer("Invulnerable") && !hitbox.CompareTag("ParryableAttack"))) 
+            if (hit.gameObject.layer == LayerMask.NameToLayer("Player") ||
+            (hit.gameObject.layer == LayerMask.NameToLayer("Invulnerable") && !hitbox.CompareTag("ParryableAttack")))
             {
                 PlayerHealthManager playerHealth = hit.GetComponent<PlayerHealthManager>();
 
@@ -171,8 +179,10 @@ public class BasicEnemyController : MonoBehaviour
                         hitDirection = (hit.transform.position - transform.position).normalized;
                     }
                     playerHealth.TakeDamage(damage, hitDirection, knockbackForce);
+                    hitPlayer = true;
                 }
             }
         }
+        return hitPlayer ? 0 : 1;
     }
 }
