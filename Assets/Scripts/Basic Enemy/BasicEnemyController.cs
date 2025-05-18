@@ -78,6 +78,7 @@ public class BasicEnemyController : MonoBehaviour
 
         //Debug.Log(currentState);
         //Debug.Log(IsPlayerInFront());
+        Debug.Log(ShouldBackAtk());
         currentState.Update();
         if (!isAttacking && !(currentState is BasicEnemyBackState)) {
             Flip();

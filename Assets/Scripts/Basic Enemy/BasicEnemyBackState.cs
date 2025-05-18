@@ -16,6 +16,10 @@ public class BasicEnemyBackState : BasicEnemyState
 
     private IEnumerator BackAtk() {
         //Debug.Log("Charging up my slash, delay: " + delay);
+
+        //Animation
+        enemy.animator.SetTrigger("Back");
+
         yield return new WaitForSeconds(enemy.backAtkDelay); // Delay before attack hitbox activates
         
         // Enabling hitbox and attack
@@ -45,6 +49,7 @@ public class BasicEnemyBackState : BasicEnemyState
     }
 
     public override void Exit() {
+        enemy.isAttacking = false;
         enemy.backHitbox.enabled = false;
     }
 }
