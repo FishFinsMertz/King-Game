@@ -34,7 +34,10 @@ public class BasicEnemyLeapState : BasicEnemyState
     private IEnumerator LeapAttack(float adjustedJumpHeight)
     {
         isLeaping = true;
-        yield return new WaitForSeconds(0.5f); // Charging animation
+        yield return new WaitForSeconds(0.5f); // Charging 
+
+        // Animation
+        enemy.animator.SetTrigger("Leap");
 
         // Calculate leap velocity
         float timeToTarget = 0.3f;
@@ -58,6 +61,9 @@ public class BasicEnemyLeapState : BasicEnemyState
 
         // Ensure enemy has landed
         enemy.leapHitbox.enabled = true;
+        // Animation
+        enemy.animator.SetTrigger("Land");
+
         enemy.cameraController.StartShake(CameraController.ShakeLevel.medium);
         enemy.DealDamageToPlayer(40, Vector2.right, 15f, enemy.leapHitbox);
 
