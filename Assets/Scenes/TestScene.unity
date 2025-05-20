@@ -535,10 +535,10 @@ MonoBehaviour:
   slashChargeTime: 0.5
   slashDmg: 30
   slashFreezeDuration: 0.1
-  leapChance: 0.1
+  leapChance: 0.2
   leapCheckInterval: 1
   leapDmg: 40
-  leapFreezeDuration: 0.2
+  leapFreezeDuration: 0.25
   backAtkChance: 0.5
   backCheckInterval: 3
   backAtkDelay: 0.6
