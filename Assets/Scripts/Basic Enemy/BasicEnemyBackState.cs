@@ -26,7 +26,13 @@ public class BasicEnemyBackState : BasicEnemyState
         enemy.backHitbox.enabled = true;
 
         // Check for player collision after enabling hitbox
-        enemy.DealDamageToPlayer(20, Vector2.right, 10f, enemy.backHitbox);
+        float success = enemy.DealDamageToPlayer(enemy.backDmg, Vector2.right, 10f, enemy.backHitbox);
+
+        if (success == 0)
+        {
+            // HitStop
+            enemy.hitstop.Freeze(enemy.backFreezeDuration);
+        }
 
         enemy.cameraController.StartShake(CameraController.ShakeLevel.light);
         yield return new WaitForSeconds(enemy.backAtkTimer); // Wait for the attack animation to finish

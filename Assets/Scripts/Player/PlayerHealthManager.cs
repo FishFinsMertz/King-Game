@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using System;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -25,25 +26,31 @@ public class PlayerHealthManager : MonoBehaviour
     void Update()
     {
         // When health reaches 0
-        if (healthAmount <= 0) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (healthAmount <= 0)
+        {
+            Death();
         }
 
         // TESTING PURPOSES
-        if (Input.GetKeyDown(KeyCode.H)) {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
             Heal(50);
         }
-        if (Input.GetKeyDown(KeyCode.Return)) {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
             TakeDamage(30f, Vector2.up, 12f);
         }
 
         // Smoothly slide the side health bar down to match the main health bar
-        if (sideHealthBar.fillAmount > mainHealthBar.fillAmount) {
+        if (sideHealthBar.fillAmount > mainHealthBar.fillAmount)
+        {
             sideHealthBar.fillAmount = Mathf.Lerp(sideHealthBar.fillAmount, mainHealthBar.fillAmount, Time.deltaTime * sideBarSpeed);
         }
     }
 
-    public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce) {
+    public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce)
+    {
+        Debug.Log("Player Damaged: " + damage);
         healthAmount -= damage;
         targetHealth = healthAmount;
         mainHealthBar.fillAmount = targetHealth / 100f;
@@ -52,17 +59,28 @@ public class PlayerHealthManager : MonoBehaviour
         if (healthAmount > 0)
         {
             player.GetComponent<PlayerController>().ChangeState(new PlayerKnockbackState(
-                player.GetComponent<PlayerController>(), 
+                player.GetComponent<PlayerController>(),
                 hitDirection.normalized * knockbackForce
             ));
         }
     }
 
-    public void Heal(float healingAmount) {
+    public void Heal(float healingAmount)
+    {
         healthAmount += healingAmount;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100f);
         targetHealth = healthAmount;
         mainHealthBar.fillAmount = targetHealth / 100f;
         sideHealthBar.fillAmount = mainHealthBar.fillAmount; // Heal instantly updates both
+    }
+
+    public void Death()
+    {
+        // Temporary death, change later
+        StartCoroutine(Die());
+    }
+    IEnumerator Die() {
+        yield return new WaitForSecondsRealtime(0.4f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

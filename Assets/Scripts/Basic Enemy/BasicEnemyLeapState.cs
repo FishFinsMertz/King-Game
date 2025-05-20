@@ -61,13 +61,22 @@ public class BasicEnemyLeapState : BasicEnemyState
 
         // Ensure enemy has landed
         enemy.leapHitbox.enabled = true;
+
         // Animation
         enemy.animator.SetTrigger("Land");
+        
+        // Dealing damage
+        float success = enemy.DealDamageToPlayer(enemy.leapDmg, Vector2.right, 15f, enemy.leapHitbox);
 
+        yield return new WaitForSeconds(0.15f); // Damage window
+
+        if (success == 0)
+        {
+            // HitStop
+            enemy.hitstop.Freeze(enemy.leapFreezeDuration);
+        }
         enemy.cameraController.StartShake(CameraController.ShakeLevel.medium);
-        enemy.DealDamageToPlayer(40, Vector2.right, 15f, enemy.leapHitbox);
 
-        yield return new WaitForSeconds(0.4f); // Damage window
         enemy.leapHitbox.enabled = false;
 
         // Pause on landing

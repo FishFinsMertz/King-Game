@@ -11,17 +11,23 @@ public class BasicEnemyController : MonoBehaviour
     [HideInInspector] public bool isAttacking = false;
     public float slashTimer = 1f;
     public float slashChargeTime = 0.5f;
+    public float slashDmg = 30f;
+    public float slashFreezeDuration;
     public float leapChance;
     public float leapCheckInterval;
     private bool shouldLeap = false;
+    public float leapDmg = 40f;
+    public float leapFreezeDuration;
     public float backAtkChance;
     public float backCheckInterval;
     private bool shouldBackAtk = false;
     public float backAtkDelay;
     public float backAtkTimer;
+    public float backDmg = 20f;
+    public float backFreezeDuration;
 
     // Hitboxes
-    [Header ("Hitboxes")]
+    [Header("Hitboxes")]
     public Collider2D slashHitbox;
     public Collider2D leapHitbox;
     public Collider2D backHitbox;
@@ -53,8 +59,9 @@ public class BasicEnemyController : MonoBehaviour
     public float distanceFromPlayer; // Store the distance
     public Vector2 vectorFromPlayer;
 
-    [Header("Animation")]
+    [Header("Misc")]
     public Animator animator;
+    public HitStop hitstop;
       
     void Start() {
         nonParryWarning.SetActive(false);

@@ -62,11 +62,10 @@ public class PlayerController : MonoBehaviour
     public float parryCost;
     public float shootCost;
 
-    [Header("Camera")]
+    [Header("Misc")]
     public CameraController cameraController;
-
-    // Animation
     public Animator animator;
+    public HitStop hitStop;
 
     void Start()
     {
@@ -90,9 +89,10 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log(currentState);
         //Debug.Log("Current Layer: " + LayerMask.LayerToName(gameObject.layer));
-
+        
         // Kill player if falling off void
-        if (math.abs(rb.linearVelocityY) > 100) {
+        if (math.abs(rb.linearVelocityY) > 100)
+        {
             healthManager.TakeDamage(1000, Vector2.zero, 0);
         }
 
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
     public void DealDamageToEnemy(float damage, Collider2D hitbox) {
         //Debug.Log(hitbox.name);
-        Debug.Log(damage);
+        //Debug.Log(damage);
         Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
 
         // Calculate crit damage

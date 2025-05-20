@@ -25,9 +25,11 @@ public class PlayerAttackState : PlayerState
         // Stamina cost
         player.staminaManager.DecreaseStamina(player.atkCost);
 
+        // Dealing damage
         player.DealDamageToEnemy(player.atkDamage, player.attackHitbox);
         
         yield return new WaitForSeconds(player.atkSpeed);
+
         attackFinished = true;
     }
 
