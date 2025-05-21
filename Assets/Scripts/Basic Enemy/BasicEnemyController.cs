@@ -88,7 +88,7 @@ public class BasicEnemyController : MonoBehaviour
         //Debug.Log(ShouldBackAtk());
         //Debug.Log(ShouldLeap());
         currentState.Update();
-        if (!isAttacking && !(currentState is BasicEnemyBackState)) {
+        if (!isAttacking && !(currentState is BasicEnemyBackState) && !(currentState is BasicEnemyLeapState)) {
             Flip();
         }
 
@@ -153,7 +153,7 @@ public class BasicEnemyController : MonoBehaviour
         return shouldBackAtk;
     }
 
-    private void Flip() {
+    public void Flip() {
         if (distanceFromPlayer > minThreshold) {
             if ((isFacingRight == 1 && vectorFromPlayer.x < 0f) || (isFacingRight == -1 && vectorFromPlayer.x > 0f))
             {

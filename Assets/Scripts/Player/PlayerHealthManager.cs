@@ -50,7 +50,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce)
     {
-        Debug.Log("Player Damaged: " + damage);
+        //Debug.Log("Player Damaged: " + damage);
         healthAmount -= damage;
         targetHealth = healthAmount;
         mainHealthBar.fillAmount = targetHealth / 100f;
@@ -80,7 +80,7 @@ public class PlayerHealthManager : MonoBehaviour
         StartCoroutine(Die());
     }
     IEnumerator Die() {
-        yield return new WaitForSecondsRealtime(0.4f);
+        yield return new WaitForSecondsRealtime(0.6f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

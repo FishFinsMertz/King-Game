@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform Player;
-    private float smoothing = 0.125f;
+    private float smoothing = 0.25f; //125 originally
     private Vector3 offset = new Vector3(0, 1, -10);
     private Vector3 velocity = Vector3.zero;
 

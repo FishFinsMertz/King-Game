@@ -4,7 +4,7 @@ public class BasicEnemyChaseState : BasicEnemyState
 {
     private int moveDirection;
     private float repulsionDistance = 5f;  // Distance at which repulsion force will be applied
-    private float repulsionStrength = 50f;  // Strength of the repulsive force
+    private float repulsionStrength = 80f;  // Strength of the repulsive force
     public BasicEnemyChaseState(BasicEnemyController enemy) : base(enemy) { }
 
     public override void Enter()

@@ -49,7 +49,7 @@ public class EnemyHealthManager : MonoBehaviour {
     }
 
     public void TakeDamage(float damage) {
-        Debug.Log("Enemy Damaged: " + damage);
+        //Debug.Log("Enemy Damaged: " + damage);
         healthAmount -= damage;
         targetHealth = Mathf.Clamp(healthAmount, 0, maxHealth);
         UpdateHealthBar();

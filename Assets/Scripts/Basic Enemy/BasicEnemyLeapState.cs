@@ -13,6 +13,9 @@ public class BasicEnemyLeapState : BasicEnemyState
 
     public override void Enter()
     {
+        // Always face player before leaping
+        enemy.Flip();
+
         enemy.nonParryWarning.SetActive(true);
         if (enemy.player == null) return;
         // Determine leap target position
