@@ -74,9 +74,6 @@ public class PlayerController : MonoBehaviour
         energyManager = GetComponent<PlayerEnergyManager>();
         healthManager = GetComponent<PlayerHealthManager>();
 
-        //Camera
-        cameraController = FindAnyObjectByType<CameraController>();
-
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         rb = GetComponent<Rigidbody2D>();
         shootHitbox.gameObject.SetActive(false);

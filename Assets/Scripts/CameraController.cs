@@ -5,12 +5,22 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform Player;
-    private float smoothing = 0.25f; //125 originally
+    public Transform Boss;
+    public float smoothing = 0.25f; //125 originally
     private Vector3 offset = new Vector3(0, 1, -10);
     private Vector3 velocity = Vector3.zero;
-
     private Vector3 shakeOffset = Vector3.zero;
     private bool isShaking = false;
+
+    private Camera cam;
+
+    // Zoom settings
+    [Header("Zoom Settings")]
+    public float baseZoom;
+    public float zoomFactor;
+    public float minZoom;
+    public float maxZoom;
+    public float zoomSmoothSpeed;
 
     // Enum for shake levels
     public enum ShakeLevel
@@ -28,16 +38,38 @@ public class CameraController : MonoBehaviour
         { ShakeLevel.heavy, (0.2f, 0.2f) }     // Strong shake
     };
 
-    void LateUpdate() {
-        // Calculate target position based on player position
-        Vector3 targetPosition = Player.position + offset;
+    void Start()
+    {
+        cam = GetComponent<Camera>();
+    }
+
+    void LateUpdate()
+    {
+        Vector3 targetPosition;
+
+        // Determine the target position
+        if (Boss != null)
+        {
+            targetPosition = (Player.position + Boss.position + offset) / 2f;
+
+            // Adjust zoom based on distance to Boss
+            float distance = Vector3.Distance(Player.position, Boss.position);
+            float targetZoom = Mathf.Clamp(baseZoom + (distance * zoomFactor), minZoom, maxZoom);
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetZoom, zoomSmoothSpeed * Time.deltaTime);
+        }
+        else
+        {
+            targetPosition = Player.position + offset;
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, minZoom, zoomSmoothSpeed * Time.deltaTime);
+        }
 
         // Smoothly move the camera to the target position
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothing);
 
-        // Apply shake offset directly after smooth following
+        // Apply shake offset after smoothing
         transform.position += shakeOffset;
     }
+
 
     // Shake based on strength
     public void StartShake(ShakeLevel shakeLevel) {

@@ -1901,10 +1901,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 862998a302ea58d47a55afc64f900fc3, type: 3}
+  m_Script: {fileID: 11500000, guid: b56ae7e6f8c534b46964c00a91421939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1458981077}
+  Boss: {fileID: 0}
+  baseZoom: 0
+  zoomFactor: 0
+  minZoom: 0
+  maxZoom: 0
+  zoomSmoothSpeed: 0
 --- !u!1 &534042360
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3183,7 @@ MonoBehaviour:
   jumpingPower: 17
   fallMultiplier: 4
   maxJumpCap: 2
-  dashPower: 50
+  dashPower: 45
   afterImageCooldown: 0.04
   afterImagePrefab: {fileID: 6533651474987976005, guid: 59999e3ffd7b9b64298f6d585a390bd0, type: 3}
   jumpVFXPrefab: {fileID: 3098556280633746471, guid: e266152ba4ec3f44da1eb6c974c4683d, type: 3}
@@ -3213,7 +3219,7 @@ MonoBehaviour:
   atkCost: 15
   parryCost: 7
   shootCost: 20
-  cameraController: {fileID: 0}
+  cameraController: {fileID: 519420033}
   animator: {fileID: 1192022451}
   hitStop: {fileID: 668522900}
 --- !u!114 &1458981080
