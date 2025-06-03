@@ -11,11 +11,13 @@ public class BasicEnemyIdleState : BasicEnemyState
 
     public override void Update()
     {
-        if (enemy.distanceFromPlayer <= enemy.detectionRange) {
+        if (enemy.distanceFromPlayer <= enemy.detectionRange)
+        {
             enemy.ChangeState(new BasicEnemyChaseState(enemy));
         }
 
-        if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront()) {
+        if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront())
+        {
             enemy.ChangeState(new BasicEnemySlashState(enemy));
         }
 

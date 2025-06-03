@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EnemyHealthManager : MonoBehaviour {
+
+    private FlashFX flashScript;
     public float maxHealth; // Set max health dynamically
     public float healthAmount;
     private float targetHealth; // Target health value for smooth animation
@@ -22,6 +24,10 @@ public class EnemyHealthManager : MonoBehaviour {
         sideHealthBar = enemyHealth.transform.Find("SideHealth").GetComponent<Image>();
         healthAmount = maxHealth;  // Initialize health
         targetHealth = healthAmount;
+
+        //Flash FX
+        flashScript = enemy.GetComponentInChildren<FlashFX>();
+
         UpdateHealthBar(); // Ensure the bar starts full
 
         // Ensure health bar canvas is in world space
@@ -52,6 +58,8 @@ public class EnemyHealthManager : MonoBehaviour {
         //Debug.Log("Enemy Damaged: " + damage);
         healthAmount -= damage;
         targetHealth = Mathf.Clamp(healthAmount, 0, maxHealth);
+
+        flashScript.Flash();
         UpdateHealthBar();
     }
 

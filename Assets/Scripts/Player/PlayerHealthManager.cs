@@ -8,6 +8,8 @@ using System;
 
 public class PlayerHealthManager : MonoBehaviour
 {
+    private FlashFX flashScript;
+
     public Image mainHealthBar;
     public Image sideHealthBar;
 
@@ -21,6 +23,7 @@ public class PlayerHealthManager : MonoBehaviour
     {
         targetHealth = healthAmount;
         player = GameObject.FindWithTag("Player");
+        flashScript = player.GetComponentInChildren<FlashFX>();
     }
 
     void Update()
@@ -54,6 +57,8 @@ public class PlayerHealthManager : MonoBehaviour
         healthAmount -= damage;
         targetHealth = healthAmount;
         mainHealthBar.fillAmount = targetHealth / 100f;
+
+        flashScript.Flash();
 
         // Apply Knockback
         if (healthAmount > 0)

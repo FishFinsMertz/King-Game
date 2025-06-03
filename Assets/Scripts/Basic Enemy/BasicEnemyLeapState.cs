@@ -18,6 +18,7 @@ public class BasicEnemyLeapState : BasicEnemyState
 
         enemy.nonParryWarning.SetActive(true);
         if (enemy.player == null) return;
+        
         // Determine leap target position
         float targetDistance = (enemy.minLeapRange + enemy.maxLeapRange) / 3f;
         float leapX = enemy.transform.position.x + Mathf.Sign(enemy.vectorFromPlayer.x) * targetDistance;
@@ -37,6 +38,7 @@ public class BasicEnemyLeapState : BasicEnemyState
     private IEnumerator LeapAttack(float adjustedJumpHeight)
     {
         isLeaping = true;
+
         yield return new WaitForSeconds(0.5f); // Charging 
 
         // Animation

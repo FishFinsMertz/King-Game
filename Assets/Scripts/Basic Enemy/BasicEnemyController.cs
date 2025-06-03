@@ -7,7 +7,7 @@ public class BasicEnemyController : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
 
     // Attack
-    [Header ("Attack Info")]
+    [Header("Attack Info")]
     [HideInInspector] public bool isAttacking = false;
     public float slashTimer = 1f;
     public float slashChargeTime = 0.5f;
@@ -81,14 +81,16 @@ public class BasicEnemyController : MonoBehaviour
         //chaseSpeed += multiplier;
     }
 
-    void Update() {
+    void Update()
+    {
 
         //Debug.Log(currentState);
         //Debug.Log(IsPlayerInFront());
         //Debug.Log(ShouldBackAtk());
         //Debug.Log(ShouldLeap());
         currentState.Update();
-        if (!isAttacking && !(currentState is BasicEnemyBackState) && !(currentState is BasicEnemyLeapState)) {
+        if (!isAttacking && !(currentState is BasicEnemyBackState) && !(currentState is BasicEnemyLeapState))
+        {
             Flip();
         }
 
