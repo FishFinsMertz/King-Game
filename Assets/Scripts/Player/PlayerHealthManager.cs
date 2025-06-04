@@ -41,7 +41,7 @@ public class PlayerHealthManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            TakeDamage(30f, Vector2.up, 12f);
+            TakeDamage(30f, Vector2.up, 20f);
         }
 
         // Smoothly slide the side health bar down to match the main health bar

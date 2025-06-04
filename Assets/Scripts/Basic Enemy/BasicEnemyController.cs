@@ -62,6 +62,7 @@ public class BasicEnemyController : MonoBehaviour
     [Header("Misc")]
     public Animator animator;
     public HitStop hitstop;
+    public ParticleSystem leapVFX;
       
     void Start() {
         nonParryWarning.SetActive(false);

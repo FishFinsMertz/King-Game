@@ -16,7 +16,9 @@ public class EnemyHealthManager : MonoBehaviour {
     private Image sideHealthBar;
 
     public GameObject enemy;
+    public bool isBoss;
     public Vector3 healthBarOffset = new Vector3(0, 2f, 0); // Adjust height above the enemy
+
 
     void Start()
     {
@@ -29,15 +31,12 @@ public class EnemyHealthManager : MonoBehaviour {
         flashScript = enemy.GetComponentInChildren<FlashFX>();
 
         UpdateHealthBar(); // Ensure the bar starts full
-
-        // Ensure health bar canvas is in world space
-        enemyHealth.renderMode = RenderMode.WorldSpace;
     }
 
     void Update()
     {
-        // Make health bar follow the enemy in world space
-        if (enemy != null)
+        // Make health bar follow the enemy in world space if not boss
+        if (enemy != null && !isBoss)
         {
             enemyHealth.transform.position = enemy.transform.position + healthBarOffset;
         }

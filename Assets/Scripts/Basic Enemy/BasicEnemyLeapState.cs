@@ -84,6 +84,9 @@ public class BasicEnemyLeapState : BasicEnemyState
 
         enemy.leapHitbox.enabled = false;
 
+        // Play leap VFX
+        enemy.leapVFX.Play();
+
         // Pause on landing
         enemy.rb.linearVelocity = Vector2.zero; // Stop movement
         enemy.rb.gravityScale = 1f;

@@ -35,10 +35,10 @@ public class PlayerShootState : PlayerState
         player.DealDamageToEnemy(damage, player.shootHitbox);
         player.energyManager.DecreaseEnergy(damage);
         player.healthManager.Heal(60f);
-
+        
         // HitStop
         player.hitStop.Freeze(0.1f);
-        
+
         yield return new WaitForSeconds(player.shootSpeed);
 
         attackFinished = true;
