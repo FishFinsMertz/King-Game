@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
     public CameraController cameraController;
     public Animator animator;
     public HitStop hitStop;
+    public ParticleSystem shootVFX;
 
     void Start()
     {
@@ -125,6 +126,9 @@ public class PlayerController : MonoBehaviour
         {
             isFacingRight *= (-1);
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
+            // Flip particles also
+            shootVFX.transform.localScale = new Vector3(isFacingRight, 1, 1);
         }
     }
 
