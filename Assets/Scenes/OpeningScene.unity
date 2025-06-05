@@ -551,7 +551,7 @@ MonoBehaviour:
   canParry: 1
   atkDamage: 20
   atkChargeTime: 0.2
-  atkSpeed: 0.2
+  atkSpeed: 0.4
   atkChargeAmt: 10
   critChance: 0.1
   parryChargeTime: 0.2
@@ -571,6 +571,7 @@ MonoBehaviour:
   cameraController: {fileID: 1967254150}
   animator: {fileID: 525396323}
   hitStop: {fileID: 1519789293}
+  shootVFX: {fileID: 0}
 --- !u!61 &190105417
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2283,7 +2284,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

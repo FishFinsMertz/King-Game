@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 126600468}
   - component: {fileID: 126600467}
   - component: {fileID: 126600466}
+  - component: {fileID: 126600470}
   - component: {fileID: 126600469}
   m_Layer: 7
   m_Name: King
@@ -487,6 +488,7 @@ Transform:
   m_LocalScale: {x: 0.61, y: 0.61, z: 0.61}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1535352786}
   - {fileID: 1876929873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -509,6 +511,23 @@ MonoBehaviour:
   enemy: {fileID: 126600465}
   isBoss: 1
   healthBarOffset: {x: 0, y: 2, z: 0}
+--- !u!114 &126600470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126600465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9616fd98ed666174bbcbb123a54561e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  groundCheck: {fileID: 1535352786}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &135020218
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,7 +6120,7 @@ MonoBehaviour:
   canParry: 1
   atkDamage: 20
   atkChargeTime: 0.2
-  atkSpeed: 0.2
+  atkSpeed: 0.4
   atkChargeAmt: 10
   critChance: 0.1
   parryChargeTime: 0.2
@@ -7093,6 +7112,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418169760}
   m_CullTransparentMesh: 1
+--- !u!1 &1535352785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535352786}
+  m_Layer: 7
+  m_Name: Ground Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1535352786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535352785}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.111, y: -2.971, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 126600468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1612611776
 GameObject:
   m_ObjectHideFlags: 0
