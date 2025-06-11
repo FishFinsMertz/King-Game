@@ -532,6 +532,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  animator: {fileID: 1876929878}
+  hitstop: {fileID: 935750595}
 --- !u!1 &135020218
 GameObject:
   m_ObjectHideFlags: 0

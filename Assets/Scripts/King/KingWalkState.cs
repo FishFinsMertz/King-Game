@@ -7,13 +7,14 @@ public class KingWalkState : KingState
     private int moveDirection;
     public override void Enter()
     {
-
+        king.animator.SetBool("isWalking", true);
     }
 
     public override void FixedUpdate()
     {
         // If the boss is further than the minimum threshold, update direction
-        if (king.GetPlayerDistance() > king.minFlipThreshold) {
+        if (king.GetPlayerDistance() > king.minFlipThreshold)
+        {
             moveDirection = king.GetVectorToPlayer().x < 0 ? -1 : 1;
         }
 
@@ -27,5 +28,10 @@ public class KingWalkState : KingState
         {
             king.ChangeState(new KingIdleState(king));
         }
+    }
+
+    public override void Exit()
+    {
+        king.animator.SetBool("isWalking", false);
     }
 }

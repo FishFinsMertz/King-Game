@@ -15,12 +15,13 @@ public class KingController : MonoBehaviour
 
     [Header("Misc")]
     [HideInInspector] public Rigidbody2D rb;
-    private KingState currentState;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    CameraController cameraController;
+    public Animator animator;
+    public HitStop hitstop;
 
     // Private variables
+    private KingState currentState;
     private float distanceFromPlayer;
     private Vector2 vectorFromPlayer;
     private int isFacingRight = 1;
@@ -29,7 +30,7 @@ public class KingController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        cameraController = FindAnyObjectByType<CameraController>();
+        CameraController cameraController = FindAnyObjectByType<CameraController>();
 
         ChangeState(new KingIdleState(this));
     }
