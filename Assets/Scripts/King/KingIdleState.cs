@@ -11,6 +11,9 @@ public class KingIdleState : KingState
 
     public override void Update()
     {
-        
+        if (king.GetPlayerDistance() <= king.detectionRange)
+        {
+            king.ChangeState(new KingWalkState(king));
+        }
     }
 }
