@@ -55,8 +55,8 @@ public class BasicEnemyController : MonoBehaviour
     public int isFacingRight = 1;
 
     // Player information
-    public GameObject player; // Declare player as a private field
-    public float distanceFromPlayer; // Store the distance
+    public GameObject player; 
+    public float distanceFromPlayer;
     public Vector2 vectorFromPlayer;
 
     [Header("Misc")]

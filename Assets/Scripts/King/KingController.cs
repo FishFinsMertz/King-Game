@@ -9,9 +9,21 @@ public class KingController : MonoBehaviour
     [Header("Detection")]
     public float detectionRange;
     public float minFlipThreshold;
+    public float closeRange;
+    public float midRange;
+    public float longRange;
 
     [Header("Movement")]
     public float chaseSpeed;
+
+    [Header("Hitboxes")]
+    public Collider2D thrustHitbox;
+
+    [Header("Attack Stats")]
+    public float thrustChargeTime;
+    public float thrustDuration;
+    public float thrustDmg;
+    public float thrustFreezeDuration;
 
     [Header("Misc")]
     [HideInInspector] public Rigidbody2D rb;
@@ -20,17 +32,19 @@ public class KingController : MonoBehaviour
     public Animator animator;
     public HitStop hitstop;
 
-    // Private variables
+    // Private / hidden variables
     private KingState currentState;
     private float distanceFromPlayer;
     private Vector2 vectorFromPlayer;
     private int isFacingRight = 1;
+    [HideInInspector] public CameraController cameraController;
+    [HideInInspector] public bool isAttacking;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        CameraController cameraController = FindAnyObjectByType<CameraController>();
+        cameraController = FindAnyObjectByType<CameraController>();
 
         ChangeState(new KingIdleState(this));
     }
@@ -39,6 +53,8 @@ public class KingController : MonoBehaviour
     void Update()
     {
         //Debug.Log(IsGrounded());
+        //Debug.Log(currentState);
+        Debug.Log(isAttacking);
         currentState.Update();
 
         // Get info about player
@@ -49,7 +65,9 @@ public class KingController : MonoBehaviour
         }
 
         // Flipping logic
-        Flip();
+        if (!isAttacking) {
+            Flip();
+        }
     }
 
     void FixedUpdate()
@@ -75,12 +93,13 @@ public class KingController : MonoBehaviour
     {
         return vectorFromPlayer;
     }
-    
-    public bool IsPlayerInFront() {
+
+    public bool IsPlayerInFront()
+    {
         float directionToPlayer = vectorFromPlayer.x;
         return (isFacingRight == 1 && directionToPlayer > 0) || (isFacingRight == -1 && directionToPlayer < 0);
     }
-    
+
     public void Flip()
     {
         if (distanceFromPlayer > minFlipThreshold)
@@ -97,5 +116,35 @@ public class KingController : MonoBehaviour
     {
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         return grounded;
+    }
+    
+        public int DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox)
+    {
+        Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
+        //Debug.Log(hitbox.name);
+        //Debug.Log(damage);
+
+        bool hitPlayer = false;
+
+        foreach (Collider2D hit in hits)
+        {
+
+            if (hit.gameObject.layer == LayerMask.NameToLayer("Player") ||
+            (hit.gameObject.layer == LayerMask.NameToLayer("Invulnerable") && !hitbox.CompareTag("ParryableAttack")))
+            {
+                PlayerHealthManager playerHealth = hit.GetComponent<PlayerHealthManager>();
+
+                if (playerHealth != null)
+                {
+                    if (hitDirection == Vector2.left || hitDirection == Vector2.right)
+                    {
+                        hitDirection = (hit.transform.position - transform.position).normalized;
+                    }
+                    playerHealth.TakeDamage(damage, hitDirection, knockbackForce);
+                    hitPlayer = true;
+                }
+            }
+        }
+        return hitPlayer ? 0 : 1;
     }
 }
