@@ -52,5 +52,6 @@ public class KingThrustState : KingState
     public override void Exit()
     {
         king.isAttacking = false;
+        king.thrustHitbox.enabled = false;
     }
 }

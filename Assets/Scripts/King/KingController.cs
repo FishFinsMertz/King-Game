@@ -54,7 +54,7 @@ public class KingController : MonoBehaviour
     {
         //Debug.Log(IsGrounded());
         //Debug.Log(currentState);
-        Debug.Log(isAttacking);
+        //Debug.Log(isAttacking);
         currentState.Update();
 
         // Get info about player

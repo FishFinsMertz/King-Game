@@ -136,9 +136,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3185421674170010094}
   - component: {fileID: 1995710220651999243}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: ThrustHitBox
-  m_TagString: Untagged
+  m_TagString: ParryableAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   chaseSpeed: 3
   thrustHitbox: {fileID: 1995710220651999243}
   thrustChargeTime: 0.5
-  thrustDuration: 1
+  thrustDuration: 1.15
   thrustDmg: 30
   thrustFreezeDuration: 0.1
   rb: {fileID: 0}

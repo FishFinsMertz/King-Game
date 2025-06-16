@@ -23,10 +23,9 @@ public class PlayerParryState : PlayerState
     private IEnumerator PerformParry()
     {
         yield return new WaitForSeconds(player.parryChargeTime);
-
+        player.gameObject.layer = LayerMask.NameToLayer("Invulnerable");
         // Stamina cost
         player.staminaManager.DecreaseStamina(player.parryCost);
-        player.gameObject.layer = LayerMask.NameToLayer("Invulnerable");
 
         yield return new WaitForSeconds(player.parryInvulnerableTime);
 

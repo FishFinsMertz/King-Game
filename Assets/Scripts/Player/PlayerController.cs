@@ -147,7 +147,8 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy")) 
             {
-                if (hitbox.name == "AttackHitbox") {
+                if (hitbox.name == "AttackHitbox")
+                {
                     energyManager.ChargeEnergy(atkChargeAmt);
                 }
                 EnemyHealthManager enemyHealth = hit.GetComponent<EnemyHealthManager>();
