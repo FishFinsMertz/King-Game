@@ -1,0 +1,779 @@
+fileFormatVersion: 2
+guid: f37fde61bffd1184a8914200e44eff3a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -427412440810421350
+    second: King-MegaSlam1_0
+  - first:
+      213: -8403873098269569829
+    second: King-MegaSlam1_1
+  - first:
+      213: 7452785154442554930
+    second: King-MegaSlam1_2
+  - first:
+      213: 177613100308572212
+    second: King-MegaSlam1_3
+  - first:
+      213: 4643108913865542211
+    second: King-MegaSlam1_4
+  - first:
+      213: -7634866669214534074
+    second: King-MegaSlam1_5
+  - first:
+      213: -1726141025910260136
+    second: King-MegaSlam1_6
+  - first:
+      213: 1808881868425746867
+    second: King-MegaSlam1_7
+  - first:
+      213: 5994874214411601909
+    second: King-MegaSlam1_8
+  - first:
+      213: 1420861880394196790
+    second: King-MegaSlam1_9
+  - first:
+      213: -292684516924401746
+    second: King-MegaSlam1_10
+  - first:
+      213: -6636039354547572338
+    second: King-MegaSlam1_11
+  - first:
+      213: -2140941929408670732
+    second: King-MegaSlam1_12
+  - first:
+      213: -8446206483008568229
+    second: King-MegaSlam1_13
+  - first:
+      213: 8795082979686925543
+    second: King-MegaSlam1_14
+  - first:
+      213: 5520928489909353503
+    second: King-MegaSlam1_15
+  - first:
+      213: -2271324836988696112
+    second: King-MegaSlam1_16
+  - first:
+      213: -6419623497713046942
+    second: King-MegaSlam1_17
+  - first:
+      213: -3509905230051285617
+    second: King-MegaSlam1_18
+  - first:
+      213: 7459580792545947366
+    second: King-MegaSlam1_19
+  - first:
+      213: 5866372442481829183
+    second: King-MegaSlam1_20
+  - first:
+      213: 3089318929814872006
+    second: King-MegaSlam1_21
+  - first:
+      213: -4956676151106253484
+    second: King-MegaSlam1_22
+  - first:
+      213: 1572056816521641751
+    second: King-MegaSlam1_23
+  - first:
+      213: 2440939571903694041
+    second: King-MegaSlam1_24
+  - first:
+      213: 8085138274683113850
+    second: King-MegaSlam1_25
+  - first:
+      213: 1306467300009384754
+    second: King-MegaSlam1_26
+  - first:
+      213: -811642669121532479
+    second: King-MegaSlam1_27
+  - first:
+      213: -2203877074447389774
+    second: King-MegaSlam1_28
+  - first:
+      213: 3346239100338441667
+    second: King-MegaSlam1_29
+  - first:
+      213: -793698753716252523
+    second: King-MegaSlam1_30
+  - first:
+      213: 8323138512242138134
+    second: King-MegaSlam1_31
+  - first:
+      213: -5753684385010863163
+    second: King-MegaSlam1_32
+  - first:
+      213: 5887064590955768406
+    second: King-MegaSlam1_33
+  - first:
+      213: 4030912733555748687
+    second: King-MegaSlam1_34
+  - first:
+      213: 5179393710048887834
+    second: King-MegaSlam1_35
+  - first:
+      213: -2501032070050095369
+    second: King-MegaSlam1_36
+  - first:
+      213: 3671319400111236011
+    second: King-MegaSlam1_37
+  - first:
+      213: 8082083214597166613
+    second: King-MegaSlam1_38
+  - first:
+      213: 396174669965184236
+    second: King-MegaSlam1_39
+  - first:
+      213: -439749615208889049
+    second: King-MegaSlam1_40
+  - first:
+      213: 7846548503318958344
+    second: King-MegaSlam1_41
+  - first:
+      213: 7030281010697639322
+    second: King-MegaSlam1_42
+  - first:
+      213: -3676617470375445249
+    second: King-MegaSlam1_43
+  - first:
+      213: -1784624609098951664
+    second: King-MegaSlam1_44
+  - first:
+      213: -2094424964986709042
+    second: King-MegaSlam1_45
+  - first:
+      213: -4410613664588894646
+    second: King-MegaSlam1_46
+  - first:
+      213: -346455974027378924
+    second: King-MegaSlam1_47
+  - first:
+      213: 4099372772989309185
+    second: King-MegaSlam1_48
+  - first:
+      213: 749178577014222642
+    second: King-MegaSlam1_49
+  - first:
+      213: -4941855041034340217
+    second: King-MegaSlam1_50
+  - first:
+      213: -8237245797586477724
+    second: King-MegaSlam1_51
+  - first:
+      213: -9183211500996083465
+    second: King-MegaSlam1_52
+  - first:
+      213: 2791670023971061798
+    second: King-MegaSlam1_53
+  - first:
+      213: 4745586995804578014
+    second: King-MegaSlam1_54
+  - first:
+      213: -5153421661141512417
+    second: King-MegaSlam1_55
+  - first:
+      213: -4051340056454619434
+    second: King-MegaSlam1_56
+  - first:
+      213: -4797304071253009120
+    second: King-MegaSlam1_57
+  - first:
+      213: -3340021127825863072
+    second: King-MegaSlam1_58
+  - first:
+      213: 5919596246823879778
+    second: King-MegaSlam1_59
+  - first:
+      213: 6645051443721147710
+    second: King-MegaSlam1_60
+  - first:
+      213: -6244643590585456581
+    second: King-MegaSlam1_61
+  - first:
+      213: 8251591700509971235
+    second: King-MegaSlam1_62
+  - first:
+      213: 9099175353312160484
+    second: King-MegaSlam1_63
+  - first:
+      213: -4982103743703034315
+    second: King-MegaSlam1_64
+  - first:
+      213: 4504747060353502800
+    second: King-MegaSlam1_65
+  - first:
+      213: 7842662920427720366
+    second: King-MegaSlam1_66
+  - first:
+      213: -3220297622576107440
+    second: King-MegaSlam1_67
+  - first:
+      213: -1767671325130447080
+    second: King-MegaSlam1_68
+  - first:
+      213: 1140790225065825888
+    second: King-MegaSlam1_69
+  - first:
+      213: 4962726540233492410
+    second: King-MegaSlam1_70
+  - first:
+      213: -3214539117874188304
+    second: King-MegaSlam1_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 35
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: King-MegaSlam1_0
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9389ec46a6811af0800000000000000
+      internalID: -427412440810421350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_1
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdc4e2851f17f5b80800000000000000
+      internalID: -8403873098269569829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_2
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e6ad58c9c9d6760800000000000000
+      internalID: 7452785154442554930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_3
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43829577c22077200800000000000000
+      internalID: 177613100308572212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_4
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ac768f4f2af6040800000000000000
+      internalID: 4643108913865542211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_5
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6467ff137318b0690800000000000000
+      internalID: -7634866669214534074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_17
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a2013017ae8e6a0800000000000000
+      internalID: -6419623497713046942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_23
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ff083785111d510800000000000000
+      internalID: 1572056816521641751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_24
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d48385ab95ffd120800000000000000
+      internalID: 2440939571903694041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_34
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f603446cda0f730800000000000000
+      internalID: 4030912733555748687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 801133d7a4a84ec60800000000000000
+      internalID: 7846548503318958344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_42
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a959ec9c453909160800000000000000
+      internalID: 7030281010697639322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_43
+      rect:
+        serializedVersion: 2
+        x: 12000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffcb647e3e70afcc0800000000000000
+      internalID: -3676617470375445249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_44
+      rect:
+        serializedVersion: 2
+        x: 13000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0149c359f5dbb37e0800000000000000
+      internalID: -1784624609098951664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_46
+      rect:
+        serializedVersion: 2
+        x: 14000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ee1b09d3a5ac2c0800000000000000
+      internalID: -4410613664588894646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_48
+      rect:
+        serializedVersion: 2
+        x: 15000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1019fef41d5e3e830800000000000000
+      internalID: 4099372772989309185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King-MegaSlam1_49
+      rect:
+        serializedVersion: 2
+        x: 16000
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23fe34c42fd956a00800000000000000
+      internalID: 749178577014222642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6eaf76a5e16731f4eb3cb30a9a893323
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      King-MegaSlam1_0: -427412440810421350
+      King-MegaSlam1_1: -8403873098269569829
+      King-MegaSlam1_10: -292684516924401746
+      King-MegaSlam1_11: -6636039354547572338
+      King-MegaSlam1_12: -2140941929408670732
+      King-MegaSlam1_13: -8446206483008568229
+      King-MegaSlam1_14: 8795082979686925543
+      King-MegaSlam1_15: 5520928489909353503
+      King-MegaSlam1_16: -2271324836988696112
+      King-MegaSlam1_17: -6419623497713046942
+      King-MegaSlam1_18: -3509905230051285617
+      King-MegaSlam1_19: 7459580792545947366
+      King-MegaSlam1_2: 7452785154442554930
+      King-MegaSlam1_20: 5866372442481829183
+      King-MegaSlam1_21: 3089318929814872006
+      King-MegaSlam1_22: -4956676151106253484
+      King-MegaSlam1_23: 1572056816521641751
+      King-MegaSlam1_24: 2440939571903694041
+      King-MegaSlam1_25: 8085138274683113850
+      King-MegaSlam1_26: 1306467300009384754
+      King-MegaSlam1_27: -811642669121532479
+      King-MegaSlam1_28: -2203877074447389774
+      King-MegaSlam1_29: 3346239100338441667
+      King-MegaSlam1_3: 177613100308572212
+      King-MegaSlam1_30: -793698753716252523
+      King-MegaSlam1_31: 8323138512242138134
+      King-MegaSlam1_32: -5753684385010863163
+      King-MegaSlam1_33: 5887064590955768406
+      King-MegaSlam1_34: 4030912733555748687
+      King-MegaSlam1_35: 5179393710048887834
+      King-MegaSlam1_36: -2501032070050095369
+      King-MegaSlam1_37: 3671319400111236011
+      King-MegaSlam1_38: 8082083214597166613
+      King-MegaSlam1_39: 396174669965184236
+      King-MegaSlam1_4: 4643108913865542211
+      King-MegaSlam1_40: -439749615208889049
+      King-MegaSlam1_41: 7846548503318958344
+      King-MegaSlam1_42: 7030281010697639322
+      King-MegaSlam1_43: -3676617470375445249
+      King-MegaSlam1_44: -1784624609098951664
+      King-MegaSlam1_45: -2094424964986709042
+      King-MegaSlam1_46: -4410613664588894646
+      King-MegaSlam1_47: -346455974027378924
+      King-MegaSlam1_48: 4099372772989309185
+      King-MegaSlam1_49: 749178577014222642
+      King-MegaSlam1_5: -7634866669214534074
+      King-MegaSlam1_50: -4941855041034340217
+      King-MegaSlam1_51: -8237245797586477724
+      King-MegaSlam1_52: -9183211500996083465
+      King-MegaSlam1_53: 2791670023971061798
+      King-MegaSlam1_54: 4745586995804578014
+      King-MegaSlam1_55: -5153421661141512417
+      King-MegaSlam1_56: -4051340056454619434
+      King-MegaSlam1_57: -4797304071253009120
+      King-MegaSlam1_58: -3340021127825863072
+      King-MegaSlam1_59: 5919596246823879778
+      King-MegaSlam1_6: -1726141025910260136
+      King-MegaSlam1_60: 6645051443721147710
+      King-MegaSlam1_61: -6244643590585456581
+      King-MegaSlam1_62: 8251591700509971235
+      King-MegaSlam1_63: 9099175353312160484
+      King-MegaSlam1_64: -4982103743703034315
+      King-MegaSlam1_65: 4504747060353502800
+      King-MegaSlam1_66: 7842662920427720366
+      King-MegaSlam1_67: -3220297622576107440
+      King-MegaSlam1_68: -1767671325130447080
+      King-MegaSlam1_69: 1140790225065825888
+      King-MegaSlam1_7: 1808881868425746867
+      King-MegaSlam1_70: 4962726540233492410
+      King-MegaSlam1_71: -3214539117874188304
+      King-MegaSlam1_8: 5994874214411601909
+      King-MegaSlam1_9: 1420861880394196790
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2164,9 +2164,17 @@ PrefabInstance:
       value: ParryableAttack
       objectReference: {fileID: 0}
     - target: {fileID: 2442754294819916144, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: m_Size.x
+      value: 28.571863
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442754294819916144, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: m_Size.y
+      value: 22.857141
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442754294819916144, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4233379331139774186, guid: fdc40495864b772469f961784bf7fce8, type: 3}
+      objectReference: {fileID: 5702086488374120824, guid: 05bd8ce67e8919b4781611930f31f86e, type: 3}
     - target: {fileID: 5541223419101622609, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: enemyHealth
       value: 

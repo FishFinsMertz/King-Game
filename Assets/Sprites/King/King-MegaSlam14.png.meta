@@ -1,10 +1,37 @@
 fileFormatVersion: 2
-guid: 05bd8ce67e8919b4781611930f31f86e
+guid: 134c133b9d038034a998be03ce0bf295
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5702086488374120824
-    second: King_idle_0
+      213: 977225998203443212
+    second: King-MegaSlam14_0
+  - first:
+      213: -1518731385592460555
+    second: King-MegaSlam14_1
+  - first:
+      213: 8155230717646862758
+    second: King-MegaSlam14_2
+  - first:
+      213: -1285998223485992255
+    second: King-MegaSlam14_3
+  - first:
+      213: -5004840608338850311
+    second: King-MegaSlam14_4
+  - first:
+      213: -1771535148223229955
+    second: King-MegaSlam14_5
+  - first:
+      213: 1490447839244747031
+    second: King-MegaSlam14_6
+  - first:
+      213: 4413006227935291091
+    second: King-MegaSlam14_7
+  - first:
+      213: 79342114558039799
+    second: King-MegaSlam14_8
+  - first:
+      213: 8022281917605456838
+    second: King-MegaSlam14_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +127,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: King_idle_0
+      name: King-MegaSlam14_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
+        width: 1000
         height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -115,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87118124371e12f40800000000000000
-      internalID: 5702086488374120824
+      spriteID: 7f6d5f99b31e91100800000000000000
+      internalID: 79342114558039799
       vertices: []
       indices: 
       edges: []
@@ -125,7 +152,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fe79f1b27789a754ba8a82ec9709267c
+    spriteID: dc77f0297d6330345822ff2ba51337ca
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +162,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      King_idle_0: 5702086488374120824
+      King-MegaSlam14_0: 977225998203443212
+      King-MegaSlam14_1: -1518731385592460555
+      King-MegaSlam14_2: 8155230717646862758
+      King-MegaSlam14_3: -1285998223485992255
+      King-MegaSlam14_4: -5004840608338850311
+      King-MegaSlam14_5: -1771535148223229955
+      King-MegaSlam14_6: 1490447839244747031
+      King-MegaSlam14_7: 4413006227935291091
+      King-MegaSlam14_8: 79342114558039799
+      King-MegaSlam14_9: 8022281917605456838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

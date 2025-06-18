@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 10639f5db81da274b82f8e788d80fc8b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9041466387181976037
+    second: King-MegaSlam16_0
+  - first:
+      213: 8602429822354743147
+    second: King-MegaSlam16_1
+  - first:
+      213: 3617203573454344384
+    second: King-MegaSlam16_2
+  - first:
+      213: 9194040104147087552
+    second: King-MegaSlam16_3
+  - first:
+      213: -804549705524021789
+    second: King-MegaSlam16_4
+  - first:
+      213: -3598237247040528589
+    second: King-MegaSlam16_5
+  - first:
+      213: 2256904105913705121
+    second: King-MegaSlam16_6
+  - first:
+      213: 8855726571469219356
+    second: King-MegaSlam16_7
+  - first:
+      213: -583952118040183325
+    second: King-MegaSlam16_8
+  - first:
+      213: -4511500812655170789
+    second: King-MegaSlam16_9
+  - first:
+      213: -8573773688202738968
+    second: King-MegaSlam16_10
+  - first:
+      213: -7482511804308703604
+    second: King-MegaSlam16_11
+  - first:
+      213: -4317165308891309314
+    second: King-MegaSlam16_12
+  - first:
+      213: 9130604380239581480
+    second: King-MegaSlam16_13
+  - first:
+      213: -6294318331588169521
+    second: King-MegaSlam16_14
+  - first:
+      213: -1961765750948268918
+    second: King-MegaSlam16_15
+  - first:
+      213: -4137920093744086554
+    second: King-MegaSlam16_16
+  - first:
+      213: 5953784189045130478
+    second: King-MegaSlam16_17
+  - first:
+      213: -3008903996429526491
+    second: King-MegaSlam16_18
+  - first:
+      213: 7526599212839108182
+    second: King-MegaSlam16_19
+  - first:
+      213: 3658750311209467802
+    second: King-MegaSlam16_20
+  - first:
+      213: -5644206251440210328
+    second: King-MegaSlam16_21
+  - first:
+      213: -5722976711232792313
+    second: King-MegaSlam16_22
+  - first:
+      213: 6789848392579729757
+    second: King-MegaSlam16_23
+  - first:
+      213: -1996476094195686194
+    second: King-MegaSlam16_24
+  - first:
+      213: 1985002086144162581
+    second: King-MegaSlam16_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 35
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: King-MegaSlam16_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b6dc1f9ede361c0800000000000000
+      internalID: -4511500812655170789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 85af47c22c6aecb468cca1f91ba72b4d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      King-MegaSlam16_0: 9041466387181976037
+      King-MegaSlam16_1: 8602429822354743147
+      King-MegaSlam16_10: -8573773688202738968
+      King-MegaSlam16_11: -7482511804308703604
+      King-MegaSlam16_12: -4317165308891309314
+      King-MegaSlam16_13: 9130604380239581480
+      King-MegaSlam16_14: -6294318331588169521
+      King-MegaSlam16_15: -1961765750948268918
+      King-MegaSlam16_16: -4137920093744086554
+      King-MegaSlam16_17: 5953784189045130478
+      King-MegaSlam16_18: -3008903996429526491
+      King-MegaSlam16_19: 7526599212839108182
+      King-MegaSlam16_2: 3617203573454344384
+      King-MegaSlam16_20: 3658750311209467802
+      King-MegaSlam16_21: -5644206251440210328
+      King-MegaSlam16_22: -5722976711232792313
+      King-MegaSlam16_23: 6789848392579729757
+      King-MegaSlam16_24: -1996476094195686194
+      King-MegaSlam16_25: 1985002086144162581
+      King-MegaSlam16_3: 9194040104147087552
+      King-MegaSlam16_4: -804549705524021789
+      King-MegaSlam16_5: -3598237247040528589
+      King-MegaSlam16_6: 2256904105913705121
+      King-MegaSlam16_7: 8855726571469219356
+      King-MegaSlam16_8: -583952118040183325
+      King-MegaSlam16_9: -4511500812655170789
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

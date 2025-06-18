@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: 05bd8ce67e8919b4781611930f31f86e
+guid: 9a5ddecca71adcf4797c18d81b1a6a3a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5702086488374120824
-    second: King_idle_0
+      213: 5766150704478726479
+    second: King-MegaSlam17_0
+  - first:
+      213: 135149815182424779
+    second: King-MegaSlam17_1
+  - first:
+      213: 2114931379546598524
+    second: King-MegaSlam17_2
+  - first:
+      213: -847452093381128724
+    second: King-MegaSlam17_3
+  - first:
+      213: 8642074318923774234
+    second: King-MegaSlam17_4
+  - first:
+      213: 6123910560859733280
+    second: King-MegaSlam17_5
+  - first:
+      213: -7125929223233292039
+    second: King-MegaSlam17_6
+  - first:
+      213: -5291873591274603166
+    second: King-MegaSlam17_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +121,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: King_idle_0
+      name: King-MegaSlam17_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
+        width: 1000
         height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -115,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87118124371e12f40800000000000000
-      internalID: 5702086488374120824
+      spriteID: f49a2dde38b750050800000000000000
+      internalID: 5766150704478726479
       vertices: []
       indices: 
       edges: []
@@ -125,7 +146,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fe79f1b27789a754ba8a82ec9709267c
+    spriteID: 91f32e70082be0742824333cf30dabfd
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +156,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      King_idle_0: 5702086488374120824
+      King-MegaSlam17_0: 5766150704478726479
+      King-MegaSlam17_1: 135149815182424779
+      King-MegaSlam17_2: 2114931379546598524
+      King-MegaSlam17_3: -847452093381128724
+      King-MegaSlam17_4: 8642074318923774234
+      King-MegaSlam17_5: 6123910560859733280
+      King-MegaSlam17_6: -7125929223233292039
+      King-MegaSlam17_7: -5291873591274603166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,40 @@
 fileFormatVersion: 2
-guid: 05bd8ce67e8919b4781611930f31f86e
+guid: c40a2b1b0b9d3d744b32aca3464b505c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5702086488374120824
-    second: King_idle_0
+      213: 4102553911233313607
+    second: King-MegaSlam15_0
+  - first:
+      213: 7905966363954498067
+    second: King-MegaSlam15_1
+  - first:
+      213: -5410103044084192905
+    second: King-MegaSlam15_2
+  - first:
+      213: 6623946702350026250
+    second: King-MegaSlam15_3
+  - first:
+      213: 7413643090725967698
+    second: King-MegaSlam15_4
+  - first:
+      213: 8474628720320642312
+    second: King-MegaSlam15_5
+  - first:
+      213: 2065487218340830460
+    second: King-MegaSlam15_6
+  - first:
+      213: 3890247864982403700
+    second: King-MegaSlam15_7
+  - first:
+      213: 2089005462786396184
+    second: King-MegaSlam15_8
+  - first:
+      213: -7231326210256666745
+    second: King-MegaSlam15_9
+  - first:
+      213: 7564930214770777331
+    second: King-MegaSlam15_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +130,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: King_idle_0
+      name: King-MegaSlam15_9
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
+        width: 1000
         height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -115,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87118124371e12f40800000000000000
-      internalID: 5702086488374120824
+      spriteID: 78ffdaeff1b25ab90800000000000000
+      internalID: -7231326210256666745
       vertices: []
       indices: 
       edges: []
@@ -125,7 +155,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fe79f1b27789a754ba8a82ec9709267c
+    spriteID: 7730da1e9f051f542877621c501fc259
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +165,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      King_idle_0: 5702086488374120824
+      King-MegaSlam15_0: 4102553911233313607
+      King-MegaSlam15_1: 7905966363954498067
+      King-MegaSlam15_10: 7564930214770777331
+      King-MegaSlam15_2: -5410103044084192905
+      King-MegaSlam15_3: 6623946702350026250
+      King-MegaSlam15_4: 7413643090725967698
+      King-MegaSlam15_5: 8474628720320642312
+      King-MegaSlam15_6: 2065487218340830460
+      King-MegaSlam15_7: 3890247864982403700
+      King-MegaSlam15_8: 2089005462786396184
+      King-MegaSlam15_9: -7231326210256666745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
