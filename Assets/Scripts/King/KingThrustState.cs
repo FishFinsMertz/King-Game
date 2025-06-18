@@ -23,7 +23,7 @@ public class KingThrustState : KingState
         king.thrustHitbox.enabled = true;
 
         // Check for player collision after enabling hitbox
-        int success = king.DealDamageToPlayer(king.thrustDmg, Vector2.right, 12f, king.thrustHitbox);
+        int success = king.DealDamageToPlayer(king.thrustDmg, Vector2.right, 9f, king.thrustHitbox);
 
         if (success == 0)
         {
@@ -33,20 +33,9 @@ public class KingThrustState : KingState
 
         yield return new WaitForSeconds(king.thrustDuration); // Wait for the attack animation to finish
 
-        // Change states
-        if (king.GetPlayerDistance() > king.detectionRange)
-        {
-            king.ChangeState(new KingIdleState(king));
-        }
+        // Change state
+        king.ChangeState(new KingWalkState(king));
 
-        if (king.GetPlayerDistance() <= king.closeRange && king.IsPlayerInFront())
-        {
-            king.ChangeState(new KingWalkState(king));
-        }
-        else
-        {
-            king.ChangeState(new KingWalkState(king));
-        }
     }
 
     public override void Exit()

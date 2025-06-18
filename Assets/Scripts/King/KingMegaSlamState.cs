@@ -1,0 +1,46 @@
+using System.Collections;
+using UnityEngine;
+
+public class KingMegaSlamState : KingState
+{
+    public KingMegaSlamState(KingController king) : base(king) { }
+
+    public override void Enter()
+    {
+        // Perform attack
+        king.rb.linearVelocity = new Vector2(0, king.rb.linearVelocity.y);
+        king.isAttacking = true;
+        king.StartCoroutine(PerformMegaSlam());
+    }
+    private IEnumerator PerformMegaSlam()
+    {
+        king.animator.SetTrigger("MegaSlam");
+
+        yield return new WaitForSeconds(king.megaSlamChargeTime);
+
+        king.megaSlamHitbox.enabled = true;
+
+        // Check for player collision after enabling hitbox
+        int success = king.DealDamageToPlayer(king.megaSlamDmg, Vector2.right, 15f, king.megaSlamHitbox);
+
+        if (success == 0)
+        {
+            king.hitstop.Freeze(king.megaSlamFreezeDuration);
+            king.cameraController.StartShake(CameraController.ShakeLevel.heavy);
+        }
+
+        king.StartCoroutine(king.StartMegaSlamCoolDown());
+
+        yield return new WaitForSeconds(king.megaSlamDuration); // Wait for the attack animation to finish
+
+        // Change states
+        king.ChangeState(new KingWalkState(king));
+
+    }
+
+    public override void Exit()
+    {
+        king.isAttacking = false;
+        king.megaSlamHitbox.enabled = false;
+    }
+}

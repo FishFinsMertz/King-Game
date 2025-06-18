@@ -29,9 +29,14 @@ public class KingWalkState : KingState
             king.ChangeState(new KingIdleState(king));
         }
 
-        if (king.GetPlayerDistance() <= king.closeRange && king.IsPlayerInFront())
+        else if (king.GetPlayerDistance() <= king.closeRange && king.IsPlayerInFront() && !king.isAttacking)
         {
             king.ChangeState(new KingThrustState(king));
+        }
+
+        else if (king.canMegaSlam && !king.isAttacking && king.GetPlayerDistance() > king.closeRange &&
+        king.GetPlayerDistance() <= king.midRange && king.IsPlayerInFront()) { 
+            king.ChangeState(new KingMegaSlamState(king));
         }
     }
 

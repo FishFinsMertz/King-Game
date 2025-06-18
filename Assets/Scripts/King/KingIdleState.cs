@@ -15,10 +15,5 @@ public class KingIdleState : KingState
         {
             king.ChangeState(new KingWalkState(king));
         }
-
-        if (king.GetPlayerDistance() <= king.closeRange && king.IsPlayerInFront())
-        {
-            king.ChangeState(new KingThrustState(king));
-        }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,12 +19,19 @@ public class KingController : MonoBehaviour
 
     [Header("Hitboxes")]
     public Collider2D thrustHitbox;
+    public Collider2D megaSlamHitbox;
 
     [Header("Attack Stats")]
     public float thrustChargeTime;
     public float thrustDuration;
     public float thrustDmg;
     public float thrustFreezeDuration;
+
+    public float megaSlamChargeTime;
+    public float megaSlamDuration;
+    public float megaSlamDmg;
+    public float megaSlamFreezeDuration;
+    public float megaSlamCoolDown;
 
     [Header("Misc")]
     [HideInInspector] public Rigidbody2D rb;
@@ -40,6 +48,9 @@ public class KingController : MonoBehaviour
     [HideInInspector] public CameraController cameraController;
     [HideInInspector] public bool isAttacking;
 
+    // Attack cooldowns
+    [HideInInspector] public bool canMegaSlam = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -55,6 +66,7 @@ public class KingController : MonoBehaviour
         //Debug.Log(IsGrounded());
         //Debug.Log(currentState);
         //Debug.Log(isAttacking);
+        //Debug.Log(canMegaSlam);
         currentState.Update();
 
         // Get info about player
@@ -65,7 +77,8 @@ public class KingController : MonoBehaviour
         }
 
         // Flipping logic
-        if (!isAttacking) {
+        if (!isAttacking)
+        {
             Flip();
         }
     }
@@ -117,8 +130,8 @@ public class KingController : MonoBehaviour
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         return grounded;
     }
-    
-        public int DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox)
+
+    public int DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox)
     {
         Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
         //Debug.Log(hitbox.name);
@@ -146,5 +159,13 @@ public class KingController : MonoBehaviour
             }
         }
         return hitPlayer ? 0 : 1;
+    }
+
+    // Attack cooldown
+    public IEnumerator StartMegaSlamCoolDown()
+    {
+        canMegaSlam = false;
+        yield return new WaitForSeconds(megaSlamCoolDown);
+        canMegaSlam = true;
     }
 }
