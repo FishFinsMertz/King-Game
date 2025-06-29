@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 8419726855151159162}
   m_Layer: 10
   m_Name: FlyStrikeHitBox
-  m_TagString: Untagged
+  m_TagString: ParryableAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,6 +611,7 @@ MonoBehaviour:
   midRange: 6
   longRange: 15
   chaseSpeed: 3
+  ascentSpeed: 30
   thrustHitbox: {fileID: 1995710220651999243}
   megaSlamHitbox: {fileID: 1399376537427456824}
   flyStrikeHitbox: {fileID: 8419726855151159162}
@@ -623,11 +624,13 @@ MonoBehaviour:
   megaSlamDmg: 45
   megaSlamFreezeDuration: 0.125
   megaSlamCoolDown: 5
-  flyStrikeChargeTime: 1
-  flyStrikeDuration: 3
+  flyHoverTime: 1
+  flyStrikeDuration: 1
   flyStrikeDmg: 55
   flyStrikeFreezeDuration: 0.125
-  flyStrikeCoolDown: 10
+  flyStrikeCoolDown: 1
+  flyStrikeSpeed: 40
+  flyHeight: 5
   nonParryWarning: {fileID: 2237481433777694426}
   rb: {fileID: 0}
   groundCheck: {fileID: 8425695460245440660}

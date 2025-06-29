@@ -16,6 +16,7 @@ public class KingController : MonoBehaviour
 
     [Header("Movement")]
     public float chaseSpeed;
+    public float ascentSpeed;
 
     [Header("Hitboxes")]
     public Collider2D thrustHitbox;
@@ -35,11 +36,13 @@ public class KingController : MonoBehaviour
     public float megaSlamFreezeDuration;
     public float megaSlamCoolDown;
     // Fly Strike
-    public float flyStrikeChargeTime;
+    public float flyHoverTime;
     public float flyStrikeDuration;
     public float flyStrikeDmg;
     public float flyStrikeFreezeDuration;
     public float flyStrikeCoolDown;
+    public float flyStrikeSpeed;
+    public float flyHeight;
 
     [Header("Misc")]
     public GameObject nonParryWarning;
@@ -180,7 +183,7 @@ public class KingController : MonoBehaviour
         canMegaSlam = true;
     }
 
-    public IEnumerator StartFlyStrike()
+    public IEnumerator StartFlyStrikeCoolDown()
     {
         canFlyStrike = false;
         yield return new WaitForSeconds(flyStrikeCoolDown);

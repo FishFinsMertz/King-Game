@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
     private Dictionary<ShakeLevel, (float magnitude, float duration)> shakeSettings = new Dictionary<ShakeLevel, (float, float)>()
     {
         { ShakeLevel.light, (0.07f, 0.15f) },   // Light shake
-        { ShakeLevel.medium, (0.15f, 0.35f) },  // Medium shake
+        { ShakeLevel.medium, (0.15f, 0.4f) },  // Medium shake
         { ShakeLevel.heavy, (0.2f, 0.6f) }     // Strong shake
     };
 
