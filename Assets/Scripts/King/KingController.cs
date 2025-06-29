@@ -20,20 +20,29 @@ public class KingController : MonoBehaviour
     [Header("Hitboxes")]
     public Collider2D thrustHitbox;
     public Collider2D megaSlamHitbox;
+    public Collider2D flyStrikeHitbox;
 
     [Header("Attack Stats")]
+    // Thrust
     public float thrustChargeTime;
     public float thrustDuration;
     public float thrustDmg;
     public float thrustFreezeDuration;
-
+    //Mega Slam
     public float megaSlamChargeTime;
     public float megaSlamDuration;
     public float megaSlamDmg;
     public float megaSlamFreezeDuration;
     public float megaSlamCoolDown;
+    // Fly Strike
+    public float flyStrikeChargeTime;
+    public float flyStrikeDuration;
+    public float flyStrikeDmg;
+    public float flyStrikeFreezeDuration;
+    public float flyStrikeCoolDown;
 
     [Header("Misc")]
+    public GameObject nonParryWarning;
     [HideInInspector] public Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundLayer;
@@ -50,12 +59,14 @@ public class KingController : MonoBehaviour
 
     // Attack cooldowns
     [HideInInspector] public bool canMegaSlam = true;
+    [HideInInspector] public bool canFlyStrike = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cameraController = FindAnyObjectByType<CameraController>();
+        nonParryWarning.SetActive(false);
 
         ChangeState(new KingIdleState(this));
     }
@@ -161,11 +172,18 @@ public class KingController : MonoBehaviour
         return hitPlayer ? 0 : 1;
     }
 
-    // Attack cooldown
+    // Attack cooldowns
     public IEnumerator StartMegaSlamCoolDown()
     {
         canMegaSlam = false;
         yield return new WaitForSeconds(megaSlamCoolDown);
         canMegaSlam = true;
+    }
+
+    public IEnumerator StartFlyStrike()
+    {
+        canFlyStrike = false;
+        yield return new WaitForSeconds(flyStrikeCoolDown);
+        canFlyStrike = true;
     }
 }

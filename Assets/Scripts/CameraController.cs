@@ -33,9 +33,9 @@ public class CameraController : MonoBehaviour
     // Dictionary to map shake levels to magnitude and duration
     private Dictionary<ShakeLevel, (float magnitude, float duration)> shakeSettings = new Dictionary<ShakeLevel, (float, float)>()
     {
-        { ShakeLevel.light, (0.07f, 0.1f) },   // Light shake
-        { ShakeLevel.medium, (0.15f, 0.15f) },  // Medium shake
-        { ShakeLevel.heavy, (0.2f, 0.2f) }     // Strong shake
+        { ShakeLevel.light, (0.07f, 0.15f) },   // Light shake
+        { ShakeLevel.medium, (0.15f, 0.35f) },  // Medium shake
+        { ShakeLevel.heavy, (0.2f, 0.6f) }     // Strong shake
     };
 
     void Start()
@@ -80,16 +80,21 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    private IEnumerator Shake(float magnitude, float duration) {
+    private IEnumerator Shake(float magnitude, float duration)
+    {
         isShaking = true;
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)
         {
-            float offsetX = Random.Range(-0.5f, 0.5f) * magnitude;
-            float offsetY = Random.Range(-0.5f, 0.5f) * magnitude;
+            // Compute decay factor (1 → 0 over time)
+            float decay = 1f - (elapsedTime / duration);
+            float currentMagnitude = magnitude * decay;
 
-            shakeOffset = new Vector3(offsetX, offsetY, 0);
+            float offsetX = Random.Range(-1f, 1f) * currentMagnitude;
+            float offsetY = Random.Range(-1f, 1f) * currentMagnitude;
+
+            shakeOffset = new Vector3(offsetX, offsetY, 0f);
 
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -98,6 +103,7 @@ public class CameraController : MonoBehaviour
         shakeOffset = Vector3.zero;
         isShaking = false;
     }
+
 
     // FOR TESTING PURPOSES
     void Update()

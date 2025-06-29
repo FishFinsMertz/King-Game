@@ -14,6 +14,7 @@ public class KingMegaSlamState : KingState
     }
     private IEnumerator PerformMegaSlam()
     {
+        king.nonParryWarning.SetActive(true);
         king.animator.SetTrigger("MegaSlam");
 
         yield return new WaitForSeconds(king.megaSlamChargeTime);
@@ -26,12 +27,15 @@ public class KingMegaSlamState : KingState
         if (success == 0)
         {
             king.hitstop.Freeze(king.megaSlamFreezeDuration);
-            king.cameraController.StartShake(CameraController.ShakeLevel.heavy);
         }
+
+        king.cameraController.StartShake(CameraController.ShakeLevel.medium);
 
         king.StartCoroutine(king.StartMegaSlamCoolDown());
 
         yield return new WaitForSeconds(king.megaSlamDuration); // Wait for the attack animation to finish
+
+        king.nonParryWarning.SetActive(false);
 
         // Change states
         king.ChangeState(new KingWalkState(king));
