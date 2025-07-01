@@ -18,7 +18,7 @@ TagManager:
   - Ground
   - Invulnerable
   - EnemyAttack
-  - 
+  - Projectiles
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1527628289
+    locked: 0
+  - name: Projectiles
+    uniqueID: 4028016797
     locked: 0
   - name: UI
     uniqueID: 1197914407
