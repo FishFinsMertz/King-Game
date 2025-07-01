@@ -39,11 +39,17 @@ public class KingWalkState : KingState
         {
             king.ChangeState(new KingMegaSlamState(king));
         }
-
+        /*
         else if (king.canFlyStrike && !king.isAttacking && king.GetPlayerDistance() > king.midRange &&
         king.GetPlayerDistance() <= king.longRange)
-        { 
+        {
             king.ChangeState(new KingFlyStrikeState(king));
+        }
+        */
+        else if (king.canSwordBarrage && !king.isAttacking && king.GetPlayerDistance() > king.midRange &&
+        king.GetPlayerDistance() <= king.longRange)
+        {
+            king.ChangeState(new KingSwordBarrage(king));
         }
     }
 

@@ -1166,6 +1166,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940918927}
   m_CullTransparentMesh: 1
+--- !u!114 &1013981717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6775431734618933077, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
+  m_PrefabInstance: {fileID: 1355649619760931804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26722c52689723b40b2c9df6cc03f77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044045269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,15 +2424,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 811566396408947041, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.87
+      value: 1.78
       objectReference: {fileID: 0}
     - target: {fileID: 811566396408947041, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.32
+      value: 6.77
       objectReference: {fileID: 0}
     - target: {fileID: 811566396408947041, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 933.05945
+      value: 933.06
       objectReference: {fileID: 0}
     - target: {fileID: 811566396408947041, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2451,13 +2462,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1690160676472550609, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
+      propertyPath: m_Size.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690160676472550609, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
+      propertyPath: m_Offset.y
+      value: -4.38
+      objectReference: {fileID: 0}
     - target: {fileID: 6421805296471078267, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: m_Name
       value: ObjPool
       objectReference: {fileID: 0}
+    - target: {fileID: 6421805296471078267, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6775431734618933077, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: poolSizeCap
-      value: 15
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6775431734618933077, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: spawnedPrefab
@@ -2468,6 +2491,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
+--- !u!61 &1355649619760931805 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8983871144784150911, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
+  m_PrefabInstance: {fileID: 1355649619760931804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6435249269093324327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2488,6 +2516,34 @@ PrefabInstance:
       propertyPath: hitstop
       value: 
       objectReference: {fileID: 935750595}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: swordPool
+      value: 
+      objectReference: {fileID: 1013981717}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: swordSpawnArea
+      value: 
+      objectReference: {fileID: 1355649619760931805}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: swordBarrageAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: swordBarrageCoolDown
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: swordBarrageInterval
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: swordBarrageChargeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: swordBarrageIntervalOffset
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5541223419101622609, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: enemyHealth
       value: 

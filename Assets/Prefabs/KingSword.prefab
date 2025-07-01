@@ -131,6 +131,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  projectileHitbox: {fileID: 7108179795773612267}
 --- !u!1 &7108179795773612267
 GameObject:
   m_ObjectHideFlags: 0

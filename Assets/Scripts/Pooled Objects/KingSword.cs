@@ -14,6 +14,7 @@ public class KingSword : PooledObjects
     [Header("Misc")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private GameObject projectileHitbox; 
 
     // Private and Hidden Variables
     private ObjPool pool;
@@ -32,6 +33,9 @@ public class KingSword : PooledObjects
 
     private void OnEnable()
     {
+        if (projectileHitbox != null)
+            projectileHitbox.SetActive(true);
+
         StartCoroutine(Launch());
     }
 
@@ -51,6 +55,10 @@ public class KingSword : PooledObjects
 
         // Wait until grounded
         yield return new WaitUntil(() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer));
+
+        // Disable the hitbox when landed
+        if (projectileHitbox != null)
+            projectileHitbox.SetActive(false);
 
         // Delay before recycling
         yield return new WaitForSeconds(LandingTime);

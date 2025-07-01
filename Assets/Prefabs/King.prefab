@@ -615,6 +615,8 @@ MonoBehaviour:
   thrustHitbox: {fileID: 1995710220651999243}
   megaSlamHitbox: {fileID: 1399376537427456824}
   flyStrikeHitbox: {fileID: 8419726855151159162}
+  swordSpawnArea: {fileID: 0}
+  swordPool: {fileID: 0}
   thrustChargeTime: 0.5
   thrustDuration: 1.15
   thrustDmg: 30
@@ -631,6 +633,9 @@ MonoBehaviour:
   flyStrikeCoolDown: 10
   flyStrikeSpeed: 40
   flyHeight: 5
+  swordBarrageAmount: 0
+  swordBarrageInterval: 0
+  swordBarrageIntervalOffset: 0
   nonParryWarning: {fileID: 2237481433777694426}
   rb: {fileID: 0}
   groundCheck: {fileID: 8425695460245440660}

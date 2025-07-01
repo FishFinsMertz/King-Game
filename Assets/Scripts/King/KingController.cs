@@ -18,10 +18,12 @@ public class KingController : MonoBehaviour
     public float chaseSpeed;
     public float ascentSpeed;
 
-    [Header("Hitboxes")]
+    [Header("Hitboxes & Utility")]
     public Collider2D thrustHitbox;
     public Collider2D megaSlamHitbox;
     public Collider2D flyStrikeHitbox;
+    public BoxCollider2D swordSpawnArea;
+    public ObjPool swordPool;
 
     [Header("Attack Stats")]
     // Thrust
@@ -43,6 +45,12 @@ public class KingController : MonoBehaviour
     public float flyStrikeCoolDown;
     public float flyStrikeSpeed;
     public float flyHeight;
+    // Sword Barrage
+    public int swordBarrageAmount;
+    public float swordBarrageInterval;
+    public float swordBarrageIntervalOffset;
+    public float swordBarrageChargeTime;
+    public float swordBarrageCoolDown;
 
     [Header("Misc")]
     public GameObject nonParryWarning;
@@ -59,10 +67,12 @@ public class KingController : MonoBehaviour
     private int isFacingRight = 1;
     [HideInInspector] public CameraController cameraController;
     [HideInInspector] public bool isAttacking;
+    private float lastSpawnX = float.NaN; // Track last spawned x, initialize as NaN so first spawn always allowed
 
     // Attack cooldowns
     [HideInInspector] public bool canMegaSlam = true;
     [HideInInspector] public bool canFlyStrike = true;
+    [HideInInspector] public bool canSwordBarrage = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -175,6 +185,43 @@ public class KingController : MonoBehaviour
         return hitPlayer ? 0 : 1;
     }
 
+    public IEnumerator PerformSwordBarrage()
+    {
+        int curSwordAmt = 0;
+        while (curSwordAmt < swordBarrageAmount)
+        {
+            yield return new WaitForSeconds(swordBarrageInterval + Random.Range(-1f * swordBarrageIntervalOffset, swordBarrageIntervalOffset));
+            Vector2 spawnLocation = GetRandomSpawnPosition();
+
+            //Debug.Log("Spawning sword at: " + spawnLocation);
+            swordPool.SpawnObject(spawnLocation);
+            curSwordAmt++;
+        }
+    }
+
+    public Vector2 GetRandomSpawnPosition()
+    {
+        Vector2 center = swordSpawnArea.bounds.center;
+        Vector2 extents = swordSpawnArea.bounds.extents;
+
+        float x;
+        int attempts = 0;
+        const int maxAttempts = 10;  // Avoid infinite loops
+
+        do
+        {
+            x = Random.Range(center.x - extents.x, center.x + extents.x);
+            attempts++;
+        }
+        while (!float.IsNaN(lastSpawnX) && Mathf.Abs(x - lastSpawnX) < 2f && attempts < maxAttempts);
+
+        lastSpawnX = x;
+
+        float y = Random.Range(center.y - extents.y, center.y + extents.y);
+
+        return new Vector2(x, y);
+    }
+
     // Attack cooldowns
     public IEnumerator StartMegaSlamCoolDown()
     {
@@ -188,5 +235,14 @@ public class KingController : MonoBehaviour
         canFlyStrike = false;
         yield return new WaitForSeconds(flyStrikeCoolDown);
         canFlyStrike = true;
+    }
+
+    public IEnumerator StartSwordbarrageCoolDown()
+    {
+        Debug.Log("CoolDown Started");
+        canSwordBarrage = false;
+        yield return new WaitForSeconds(swordBarrageCoolDown);
+        canSwordBarrage = true;
+        Debug.Log("CoolDown Ended");
     }
 }

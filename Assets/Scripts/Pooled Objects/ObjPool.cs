@@ -61,7 +61,7 @@ public class ObjPool : MonoBehaviour
 
     void Update()
     {
-
+        /*
         if (Input.GetMouseButtonDown(0)) // Left mouse button clicked
         {
             Vector3 mousePos = Input.mousePosition;
@@ -88,5 +88,6 @@ public class ObjPool : MonoBehaviour
                 }
             }
         }
+        */
     }
 }
