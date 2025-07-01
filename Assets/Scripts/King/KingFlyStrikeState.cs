@@ -9,8 +9,6 @@ public class KingFlyStrikeState : KingState
     private float originalDrag;
     public override void Enter()
     {
-        // Perform attack
-        king.Flip();
         king.rb.linearVelocity = new Vector2(0, king.rb.linearVelocity.y);
         king.isAttacking = true;
         originalGravity = king.rb.gravityScale;
@@ -43,10 +41,7 @@ public class KingFlyStrikeState : KingState
         yield return new WaitForSeconds(king.flyHoverTime);
 
         // Phase 2: Lock onto player’s position to slam
-
         Vector2 slamDirection = (king.player.transform.position - king.transform.position).normalized;
-
-        // Launch toward the player
         king.rb.linearVelocity = slamDirection * king.flyStrikeSpeed;
 
         // Wait until boss lands
@@ -73,6 +68,11 @@ public class KingFlyStrikeState : KingState
 
         // End
         king.ChangeState(new KingWalkState(king));
+    }
+
+    public override void Update()
+    {
+        king.Flip();
     }
 
     public override void Exit()

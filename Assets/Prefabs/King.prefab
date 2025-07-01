@@ -628,7 +628,7 @@ MonoBehaviour:
   flyStrikeDuration: 1
   flyStrikeDmg: 55
   flyStrikeFreezeDuration: 0.125
-  flyStrikeCoolDown: 1
+  flyStrikeCoolDown: 10
   flyStrikeSpeed: 40
   flyHeight: 5
   nonParryWarning: {fileID: 2237481433777694426}
