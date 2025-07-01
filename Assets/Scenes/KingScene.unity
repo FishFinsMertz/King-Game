@@ -2457,7 +2457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6775431734618933077, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: poolSizeCap
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6775431734618933077, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: spawnedPrefab
