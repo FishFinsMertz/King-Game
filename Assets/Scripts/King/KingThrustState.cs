@@ -10,11 +10,16 @@ public class KingThrustState : KingState
         // Perform attack
         king.rb.linearVelocity = new Vector2(0, king.rb.linearVelocity.y);
         king.isAttacking = true;
+
         king.StartCoroutine(PerformThrust());
     }
 
     private IEnumerator PerformThrust()
     {
+        // Attempt Teleport
+        yield return king.enemyTeleporter.TryTeleport(3f, king.teleportProbability); //Teleport distance and probability of teleporting
+        king.Flip();
+
         king.animator.SetTrigger("Thrust");
 
         yield return new WaitForSeconds(king.thrustChargeTime); // Delay before attack hitbox activates

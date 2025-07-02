@@ -17,6 +17,7 @@ public class KingController : MonoBehaviour
     [Header("Movement")]
     public float chaseSpeed;
     public float ascentSpeed;
+    public float teleportProbability; // UPDATE WHEN WE MAKE A "PHASE 2"
 
     [Header("Hitboxes & Utility")]
     public Collider2D thrustHitbox;
@@ -24,6 +25,7 @@ public class KingController : MonoBehaviour
     public Collider2D flyStrikeHitbox;
     public BoxCollider2D swordSpawnArea;
     public ObjPool swordPool;
+    public EnemyTeleporter enemyTeleporter;
 
     [Header("Attack Stats")]
     // Thrust
@@ -92,6 +94,11 @@ public class KingController : MonoBehaviour
         //Debug.Log(isAttacking);
         //Debug.Log(canMegaSlam);
         currentState.Update();
+
+        if (Input.GetKeyDown(KeyCode.V))
+        { 
+            enemyTeleporter.TryTeleport(3f, 0.5f); //Teleport distance and probability of teleporting
+        }
 
         // Get info about player
         if (player != null)
@@ -185,6 +192,8 @@ public class KingController : MonoBehaviour
         return hitPlayer ? 0 : 1;
     }
 
+    // Attack Utility
+
     public IEnumerator PerformSwordBarrage()
     {
         int curSwordAmt = 0;
@@ -239,10 +248,8 @@ public class KingController : MonoBehaviour
 
     public IEnumerator StartSwordbarrageCoolDown()
     {
-        Debug.Log("CoolDown Started");
         canSwordBarrage = false;
         yield return new WaitForSeconds(swordBarrageCoolDown);
         canSwordBarrage = true;
-        Debug.Log("CoolDown Ended");
     }
 }

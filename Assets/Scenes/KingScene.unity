@@ -404,9 +404,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 935750595}
     - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
+      propertyPath: parryChargeTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 119794766}
+    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
+      propertyPath: parryInvulnerableTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3509742245245832316, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
       propertyPath: mainEnergyBar
       value: 
@@ -2525,12 +2533,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1355649619760931805}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: swordBarrageAmount
+      propertyPath: flyStrikeCoolDown
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: swordBarrageAmount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: teleportProbability
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordBarrageCoolDown
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordBarrageInterval

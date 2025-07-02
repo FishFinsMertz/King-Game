@@ -18,7 +18,7 @@ public class ParryHitbox : MonoBehaviour
         if (player.currentState is PlayerParryState && player.gameObject.layer == LayerMask.NameToLayer("Invulnerable") &&
         other.CompareTag("ParryableAttack"))
         {
-            Debug.Log("Parry Successful!");
+            //Debug.Log("Parry Successful!");
             player.energyManager.ChargeEnergy(player.parryChargeAmt);
         }
     }

@@ -10,10 +10,15 @@ public class KingMegaSlamState : KingState
         // Perform attack
         king.rb.linearVelocity = new Vector2(0, king.rb.linearVelocity.y);
         king.isAttacking = true;
+
         king.StartCoroutine(PerformMegaSlam());
     }
     private IEnumerator PerformMegaSlam()
     {
+        // Attempt Teleport
+        yield return king.enemyTeleporter.TryTeleport(4f, king.teleportProbability); //Teleport distance and probability of teleporting
+        king.Flip();
+
         king.nonParryWarning.SetActive(true);
         king.animator.SetTrigger("MegaSlam");
 
