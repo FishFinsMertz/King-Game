@@ -1,5 +1,4 @@
 using System.Collections;
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class KingSword : PooledObjects
@@ -14,7 +13,9 @@ public class KingSword : PooledObjects
     [Header("Misc")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private GameObject projectileHitbox; 
+    [SerializeField] private GameObject projectileHitbox;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private float fadeInDuration = 0.15f;
 
     // Private and Hidden Variables
     private ObjPool pool;
@@ -35,6 +36,14 @@ public class KingSword : PooledObjects
     {
         if (projectileHitbox != null)
             projectileHitbox.SetActive(true);
+
+        if (spriteRenderer != null)
+        {
+            Color c = spriteRenderer.color;
+            c.a = 0f;
+            spriteRenderer.color = c;
+            StartCoroutine(FadeIn());
+        }
 
         StartCoroutine(Launch());
     }
@@ -64,5 +73,22 @@ public class KingSword : PooledObjects
         yield return new WaitForSeconds(LandingTime);
 
         pool.RecycleObject(gameObject);
+    }
+
+    private IEnumerator FadeIn()
+    {
+        float time = 0f;
+        Color color = spriteRenderer.color;
+
+        while (time < fadeInDuration)
+        {
+            float alpha = Mathf.Lerp(0f, 1f, time / fadeInDuration);
+            spriteRenderer.color = new Color(color.r, color.g, color.b, alpha);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure final alpha is 1
+        spriteRenderer.color = new Color(color.r, color.g, color.b, 1f);
     }
 }

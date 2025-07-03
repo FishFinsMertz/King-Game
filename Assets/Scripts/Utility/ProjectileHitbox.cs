@@ -6,7 +6,19 @@ public class ProjectileHitbox : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private Vector2 hitDirection;
     [SerializeField] private float knockbackForce;
+
+    private CameraController cameraController;
     
+    private void Start()
+    {
+        cameraController = FindAnyObjectByType<CameraController>();
+
+        if (cameraController == null)
+        {
+            Debug.LogWarning("CameraController not found in scene.");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -14,6 +26,7 @@ public class ProjectileHitbox : MonoBehaviour
             PlayerHealthManager playerHealth = other.GetComponent<PlayerHealthManager>();
 
             playerHealth.TakeDamage(damage, hitDirection, knockbackForce);
+            cameraController.StartShake(CameraController.ShakeLevel.light);
         }
     }
 }
