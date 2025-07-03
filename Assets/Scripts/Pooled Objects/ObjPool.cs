@@ -74,7 +74,8 @@ public class ObjPool : MonoBehaviour
                 Debug.LogWarning("Failed to spawn object: pool exhausted");
             }
         }
-
+        */
+        /*
         // Recycle one active object when pressing Y
         if (Input.GetKeyDown(KeyCode.Y))
         {

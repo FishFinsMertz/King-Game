@@ -16,6 +16,7 @@ public class KingSword : PooledObjects
     [SerializeField] private GameObject projectileHitbox;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float fadeInDuration = 0.15f;
+    [SerializeField] private GameObject spawnVFXPrefab;
 
     // Private and Hidden Variables
     private ObjPool pool;
@@ -34,6 +35,7 @@ public class KingSword : PooledObjects
 
     private void OnEnable()
     {
+
         if (projectileHitbox != null)
             projectileHitbox.SetActive(true);
 
@@ -77,9 +79,17 @@ public class KingSword : PooledObjects
 
     private IEnumerator FadeIn()
     {
+        // Spawn VFX as a detached object in the scene
+        GameObject vfxInstance = Instantiate(spawnVFXPrefab, transform.position, Quaternion.identity);
+        ParticleSystem ps = vfxInstance.GetComponent<ParticleSystem>();
+        if (ps != null)
+        {
+            ps.Play();
+            Destroy(vfxInstance, ps.main.duration + ps.main.startLifetime.constant); // clean up
+    }
+
         float time = 0f;
         Color color = spriteRenderer.color;
-
         while (time < fadeInDuration)
         {
             float alpha = Mathf.Lerp(0f, 1f, time / fadeInDuration);
