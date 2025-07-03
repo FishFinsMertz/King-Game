@@ -17,6 +17,7 @@ public class KingSword : PooledObjects
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float fadeInDuration = 0.15f;
     [SerializeField] private GameObject spawnVFXPrefab;
+    [SerializeField] private Animator animator;
 
     // Private and Hidden Variables
     private ObjPool pool;
@@ -66,6 +67,9 @@ public class KingSword : PooledObjects
 
         // Wait until grounded
         yield return new WaitUntil(() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer));
+
+        // Land
+        animator.SetTrigger("Land");
 
         // Disable the hitbox when landed
         if (projectileHitbox != null)
