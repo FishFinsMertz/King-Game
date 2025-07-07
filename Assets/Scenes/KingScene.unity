@@ -2550,7 +2550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: megaSlamProbability
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: teleportProbability
@@ -2558,7 +2558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: flyStrikeProbability
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordBarrageCoolDown
@@ -2574,7 +2574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordBarrageProbability
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordBarrageIntervalOffset

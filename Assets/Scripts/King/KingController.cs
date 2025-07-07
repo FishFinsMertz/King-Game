@@ -254,7 +254,7 @@ public class KingController : MonoBehaviour
     {
         if (currentProbability > atkProbability)
         {
-            Debug.Log(currentProbability);
+            //Debug.Log(currentProbability);
             return false;
         }
         return true;
