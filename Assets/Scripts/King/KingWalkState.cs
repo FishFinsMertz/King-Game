@@ -29,24 +29,25 @@ public class KingWalkState : KingState
             king.ChangeState(new KingIdleState(king));
         }
 
-        else if (king.GetPlayerDistance() <= king.closeRange && king.IsPlayerInFront() && !king.isAttacking)
+        else if (king.CompareAtkProbability(king.thrustProbability) && king.GetPlayerDistance() <= king.closeRange
+        && king.IsPlayerInFront() && !king.isAttacking)
         {
             king.ChangeState(new KingThrustState(king));
         }
 
-        else if (king.canMegaSlam && !king.isAttacking && king.GetPlayerDistance() > king.closeRange &&
+        else if (king.CompareAtkProbability(king.megaSlamProbability) && king.canMegaSlam && !king.isAttacking && king.GetPlayerDistance() > king.closeRange &&
         king.GetPlayerDistance() <= king.midRange && king.IsPlayerInFront())
         {
             king.ChangeState(new KingMegaSlamState(king));
         }
     
-        else if (king.canFlyStrike && !king.isAttacking && king.GetPlayerDistance() > king.midRange &&
+        else if (king.CompareAtkProbability(king.flyStrikeProbability) && king.canFlyStrike && !king.isAttacking && king.GetPlayerDistance() > king.midRange &&
         king.GetPlayerDistance() <= king.longRange)
         {
             king.ChangeState(new KingFlyStrikeState(king));
         }
 
-        else if (king.canSwordBarrage && !king.isAttacking && king.GetPlayerDistance() > king.midRange &&
+        else if (king.CompareAtkProbability(king.swordBarrageProbability) && king.canSwordBarrage && !king.isAttacking && king.GetPlayerDistance() > king.midRange &&
         king.GetPlayerDistance() <= king.longRange)
         {
             king.ChangeState(new KingSwordBarrage(king));

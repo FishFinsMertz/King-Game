@@ -27,6 +27,13 @@ public class KingController : MonoBehaviour
     public ObjPool swordPool;
     public EnemyTeleporter enemyTeleporter;
 
+    [Header("State Transition Probabilities")]
+    public float probRefreshRate;
+    public float thrustProbability;
+    public float megaSlamProbability;
+    public float flyStrikeProbability;
+    public float swordBarrageProbability;
+
     [Header("Attack Stats")]
     // Thrust
     public float thrustChargeTime;
@@ -70,6 +77,7 @@ public class KingController : MonoBehaviour
     [HideInInspector] public CameraController cameraController;
     [HideInInspector] public bool isAttacking;
     private float lastSpawnX = float.NaN; // Track last spawned x, initialize as NaN so first spawn always allowed
+    private float currentProbability = 0;
 
     // Attack cooldowns
     [HideInInspector] public bool canMegaSlam = true;
@@ -83,6 +91,7 @@ public class KingController : MonoBehaviour
         cameraController = FindAnyObjectByType<CameraController>();
         nonParryWarning.SetActive(false);
 
+        StartCoroutine(CalculateAtkProbability());
         ChangeState(new KingIdleState(this));
     }
 
@@ -229,6 +238,26 @@ public class KingController : MonoBehaviour
         float y = Random.Range(center.y - extents.y, center.y + extents.y);
 
         return new Vector2(x, y);
+    }
+    // Attack Probability
+    private IEnumerator CalculateAtkProbability()
+    {
+        while (true)
+        {
+            currentProbability = Random.Range(0f, 1f);
+            //Debug.Log(currentProbability);
+            yield return new WaitForSeconds(probRefreshRate);
+        }
+    }
+
+    public bool CompareAtkProbability(float atkProbability)
+    {
+        if (currentProbability > atkProbability)
+        {
+            Debug.Log(currentProbability);
+            return false;
+        }
+        return true;
     }
 
     // Attack cooldowns
