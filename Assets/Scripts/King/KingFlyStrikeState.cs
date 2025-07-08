@@ -19,9 +19,9 @@ public class KingFlyStrikeState : KingState
 
     private IEnumerator FlyStrike()
     {
-        // Animation
-
         // Phase 1: Rise into the air
+        king.animator.SetTrigger("Hover");
+
         Vector2 targetHoverPosition = new Vector2(king.transform.position.x, king.transform.position.y + king.flyHeight);
 
         // Turn off some physics stuff
@@ -46,7 +46,7 @@ public class KingFlyStrikeState : KingState
 
         // Wait until boss lands
         yield return new WaitUntil(() => king.IsGrounded());
-
+        king.animator.SetTrigger("Land");
         // Slam landed animation
 
         // Enable hitbox
