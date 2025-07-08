@@ -400,9 +400,21 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
+      propertyPath: atkCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
       propertyPath: hitStop
       value: 
       objectReference: {fileID: 935750595}
+    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
+      propertyPath: parryCost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
+      propertyPath: shootCost
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
       propertyPath: parryChargeTime
       value: 0.1
@@ -2488,7 +2500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6775431734618933077, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: poolSizeCap
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6775431734618933077, guid: 7e4851844c302244ca0043fa6d6ef63f, type: 3}
       propertyPath: spawnedPrefab
@@ -2542,11 +2554,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: thrustProbability
-      value: 0.9
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordBarrageAmount
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: megaSlamProbability
@@ -2562,7 +2574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordBarrageCoolDown
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordBarrageInterval

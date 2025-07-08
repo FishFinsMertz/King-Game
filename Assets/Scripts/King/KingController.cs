@@ -34,6 +34,11 @@ public class KingController : MonoBehaviour
     public float flyStrikeProbability;
     public float swordBarrageProbability;
 
+    [Header("Attack Cool Downs")]
+    public float megaSlamCoolDown;
+    public float flyStrikeCoolDown;
+    public float swordBarrageCoolDown;
+
     [Header("Attack Stats")]
     // Thrust
     public float thrustChargeTime;
@@ -45,13 +50,11 @@ public class KingController : MonoBehaviour
     public float megaSlamDuration;
     public float megaSlamDmg;
     public float megaSlamFreezeDuration;
-    public float megaSlamCoolDown;
     // Fly Strike
     public float flyHoverTime;
     public float flyStrikeDuration;
     public float flyStrikeDmg;
     public float flyStrikeFreezeDuration;
-    public float flyStrikeCoolDown;
     public float flyStrikeSpeed;
     public float flyHeight;
     // Sword Barrage
@@ -59,7 +62,6 @@ public class KingController : MonoBehaviour
     public float swordBarrageInterval;
     public float swordBarrageIntervalOffset;
     public float swordBarrageChargeTime;
-    public float swordBarrageCoolDown;
 
     [Header("Misc")]
     public GameObject nonParryWarning;
