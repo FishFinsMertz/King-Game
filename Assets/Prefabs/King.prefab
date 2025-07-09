@@ -78,6 +78,84 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &271395144945721734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8647878835640313641}
+  - component: {fileID: 8847016501270045762}
+  m_Layer: 7
+  m_Name: Rush1HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8647878835640313641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271395144945721734}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7403255401186922510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &8847016501270045762
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271395144945721734}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.38, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.1, y: 5.23}
+  m_EdgeRadius: 0
 --- !u!1 &1108526216210646901
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +486,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6021597347988347994}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -446,6 +524,84 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &6228684872896573123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4494001038819298149}
+  - component: {fileID: 4246130257010693775}
+  m_Layer: 0
+  m_Name: Rush2HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4494001038819298149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228684872896573123}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7194087, y: 2.682084, z: -0.03515591}
+  m_LocalScale: {x: 1.6949153, y: 1.6949153, z: 1.6949153}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7403255401186922510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4246130257010693775
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228684872896573123}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 2.94, y: -1.28}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 5.28, y: 3.78}
   m_EdgeRadius: 0
 --- !u!1 &6646710558630162832
 GameObject:
@@ -515,6 +671,8 @@ Transform:
   - {fileID: 3185421674170010094}
   - {fileID: 2847693106077128660}
   - {fileID: 366772834724573671}
+  - {fileID: 8647878835640313641}
+  - {fileID: 4494001038819298149}
   - {fileID: 8425695460245440660}
   - {fileID: 7579789788583870141}
   - {fileID: 245482628232859131}
@@ -613,12 +771,26 @@ MonoBehaviour:
   longRange: 15
   chaseSpeed: 3
   ascentSpeed: 30
+  rushSpeed: 0
+  teleportProbability: 0
   thrustHitbox: {fileID: 1995710220651999243}
   megaSlamHitbox: {fileID: 1399376537427456824}
   flyStrikeHitbox: {fileID: 8419726855151159162}
+  rush1Hitbox: {fileID: 8847016501270045762}
+  rush2Hitbox: {fileID: 4246130257010693775}
   swordSpawnArea: {fileID: 0}
   swordPool: {fileID: 0}
   enemyTeleporter: {fileID: 67175586500758717}
+  probRefreshRate: 0
+  thrustProbability: 0
+  megaSlamProbability: 0
+  flyStrikeProbability: 0
+  swordBarrageProbability: 0
+  rushProbability: 0
+  megaSlamCoolDown: 5
+  flyStrikeCoolDown: 10
+  swordBarrageCoolDown: 0
+  rushCoolDown: 0
   thrustChargeTime: 0.5
   thrustDuration: 1.15
   thrustDmg: 30
@@ -627,19 +799,24 @@ MonoBehaviour:
   megaSlamDuration: 0.6
   megaSlamDmg: 45
   megaSlamFreezeDuration: 0.125
-  megaSlamCoolDown: 5
   flyHoverTime: 1
   flyStrikeDuration: 1
   flyStrikeDmg: 55
   flyStrikeFreezeDuration: 0.125
-  flyStrikeCoolDown: 10
   flyStrikeSpeed: 40
   flyHeight: 5
   swordBarrageAmount: 0
   swordBarrageInterval: 0
   swordBarrageIntervalOffset: 0
   swordBarrageChargeTime: 0
-  swordBarrageCoolDown: 0
+  rushChargeTime: 0
+  rushSlashChargeTime: 0
+  rushSlashDuration: 0
+  rushDmg: 0
+  rushSlashDmg: 0
+  rushFreezeDuration: 0
+  rushSlashFreezeDuration: 0
+  rushDistance: 0
   nonParryWarning: {fileID: 2237481433777694426}
   rb: {fileID: 0}
   groundCheck: {fileID: 8425695460245440660}
@@ -653,6 +830,7 @@ MonoBehaviour:
   canMegaSlam: 1
   canFlyStrike: 1
   canSwordBarrage: 1
+  canRush: 1
 --- !u!114 &5541223419101622609
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,12 +17,15 @@ public class KingController : MonoBehaviour
     [Header("Movement")]
     public float chaseSpeed;
     public float ascentSpeed;
+    public float rushSpeed;
     public float teleportProbability; // UPDATE WHEN WE MAKE A "PHASE 2"
 
     [Header("Hitboxes & Utility")]
     public Collider2D thrustHitbox;
     public Collider2D megaSlamHitbox;
     public Collider2D flyStrikeHitbox;
+    public BoxCollider2D rush1Hitbox;
+    public BoxCollider2D rush2Hitbox;
     public BoxCollider2D swordSpawnArea;
     public ObjPool swordPool;
     public EnemyTeleporter enemyTeleporter;
@@ -33,11 +36,13 @@ public class KingController : MonoBehaviour
     public float megaSlamProbability;
     public float flyStrikeProbability;
     public float swordBarrageProbability;
+    public float rushProbability;
 
     [Header("Attack Cool Downs")]
     public float megaSlamCoolDown;
     public float flyStrikeCoolDown;
     public float swordBarrageCoolDown;
+    public float rushCoolDown;
 
     [Header("Attack Stats")]
     // Thrust
@@ -62,6 +67,15 @@ public class KingController : MonoBehaviour
     public float swordBarrageInterval;
     public float swordBarrageIntervalOffset;
     public float swordBarrageChargeTime;
+    // Rush Attack
+    public float rushChargeTime;
+    public float rushSlashChargeTime;
+    public float rushSlashDuration;
+    public float rushDmg;
+    public float rushSlashDmg;
+    public float rushFreezeDuration;
+    public float rushSlashFreezeDuration;
+    public float rushDistance;
 
     [Header("Misc")]
     public GameObject nonParryWarning;
@@ -85,6 +99,7 @@ public class KingController : MonoBehaviour
     [HideInInspector] public bool canMegaSlam = true;
     [HideInInspector] public bool canFlyStrike = true;
     [HideInInspector] public bool canSwordBarrage = true;
+    [HideInInspector] public bool canRush = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -107,7 +122,7 @@ public class KingController : MonoBehaviour
         currentState.Update();
 
         if (Input.GetKeyDown(KeyCode.V))
-        { 
+        {
             enemyTeleporter.TryTeleport(3f, 0.5f); //Teleport distance and probability of teleporting
         }
 
@@ -282,5 +297,12 @@ public class KingController : MonoBehaviour
         canSwordBarrage = false;
         yield return new WaitForSeconds(swordBarrageCoolDown);
         canSwordBarrage = true;
+    }
+    
+    public IEnumerator StartRushCoolDown()
+    {
+        canRush = false;
+        yield return new WaitForSeconds(swordBarrageCoolDown);
+        canRush = true;
     }
 }
