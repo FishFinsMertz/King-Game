@@ -8,6 +8,8 @@ public class EnemyTeleporter : MonoBehaviour
     [SerializeField] private float checkRadius = 0.5f;
     [SerializeField] private float fadeDuration = 0.1f;
 
+    [SerializeField] private float teleportBufferDistance;
+
     private Transform ownerTransform;
     private GameObject player;
     [SerializeField] private SpriteRenderer sprite;
@@ -25,7 +27,8 @@ public class EnemyTeleporter : MonoBehaviour
 
     public IEnumerator TryTeleport(float distance, float probability = 1f)
     {
-        if (Random.value <= Mathf.Clamp01(probability))
+        float distanceFromPlayer = Vector2.Distance (this.transform.position, player.transform.position);
+        if (Random.value <= Mathf.Clamp01(probability) && distanceFromPlayer >= teleportBufferDistance)
         {
             yield return TeleportWithFade(distance);
         }

@@ -2524,6 +2524,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 67175586500758717, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: teleportBufferDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 909282270638679957, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: m_Offset.y
       value: 0.09
