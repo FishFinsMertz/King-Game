@@ -15,7 +15,9 @@ public class KingSwordBarrage : KingState
 
     private IEnumerator BarrageRoutine()
     {
+        king.nonParryWarning.SetActive(true);
         yield return new WaitForSeconds(king.swordBarrageChargeTime);
+        king.nonParryWarning.SetActive(false);
         //Debug.Log("Barrage incoming");
         king.StartCoroutine(king.PerformSwordBarrage());
         king.StartCoroutine(king.StartSwordbarrageCoolDown());

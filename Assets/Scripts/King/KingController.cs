@@ -26,6 +26,7 @@ public class KingController : MonoBehaviour
     public Collider2D flyStrikeHitbox;
     public BoxCollider2D rush1Hitbox;
     public BoxCollider2D rush2Hitbox;
+    public BoxCollider2D spikeHitbox;
     public BoxCollider2D swordSpawnArea;
     public ObjPool swordPool;
     public EnemyTeleporter enemyTeleporter;
@@ -37,12 +38,14 @@ public class KingController : MonoBehaviour
     public float flyStrikeProbability;
     public float swordBarrageProbability;
     public float rushProbability;
+    public float spikeProbability;
 
     [Header("Attack Cool Downs")]
     public float megaSlamCoolDown;
     public float flyStrikeCoolDown;
     public float swordBarrageCoolDown;
     public float rushCoolDown;
+    public float spikeCoolDown;
 
     [Header("Attack Stats")]
     // Thrust
@@ -76,6 +79,11 @@ public class KingController : MonoBehaviour
     public float rushFreezeDuration;
     public float rushSlashFreezeDuration;
     public float rushDistance;
+    // Spike Attack
+    public float spikeChargeTime;
+    public float spikeDuration;
+    public float spikeDmg;
+    public float spikeFreezeDuration;
 
     [Header("Misc")]
     public GameObject nonParryWarning;
@@ -100,6 +108,7 @@ public class KingController : MonoBehaviour
     [HideInInspector] public bool canFlyStrike = true;
     [HideInInspector] public bool canSwordBarrage = true;
     [HideInInspector] public bool canRush = true;
+    [HideInInspector] public bool canSpike = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -298,11 +307,18 @@ public class KingController : MonoBehaviour
         yield return new WaitForSeconds(swordBarrageCoolDown);
         canSwordBarrage = true;
     }
-    
+
     public IEnumerator StartRushCoolDown()
     {
         canRush = false;
         yield return new WaitForSeconds(swordBarrageCoolDown);
         canRush = true;
+    }
+
+    public IEnumerator StartSpikeCoolDown()
+    { 
+        canSpike = false;
+        yield return new WaitForSeconds(spikeCoolDown);
+        canSpike = true;
     }
 }

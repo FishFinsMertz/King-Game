@@ -34,6 +34,12 @@ public class KingWalkState : KingState
         {
             king.ChangeState(new KingThrustState(king));
         }
+        
+        else if (king.CompareAtkProbability(king.spikeProbability) && king.canSpike && king.GetPlayerDistance() <= king.closeRange
+        && !king.IsPlayerInFront() && !king.isAttacking)
+        {
+            king.ChangeState(new KingSpikeState(king));
+        }
 
         else if (king.CompareAtkProbability(king.megaSlamProbability) && king.canMegaSlam && !king.isAttacking && king.GetPlayerDistance() > king.closeRange &&
         king.GetPlayerDistance() <= king.midRange && king.IsPlayerInFront())
@@ -46,7 +52,7 @@ public class KingWalkState : KingState
         {
             king.ChangeState(new KingRushState(king));
         }
-    
+
         else if (king.CompareAtkProbability(king.flyStrikeProbability) && king.canFlyStrike && !king.isAttacking && king.GetPlayerDistance() > king.midRange &&
         king.GetPlayerDistance() <= king.longRange)
         {

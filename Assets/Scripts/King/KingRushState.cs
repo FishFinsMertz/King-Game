@@ -41,6 +41,7 @@ public class KingRushState : KingState
 
             if (!hasHit)
             {
+                king.Flip();
                 int rushResult = king.DealDamageToPlayer(king.rushDmg, xDirection, 8f, king.rush1Hitbox);
                 if (rushResult == 0)
                 {

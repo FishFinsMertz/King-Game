@@ -2549,116 +2549,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 935750595}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushDmg
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordPool
       value: 
       objectReference: {fileID: 1013981717}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: ascentSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: flyHoverTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushCoolDown
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushDistance
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: rushDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushSlashDmg
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushChargeTime
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordSpawnArea
       value: 
       objectReference: {fileID: 1355649619760931805}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: probRefreshRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushProbability
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: flyStrikeCoolDown
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushSlashDuration
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: thrustProbability
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushFreezeDuration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: swordBarrageAmount
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: megaSlamProbability
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushSlashChargeTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: teleportProbability
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: flyStrikeProbability
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: swordBarrageCoolDown
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: swordBarrageInterval
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: swordBarrageChargeTime
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushSlashFreezeDuration
-      value: 0.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: swordBarrageProbability
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: swordBarrageIntervalOffset
-      value: 0.3
+    - target: {fileID: 4229906182413861609, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5541223419101622609, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: enemyHealth

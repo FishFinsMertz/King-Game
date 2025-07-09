@@ -673,6 +673,7 @@ Transform:
   - {fileID: 366772834724573671}
   - {fileID: 8647878835640313641}
   - {fileID: 4494001038819298149}
+  - {fileID: 5143239010000389082}
   - {fileID: 8425695460245440660}
   - {fileID: 7579789788583870141}
   - {fileID: 245482628232859131}
@@ -770,27 +771,30 @@ MonoBehaviour:
   midRange: 6
   longRange: 15
   chaseSpeed: 3
-  ascentSpeed: 30
-  rushSpeed: 0
-  teleportProbability: 0
+  ascentSpeed: 20
+  rushSpeed: 50
+  teleportProbability: 0.1
   thrustHitbox: {fileID: 1995710220651999243}
   megaSlamHitbox: {fileID: 1399376537427456824}
   flyStrikeHitbox: {fileID: 8419726855151159162}
   rush1Hitbox: {fileID: 8847016501270045762}
   rush2Hitbox: {fileID: 4246130257010693775}
+  spikeHitbox: {fileID: 4229906182413861609}
   swordSpawnArea: {fileID: 0}
   swordPool: {fileID: 0}
   enemyTeleporter: {fileID: 67175586500758717}
-  probRefreshRate: 0
-  thrustProbability: 0
-  megaSlamProbability: 0
-  flyStrikeProbability: 0
-  swordBarrageProbability: 0
-  rushProbability: 0
+  probRefreshRate: 1
+  thrustProbability: 1
+  megaSlamProbability: 0.5
+  flyStrikeProbability: 0.25
+  swordBarrageProbability: 0.4
+  rushProbability: 0.2
+  spikeProbability: 0.45
   megaSlamCoolDown: 5
-  flyStrikeCoolDown: 10
-  swordBarrageCoolDown: 0
-  rushCoolDown: 0
+  flyStrikeCoolDown: 30
+  swordBarrageCoolDown: 65
+  rushCoolDown: 25
+  spikeCoolDown: 10
   thrustChargeTime: 0.5
   thrustDuration: 1.15
   thrustDmg: 30
@@ -799,24 +803,28 @@ MonoBehaviour:
   megaSlamDuration: 0.6
   megaSlamDmg: 45
   megaSlamFreezeDuration: 0.125
-  flyHoverTime: 1
+  flyHoverTime: 0.1
   flyStrikeDuration: 1
   flyStrikeDmg: 55
   flyStrikeFreezeDuration: 0.125
   flyStrikeSpeed: 40
   flyHeight: 5
-  swordBarrageAmount: 0
-  swordBarrageInterval: 0
-  swordBarrageIntervalOffset: 0
-  swordBarrageChargeTime: 0
-  rushChargeTime: 0
-  rushSlashChargeTime: 0
-  rushSlashDuration: 0
-  rushDmg: 0
-  rushSlashDmg: 0
-  rushFreezeDuration: 0
-  rushSlashFreezeDuration: 0
-  rushDistance: 0
+  swordBarrageAmount: 50
+  swordBarrageInterval: 0.3
+  swordBarrageIntervalOffset: 0.3
+  swordBarrageChargeTime: 1.5
+  rushChargeTime: 1
+  rushSlashChargeTime: 1
+  rushSlashDuration: 1.25
+  rushDmg: 25
+  rushSlashDmg: 35
+  rushFreezeDuration: 0.1
+  rushSlashFreezeDuration: 0.125
+  rushDistance: 7
+  spikeChargeTime: 0.3
+  spikeDuration: 0.75
+  spikeDmg: 30
+  spikeFreezeDuration: 0.1
   nonParryWarning: {fileID: 2237481433777694426}
   rb: {fileID: 0}
   groundCheck: {fileID: 8425695460245440660}
@@ -831,6 +839,7 @@ MonoBehaviour:
   canFlyStrike: 1
   canSwordBarrage: 1
   canRush: 1
+  canSpike: 1
 --- !u!114 &5541223419101622609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,6 +859,84 @@ MonoBehaviour:
   enemy: {fileID: 7319855750297570190}
   isBoss: 1
   healthBarOffset: {x: 0, y: 2, z: 0}
+--- !u!1 &8103960411065113033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5143239010000389082}
+  - component: {fileID: 4229906182413861609}
+  m_Layer: 10
+  m_Name: SpikeHitBox
+  m_TagString: ParryableAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5143239010000389082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103960411065113033}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7403255401186922510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4229906182413861609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103960411065113033}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -4.83, y: 0.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 8.8, y: 6.49}
+  m_EdgeRadius: 0
 --- !u!1001 &2575710535104273419
 PrefabInstance:
   m_ObjectHideFlags: 0
