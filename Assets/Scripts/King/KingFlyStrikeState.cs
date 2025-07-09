@@ -41,9 +41,10 @@ public class KingFlyStrikeState : KingState
         yield return new WaitForSeconds(king.flyHoverTime);
 
         // Phase 2: Lock onto player’s position to slam
+        king.Flip();
         Vector2 slamDirection = (king.player.transform.position - king.transform.position).normalized;
         king.rb.linearVelocity = slamDirection * king.flyStrikeSpeed;
-
+    
         // Wait until boss lands
         yield return new WaitUntil(() => king.IsGrounded());
         king.animator.SetTrigger("Land");
@@ -72,7 +73,7 @@ public class KingFlyStrikeState : KingState
 
     public override void Update()
     {
-        king.Flip();
+        
     }
 
     public override void Exit()
