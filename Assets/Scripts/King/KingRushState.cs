@@ -15,9 +15,11 @@ public class KingRushState : KingState
 
     private IEnumerator StartRush()
     {
+        king.animator.SetTrigger("Rush");
+
         yield return new WaitForSeconds(king.rushChargeTime);
 
-        // Attempt Teleport
+        //Attempt Teleport
         //yield return king.enemyTeleporter.TryTeleport(5.5f, king.teleportProbability);
         //king.Flip();
 
@@ -60,6 +62,10 @@ public class KingRushState : KingState
         king.rush1Hitbox.enabled = false;
 
         king.nonParryWarning.SetActive(true);
+
+        yield return new WaitForSeconds(king.rushDuration);
+        
+        king.animator.SetTrigger("RushSlash");
 
         yield return new WaitForSeconds(king.rushSlashChargeTime);
 

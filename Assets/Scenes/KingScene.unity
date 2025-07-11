@@ -2553,10 +2553,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1013981717}
     - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
-      propertyPath: rushDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1297108872617302399, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: swordSpawnArea
       value: 
       objectReference: {fileID: 1355649619760931805}

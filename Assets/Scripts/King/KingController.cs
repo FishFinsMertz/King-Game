@@ -72,6 +72,7 @@ public class KingController : MonoBehaviour
     public float swordBarrageChargeTime;
     // Rush Attack
     public float rushChargeTime;
+    public float rushDuration;
     public float rushSlashChargeTime;
     public float rushSlashDuration;
     public float rushDmg;
