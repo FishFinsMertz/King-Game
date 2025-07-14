@@ -19,10 +19,6 @@ public class KingRushState : KingState
 
         yield return new WaitForSeconds(king.rushChargeTime);
 
-        //Attempt Teleport
-        //yield return king.enemyTeleporter.TryTeleport(5.5f, king.teleportProbability);
-        //king.Flip();
-
         king.rush1Hitbox.enabled = true;
 
         Vector2 direction = (king.player.transform.position - king.transform.position).normalized;

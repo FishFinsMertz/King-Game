@@ -2558,7 +2558,11 @@ PrefabInstance:
       objectReference: {fileID: 5494238635006565833, guid: d02f07234efdde946912ccec7fe7f504, type: 3}
     - target: {fileID: 4229906182413861609, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246130257010693775, guid: 0526ed588046c014c88085833ad8b145, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5541223419101622609, guid: 0526ed588046c014c88085833ad8b145, type: 3}
       propertyPath: enemyHealth

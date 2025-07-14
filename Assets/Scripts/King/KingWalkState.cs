@@ -41,7 +41,7 @@ public class KingWalkState : KingState
             king.ChangeState(new KingSpikeState(king));
         }
 
-        else if (king.CompareAtkProbability(king.megaSlamProbability) && king.canMegaSlam && !king.isAttacking && king.GetPlayerDistance() > king.closeRange &&
+        else if (king.CompareAtkProbability(king.megaSlamProbability) && king.canMegaSlam && !king.isAttacking &&
         king.GetPlayerDistance() <= king.midRange && king.IsPlayerInFront())
         {
             king.ChangeState(new KingMegaSlamState(king));
