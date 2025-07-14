@@ -740,7 +740,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.36, y: 0.16}
+  m_Offset: {x: -0.36, y: 0.09}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -783,13 +783,13 @@ MonoBehaviour:
   swordSpawnArea: {fileID: 0}
   swordPool: {fileID: 0}
   enemyTeleporter: {fileID: 67175586500758717}
-  probRefreshRate: 1
+  probRefreshRate: 1.125
   thrustProbability: 1
   megaSlamProbability: 0.5
   flyStrikeProbability: 0.25
   swordBarrageProbability: 0.4
   rushProbability: 0.2
-  spikeProbability: 0.45
+  spikeProbability: 0.5
   megaSlamCoolDown: 5
   flyStrikeCoolDown: 30
   swordBarrageCoolDown: 65
@@ -822,8 +822,8 @@ MonoBehaviour:
   rushFreezeDuration: 0.1
   rushSlashFreezeDuration: 0.125
   rushDistance: 7
-  spikeChargeTime: 0.3
-  spikeDuration: 0.75
+  spikeChargeTime: 0.375
+  spikeDuration: 1
   spikeDmg: 30
   spikeFreezeDuration: 0.1
   nonParryWarning: {fileID: 2237481433777694426}
@@ -926,7 +926,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -4.83, y: 0.55}
+  m_Offset: {x: -5.73, y: 1.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -936,7 +936,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.8, y: 6.49}
+  m_Size: {x: 10.11, y: 8.19}
   m_EdgeRadius: 0
 --- !u!1001 &2575710535104273419
 PrefabInstance:

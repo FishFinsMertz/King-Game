@@ -15,6 +15,7 @@ public class KingSpikeState : KingState
 
     private IEnumerator PerformSpike()
     {
+        king.animator.SetTrigger("Spike");
         yield return new WaitForSeconds(king.spikeChargeTime);
 
         king.spikeHitbox.enabled = true;
@@ -25,8 +26,8 @@ public class KingSpikeState : KingState
         if (success == 0)
         {
             king.hitstop.Freeze(king.spikeFreezeDuration);
-            king.cameraController.StartShake(CameraController.ShakeLevel.light);
         }
+        king.cameraController.StartShake(CameraController.ShakeLevel.light);
 
         yield return new WaitForSeconds(king.spikeDuration);
         king.StartCoroutine(king.StartSpikeCoolDown());
