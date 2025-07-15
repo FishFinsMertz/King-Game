@@ -400,33 +400,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
-      propertyPath: atkCost
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
       propertyPath: hitStop
       value: 
       objectReference: {fileID: 935750595}
     - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
-      propertyPath: parryCost
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
-      propertyPath: shootCost
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
-      propertyPath: parryChargeTime
-      value: 0.1
+      propertyPath: parryDuration
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 119794766}
-    - target: {fileID: 1509406362757066306, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
-      propertyPath: parryInvulnerableTime
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 3509742245245832316, guid: 7339e8c5c2c74314c8fe71ad207e1f41, type: 3}
       propertyPath: mainEnergyBar
       value: 
@@ -1107,7 +1091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sigma, The Archdemon of Gooning
+  m_text: Bob
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1141,7 +1125,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

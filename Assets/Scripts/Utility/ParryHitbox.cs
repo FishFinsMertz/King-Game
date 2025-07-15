@@ -12,10 +12,7 @@ public class ParryHitbox : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Debug.Log("Parrying");
-        //Debug.Log("Current State: " + player.currentState.GetType());
-        //Debug.Log("Player Layer: " + LayerMask.LayerToName(player.gameObject.layer));
-        //Debug.Log("Other Tag: " + other.tag);
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         if (player.currentState is PlayerParryState && player.gameObject.layer == LayerMask.NameToLayer("Invulnerable") &&
         other.CompareTag("ParryableAttack"))
         {

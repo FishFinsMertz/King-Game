@@ -29,6 +29,8 @@ public class PlayerParryState : PlayerState
 
         yield return new WaitForSeconds(player.parryInvulnerableTime);
 
+        yield return new WaitForSeconds(player.parryDuration - player.parryInvulnerableTime);
+
         // Only reset if still in this state
         if (player.currentState == this)
         {

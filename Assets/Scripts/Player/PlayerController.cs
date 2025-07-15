@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     public float critChance;
     public float parryChargeTime;
     public float parryInvulnerableTime;
+    public float parryDuration;
     public float parryCoolDownTime;
     public float parryChargeAmt;
     public float shootChargeTime;
