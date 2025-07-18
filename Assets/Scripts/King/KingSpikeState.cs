@@ -7,6 +7,7 @@ public class KingSpikeState : KingState
 
     public override void Enter()
     {
+        king.canSpike = false;
         king.rb.linearVelocity = new Vector2(0, king.rb.linearVelocity.y);
         king.isAttacking = true;
 

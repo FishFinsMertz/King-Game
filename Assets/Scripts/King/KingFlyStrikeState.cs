@@ -9,6 +9,7 @@ public class KingFlyStrikeState : KingState
     private float originalDrag;
     public override void Enter()
     {
+        king.canFlyStrike = false;
         king.rb.linearVelocity = new Vector2(0, king.rb.linearVelocity.y);
         king.isAttacking = true;
         originalGravity = king.rb.gravityScale;

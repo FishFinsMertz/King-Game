@@ -7,6 +7,7 @@ public class KingRushState : KingState
 
     public override void Enter()
     {
+        king.canRush = false;
         king.rb.linearVelocity = new Vector2(0, king.rb.linearVelocity.y);
         king.isAttacking = true;
 

@@ -8,6 +8,7 @@ public class KingMegaSlamState : KingState
     public override void Enter()
     {
         // Perform attack
+        king.canMegaSlam = false;
         king.rb.linearVelocity = new Vector2(0, king.rb.linearVelocity.y);
         king.isAttacking = true;
 
@@ -36,11 +37,9 @@ public class KingMegaSlamState : KingState
 
         king.cameraController.StartShake(CameraController.ShakeLevel.medium);
 
-
-        king.StartCoroutine(king.StartMegaSlamCoolDown());
-
         yield return new WaitForSeconds(king.megaSlamDuration); // Wait for the attack animation to finish
 
+        king.StartCoroutine(king.StartMegaSlamCoolDown());
         king.nonParryWarning.SetActive(false);
 
         // Change states

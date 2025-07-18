@@ -8,6 +8,7 @@ public class KingSwordBarrage : KingState
 
     public override void Enter()
     {
+        king.canSwordBarrage = false;
         king.animator.SetTrigger("Barrage");
         king.isAttacking = true;
         king.StartCoroutine(BarrageRoutine());

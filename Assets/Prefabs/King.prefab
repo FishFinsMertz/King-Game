@@ -674,6 +674,7 @@ Transform:
   - {fileID: 8647878835640313641}
   - {fileID: 4494001038819298149}
   - {fileID: 5143239010000389082}
+  - {fileID: 1142688398012714665}
   - {fileID: 8425695460245440660}
   - {fileID: 7579789788583870141}
   - {fileID: 245482628232859131}
@@ -780,21 +781,24 @@ MonoBehaviour:
   rush1Hitbox: {fileID: 8847016501270045762}
   rush2Hitbox: {fileID: 4246130257010693775}
   spikeHitbox: {fileID: 4229906182413861609}
+  rumbleHitbox: {fileID: 3814962110266784512}
   swordSpawnArea: {fileID: 0}
   swordPool: {fileID: 0}
   enemyTeleporter: {fileID: 67175586500758717}
   probRefreshRate: 1.125
   thrustProbability: 1
-  megaSlamProbability: 0.5
+  megaSlamProbability: 0.7
   flyStrikeProbability: 0.25
   swordBarrageProbability: 0.4
   rushProbability: 0.2
   spikeProbability: 0.5
+  rumbleProbability: 0.7
   megaSlamCoolDown: 5
   flyStrikeCoolDown: 30
   swordBarrageCoolDown: 65
   rushCoolDown: 25
   spikeCoolDown: 10
+  rumbleCoolDown: 5
   thrustChargeTime: 0.5
   thrustDuration: 1.15
   thrustDmg: 30
@@ -826,6 +830,10 @@ MonoBehaviour:
   spikeDuration: 1
   spikeDmg: 30
   spikeFreezeDuration: 0.1
+  rumbleChargeTime: 1
+  rumbleDuration: 1
+  rumbleDmg: 40
+  rumbleFreezeDuration: 0.125
   nonParryWarning: {fileID: 2237481433777694426}
   rb: {fileID: 0}
   groundCheck: {fileID: 8425695460245440660}
@@ -841,6 +849,7 @@ MonoBehaviour:
   canSwordBarrage: 1
   canRush: 1
   canSpike: 1
+  canRumble: 1
 --- !u!114 &5541223419101622609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,6 +869,84 @@ MonoBehaviour:
   enemy: {fileID: 7319855750297570190}
   isBoss: 1
   healthBarOffset: {x: 0, y: 2, z: 0}
+--- !u!1 &7415231447065295919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142688398012714665}
+  - component: {fileID: 3814962110266784512}
+  m_Layer: 7
+  m_Name: RumbleHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1142688398012714665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7415231447065295919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7403255401186922510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3814962110266784512
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7415231447065295919}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.13, y: -1.2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 15.66, y: 3}
+  m_EdgeRadius: 0
 --- !u!1 &8103960411065113033
 GameObject:
   m_ObjectHideFlags: 0

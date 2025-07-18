@@ -27,6 +27,7 @@ public class KingController : MonoBehaviour
     public BoxCollider2D rush1Hitbox;
     public BoxCollider2D rush2Hitbox;
     public BoxCollider2D spikeHitbox;
+    public BoxCollider2D rumbleHitbox;
     public BoxCollider2D swordSpawnArea;
     public ObjPool swordPool;
     public EnemyTeleporter enemyTeleporter;
@@ -39,6 +40,7 @@ public class KingController : MonoBehaviour
     public float swordBarrageProbability;
     public float rushProbability;
     public float spikeProbability;
+    public float rumbleProbability;
 
     [Header("Attack Cool Downs")]
     public float megaSlamCoolDown;
@@ -46,6 +48,7 @@ public class KingController : MonoBehaviour
     public float swordBarrageCoolDown;
     public float rushCoolDown;
     public float spikeCoolDown;
+    public float rumbleCoolDown;
 
     [Header("Attack Stats")]
     // Thrust
@@ -85,6 +88,11 @@ public class KingController : MonoBehaviour
     public float spikeDuration;
     public float spikeDmg;
     public float spikeFreezeDuration;
+    // Rumble
+    public float rumbleChargeTime;
+    public float rumbleDuration;
+    public float rumbleDmg;
+    public float rumbleFreezeDuration;
 
     [Header("Misc")]
     public GameObject nonParryWarning;
@@ -110,6 +118,7 @@ public class KingController : MonoBehaviour
     [HideInInspector] public bool canSwordBarrage = true;
     [HideInInspector] public bool canRush = true;
     [HideInInspector] public bool canSpike = true;
+    [HideInInspector] public bool canRumble = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -317,9 +326,16 @@ public class KingController : MonoBehaviour
     }
 
     public IEnumerator StartSpikeCoolDown()
-    { 
+    {
         canSpike = false;
         yield return new WaitForSeconds(spikeCoolDown);
         canSpike = true;
+    }
+    
+    public IEnumerator StartRumbleCoolDown()
+    { 
+        canRumble = false;
+        yield return new WaitForSeconds(rumbleCoolDown);
+        canRumble = true;
     }
 }
