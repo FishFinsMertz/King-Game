@@ -16,6 +16,7 @@ public class KingRumbleState : KingState
     private IEnumerator PerformRumble()
     {
         king.nonParryWarning.SetActive(true);
+        king.animator.SetTrigger("Rumble");
         yield return new WaitForSeconds(king.rumbleChargeTime);
         king.rumbleHitbox.enabled = true;
 
@@ -29,7 +30,7 @@ public class KingRumbleState : KingState
         king.cameraController.StartShake(CameraController.ShakeLevel.medium);
 
         yield return new WaitForSeconds(king.rumbleDuration);
-        king.StartCoroutine(king.StartMegaSlamCoolDown());
+        king.StartCoroutine(king.StartRumbleCoolDown());
         king.nonParryWarning.SetActive(false);
         king.ChangeState(new KingWalkState(king));
     }
