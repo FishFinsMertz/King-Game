@@ -22,7 +22,7 @@ public class TeleporterController : MonoBehaviour
     void Update()
     {
         if (isPlayerNear && Input.GetKeyDown(KeyCode.X)) {
-            SceneManager.LoadScene(sceneToLoad);
+            MySceneManager.Instance.LoadScene(sceneToLoad);
         }
     }
 
