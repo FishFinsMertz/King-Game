@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public HitStop hitStop;
     public ParticleSystem shootVFX;
+    public Animator slashFXAnimator;
 
     void Start()
     {

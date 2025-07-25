@@ -11,6 +11,7 @@ public class PlayerAttackState : PlayerState
     {
         //Animation
         player.animator.SetTrigger("Attack");
+        player.slashFXAnimator.SetTrigger("SlashFX");
 
         player.attackHitbox.enabled = true;
         player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y); // Stop movement
@@ -21,13 +22,12 @@ public class PlayerAttackState : PlayerState
     private IEnumerator PerformAttack()
     {
         yield return new WaitForSeconds(player.atkChargeTime);
-        
         // Stamina cost
         player.staminaManager.DecreaseStamina(player.atkCost);
 
         // Dealing damage
         player.DealDamageToEnemy(player.atkDamage, player.attackHitbox);
-        
+
         yield return new WaitForSeconds(player.atkSpeed);
 
         attackFinished = true;
