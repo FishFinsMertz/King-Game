@@ -128,6 +128,7 @@ MonoBehaviour:
   chargeSpeed: 3
   chargeTime: 0.5
   LandingTime: 0.5
+  maxLifeTime: 5
   groundCheck: {fileID: 3981672161581103954}
   groundLayer:
     serializedVersion: 2

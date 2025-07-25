@@ -9,6 +9,7 @@ public class KingSword : PooledObjects
     public float chargeSpeed;
     public float chargeTime;
     public float LandingTime;
+    public float maxLifeTime;
 
     [Header("Misc")]
     [SerializeField] private Transform groundCheck;
@@ -47,8 +48,15 @@ public class KingSword : PooledObjects
             spriteRenderer.color = c;
             StartCoroutine(FadeIn());
         }
-
+        StartCoroutine(FailSafeRecycle());
         StartCoroutine(Launch());
+    }
+
+    private IEnumerator FailSafeRecycle() 
+    {
+        yield return new WaitForSeconds(maxLifeTime);
+        Debug.Log("KingSword fail-safe triggered: Recycling due to timeout.");
+        pool.RecycleObject(gameObject);
     }
 
     private IEnumerator Launch()
