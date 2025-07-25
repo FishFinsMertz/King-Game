@@ -773,8 +773,8 @@ MonoBehaviour:
   longRange: 15
   chaseSpeed: 3
   ascentSpeed: 20
-  rushSpeed: 50
-  teleportProbability: 0.1
+  rushSpeed: 80
+  teleportProbability: 0.5
   thrustHitbox: {fileID: 1995710220651999243}
   megaSlamHitbox: {fileID: 1399376537427456824}
   flyStrikeHitbox: {fileID: 8419726855151159162}
@@ -790,7 +790,7 @@ MonoBehaviour:
   megaSlamProbability: 0.7
   flyStrikeProbability: 0.25
   swordBarrageProbability: 0.4
-  rushProbability: 0.2
+  rushProbability: 0.25
   spikeProbability: 0.5
   rumbleProbability: 0.7
   megaSlamCoolDown: 5
