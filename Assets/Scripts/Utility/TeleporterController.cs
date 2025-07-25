@@ -7,7 +7,8 @@ public class TeleporterController : MonoBehaviour
     [SerializeField] string sceneToLoad;
      public TextMeshProUGUI promptText;
      private bool isPlayerNear = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool isLoading = false; // Flag to prevent multiple loads
+
     void Start()
     {
         if (promptText != null) {
@@ -21,7 +22,9 @@ public class TeleporterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.X)) {
+        if (isPlayerNear && !isLoading && Input.GetKeyDown(KeyCode.X))
+        {
+            isLoading = true;
             MySceneManager.Instance.LoadScene(sceneToLoad);
         }
     }

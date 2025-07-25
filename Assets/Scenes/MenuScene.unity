@@ -818,6 +818,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6926981635098774442, guid: 6237112d240cf5941a4b41306efd9ee9, type: 3}
+      propertyPath: fadeDuration
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926981635098774442, guid: 6237112d240cf5941a4b41306efd9ee9, type: 3}
+      propertyPath: fadePanelPrefab
+      value: 
+      objectReference: {fileID: 8763964185941209736, guid: 5f452f56b79cec344984a0c98e127f88, type: 3}
     - target: {fileID: 7820567665983140351, guid: 6237112d240cf5941a4b41306efd9ee9, type: 3}
       propertyPath: m_Name
       value: MySceneManager

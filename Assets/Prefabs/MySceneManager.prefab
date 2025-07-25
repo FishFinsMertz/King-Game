@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba584c4e21563604dabefd9a7b9b5247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 0}
+  fadeCanvasGroup: {fileID: 3009788230935057659, guid: 5f452f56b79cec344984a0c98e127f88, type: 3}
+  fadeDuration: 1
