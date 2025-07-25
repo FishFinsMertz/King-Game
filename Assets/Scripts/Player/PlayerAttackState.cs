@@ -11,7 +11,6 @@ public class PlayerAttackState : PlayerState
     {
         //Animation
         player.animator.SetTrigger("Attack");
-        player.slashFXAnimator.SetTrigger("SlashFX");
 
         player.attackHitbox.enabled = true;
         player.rb.linearVelocity = new Vector2(0, player.rb.linearVelocity.y); // Stop movement

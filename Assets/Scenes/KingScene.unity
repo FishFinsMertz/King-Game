@@ -785,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 2881629802845824729, guid: 6a868dad1928a184a8e398747a83d8a1, type: 3}
       propertyPath: musicClip
       value: 
-      objectReference: {fileID: 8300000, guid: d8bb9677e77e3424bb67e15504e3e64d, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2881629802845824729, guid: 6a868dad1928a184a8e398747a83d8a1, type: 3}
       propertyPath: stopPrevMusic
       value: 1

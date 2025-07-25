@@ -149,6 +149,8 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy")) 
             {
+                slashFXAnimator.SetTrigger("SlashFX");
+                cameraController.StartShake(CameraController.ShakeLevel.light);
                 if (hitbox.name == "AttackHitbox")
                 {
                     energyManager.ChargeEnergy(atkChargeAmt);

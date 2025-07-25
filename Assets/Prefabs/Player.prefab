@@ -153,7 +153,7 @@ MonoBehaviour:
   canParry: 1
   atkDamage: 20
   atkChargeTime: 0.2
-  atkSpeed: 0.35
+  atkSpeed: 0.4
   atkChargeAmt: 10
   critChance: 0.1
   parryChargeTime: 0.1
