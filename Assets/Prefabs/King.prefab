@@ -794,9 +794,9 @@ MonoBehaviour:
   spikeProbability: 0.5
   rumbleProbability: 0.7
   megaSlamCoolDown: 5
-  flyStrikeCoolDown: 30
+  flyStrikeCoolDown: 20
   swordBarrageCoolDown: 65
-  rushCoolDown: 25
+  rushCoolDown: 20
   spikeCoolDown: 10
   rumbleCoolDown: 5
   thrustChargeTime: 0.5
@@ -908,7 +908,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7415231447065295919}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -935,7 +935,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.1, y: -1.2}
+  m_Offset: {x: -0.1, y: -1.74}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -945,7 +945,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 21.11, y: 3}
+  m_Size: {x: 21.11, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &8103960411065113033
 GameObject:

@@ -20,6 +20,7 @@ public class PlayerAttackState : PlayerState
 
     private IEnumerator PerformAttack()
     {
+        player.audioEmitter.PlaySFX(player.attackSFX, 0.5f, 0.1f);
         yield return new WaitForSeconds(player.atkChargeTime);
         // Stamina cost
         player.staminaManager.DecreaseStamina(player.atkCost);

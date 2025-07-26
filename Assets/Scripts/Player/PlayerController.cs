@@ -63,6 +63,10 @@ public class PlayerController : MonoBehaviour
     public float parryCost;
     public float shootCost;
 
+    [Header("Audio")]
+    public AudioClip attackSFX;
+    public AudioClip runSFX;
+
     [Header("Misc")]
     public CameraController cameraController;
     public Animator animator;
@@ -70,12 +74,15 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem shootVFX;
     public Animator slashFXAnimator;
 
+    [HideInInspector] public AudioEmitter audioEmitter;
+
     void Start()
     {
         // Get stats
         staminaManager = GetComponent<PlayerStaminaManager>();
         energyManager = GetComponent<PlayerEnergyManager>();
         healthManager = GetComponent<PlayerHealthManager>();
+        audioEmitter = GetComponent<AudioEmitter>();
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         rb = GetComponent<Rigidbody2D>();
