@@ -17,6 +17,8 @@ public class PlayerParryState : PlayerState
         // Animation
         player.animator.SetTrigger("Parry");
 
+        player.audioEmitter.PlaySFX(player.parrySFX, 0.5f, 0f);
+
         parryCoroutine = player.StartCoroutine(PerformParry());
     }
 

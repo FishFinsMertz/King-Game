@@ -826,7 +826,7 @@ MonoBehaviour:
   rushFreezeDuration: 0.1
   rushSlashFreezeDuration: 0.125
   rushDistance: 7
-  spikeChargeTime: 0.375
+  spikeChargeTime: 0.5
   spikeDuration: 1
   spikeDmg: 30
   spikeFreezeDuration: 0.1
