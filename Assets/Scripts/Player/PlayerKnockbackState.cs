@@ -23,7 +23,7 @@ public class PlayerKnockbackState : PlayerState
 
     public override void Enter()
     {
-        player.audioEmitter.PlaySFX(player.damagedSFX, 0.35f, 0.1f);
+        player.audioEmitter.PlaySFX(player.damagedSFX, 0.3f, 0.1f);
 
         originalDamping = player.rb.linearDamping;
         player.rb.linearDamping = 0f; // Remove drag
