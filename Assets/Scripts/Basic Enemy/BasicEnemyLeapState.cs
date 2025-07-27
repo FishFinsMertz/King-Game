@@ -69,7 +69,7 @@ public class BasicEnemyLeapState : BasicEnemyState
 
         // Animation
         enemy.animator.SetTrigger("Land");
-        
+
         // Dealing damage
         float success = enemy.DealDamageToPlayer(enemy.leapDmg, Vector2.right, 15f, enemy.leapHitbox);
 
@@ -93,24 +93,7 @@ public class BasicEnemyLeapState : BasicEnemyState
         yield return new WaitForSeconds(0.5f); // Pause before state change
 
         isLeaping = false;
-    }
-
-
-    public override void Update() {
-        if (isLeaping == false) {
-            if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront()) {
-                enemy.ChangeState(new BasicEnemySlashState(enemy)); // Attack if close
-            }
-            if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {
-                enemy.ChangeState(new BasicEnemyBackState(enemy));
-            }
-            if (enemy.distanceFromPlayer <= enemy.detectionRange) {
-                enemy.ChangeState(new BasicEnemyChaseState(enemy)); // Chase if in range
-            }
-            else {
-                enemy.ChangeState(new BasicEnemyIdleState(enemy)); // Go idle
-            }
-        }
+        enemy.ChangeState(new BasicEnemyChaseState(enemy));
     }
 
     public override void Exit()

@@ -36,30 +36,12 @@ public class BasicEnemySlashState : BasicEnemyState
         yield return new WaitForSeconds(enemy.slashTimer); // Wait for the attack animation to finish
         enemy.isAttacking = false;
 
-        // next states
-        if (enemy.distanceFromPlayer <= enemy.slashRange && enemy.IsPlayerInFront())
-        {
-            // SCUFFED FIX FOR WHEN ENEMY ATTACKS 2 TIMES IN A ROW AND THE THRUST ANIMATION TRIGGER DOESNT RESET
-            enemy.isAttacking = false;
-            enemy.ChangeState(new BasicEnemyChaseState(enemy));
-        }
-
-        if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {
-            enemy.ChangeState(new BasicEnemyBackState(enemy));
-        }
-
-        if (enemy.distanceFromPlayer > enemy.slashRange && enemy.distanceFromPlayer <= enemy.detectionRange || !enemy.IsPlayerInFront()) {
-            enemy.isAttacking = false;
-            enemy.ChangeState(new BasicEnemyChaseState(enemy));
-        }
-
-        if (enemy.distanceFromPlayer > enemy.detectionRange) {
-            enemy.isAttacking = false;
-            enemy.ChangeState(new BasicEnemyIdleState(enemy));
-        }
+        // Switch state
+        enemy.ChangeState(new BasicEnemyChaseState(enemy));
     }
 
     public override void Exit() {
+        enemy.isAttacking = false;
         enemy.slashHitbox.enabled = false;
     }
 }

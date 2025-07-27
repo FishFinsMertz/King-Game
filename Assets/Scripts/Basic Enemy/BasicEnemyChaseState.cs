@@ -18,16 +18,16 @@ public class BasicEnemyChaseState : BasicEnemyState
             enemy.ChangeState(new BasicEnemySlashState(enemy));
         }
 
-        if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {
+        else if (enemy.distanceFromPlayer <= enemy.backRange && !enemy.IsPlayerInFront() && enemy.ShouldBackAtk()) {
             enemy.ChangeState(new BasicEnemyBackState(enemy));
         }
 
-        if (enemy.distanceFromPlayer > enemy.detectionRange) {
+        else if (enemy.distanceFromPlayer > enemy.detectionRange) {
             enemy.ChangeState(new BasicEnemyIdleState(enemy));
         }
 
         // Add a probability thing later so the enemy doesn't always jump!!!!!!!
-        if (enemy.playerInLeapRange() && enemy.ShouldLeap()) {
+        else if (enemy.playerInLeapRange() && enemy.ShouldLeap()) {
             enemy.ChangeState(new BasicEnemyLeapState(enemy));
         }
     }

@@ -169,8 +169,8 @@ public class BasicEnemyController : MonoBehaviour
     public int DealDamageToPlayer(float damage, Vector2 hitDirection, float knockbackForce, Collider2D hitbox)
     {
         Collider2D[] hits = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
-        Debug.Log(hitbox.name);
-        Debug.Log(damage);
+        //Debug.Log(hitbox.name);
+        //Debug.Log(damage);
 
         bool hitPlayer = false;
 
