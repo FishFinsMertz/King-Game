@@ -53,8 +53,11 @@ public class PlayerJumpingState : PlayerState
         // Stamina cost
         player.staminaManager.DecreaseStamina(player.jumpCost);
 
+        player.audioEmitter.PlaySFX(player.jumpSFX, 0.45f, 0.1f);
+        
         // Animation
-        if (player.jumpCounter > 0) {
+        if (player.jumpCounter > 0)
+        {
             CreateJumpVFX();
         }
 

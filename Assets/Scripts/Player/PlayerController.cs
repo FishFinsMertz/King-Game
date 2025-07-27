@@ -67,6 +67,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip attackSFX;
     public AudioClip runSFX;
     public AudioClip parrySFX;
+    public AudioClip dashSFX;
+    public AudioClip jumpSFX;
+    public AudioClip damagedSFX;
 
     [Header("Misc")]
     public CameraController cameraController;

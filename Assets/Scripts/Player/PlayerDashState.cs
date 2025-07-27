@@ -13,6 +13,8 @@ public class PlayerDashState : PlayerState
 
     public override void Enter()
     {
+        player.audioEmitter.PlaySFX(player.dashSFX, 0.65f, 0.1f);
+
         // After image
         afterImageTimer = player.afterImageCooldown;
         CreateAfterImage();

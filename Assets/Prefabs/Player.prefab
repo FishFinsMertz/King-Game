@@ -176,6 +176,9 @@ MonoBehaviour:
   attackSFX: {fileID: 8300000, guid: 9573bf09a9f9675488d6fcd3249535d6, type: 3}
   runSFX: {fileID: 8300000, guid: 27d4722e926a45d45b08c6541a69bcb7, type: 3}
   parrySFX: {fileID: 8300000, guid: cce6d7bdafbad2e41ac07e1f97e1971f, type: 3}
+  dashSFX: {fileID: 8300000, guid: 4d8c7ce474514c742aa0db0893862b23, type: 3}
+  jumpSFX: {fileID: 8300000, guid: c41658983f3d45f4fba2c1c4d7617ccc, type: 3}
+  damagedSFX: {fileID: 8300000, guid: 82251d7de16a56b4386141ef868ae9c5, type: 3}
   cameraController: {fileID: 0}
   animator: {fileID: 1288362814603606461}
   hitStop: {fileID: 0}

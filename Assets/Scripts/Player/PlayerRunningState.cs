@@ -7,7 +7,7 @@ public class PlayerRunningState : PlayerState
     public override void Enter()
     {
         player.animator.SetBool("isRunning", true);
-        player.audioEmitter.PlaySFX(player.runSFX, 0.5f, 0f);
+        player.audioEmitter.PlaySFX(player.runSFX, 0.65f, 0f);
     }
 
     public override void Update()
