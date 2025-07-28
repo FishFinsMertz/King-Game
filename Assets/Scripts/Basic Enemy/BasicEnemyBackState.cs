@@ -19,6 +19,7 @@ public class BasicEnemyBackState : BasicEnemyState
 
         //Animation
         enemy.animator.SetTrigger("Back");
+        enemy.audioEmitter.PlaySFX(enemy.backSFX, 0.5f, 0.1f);
 
         yield return new WaitForSeconds(enemy.backAtkDelay); // Delay before attack hitbox activates
         

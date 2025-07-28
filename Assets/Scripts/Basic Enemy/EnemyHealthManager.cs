@@ -11,7 +11,8 @@ public class EnemyHealthManager : MonoBehaviour {
     private float targetHealth; // Target health value for smooth animation
     public float sideBarSpeed = 2f; // Speed of the side bar animation
 
-    public Canvas enemyHealth;
+    public Canvas enemyHealthPrefab;
+    private Canvas enemyHealth;
     private Image mainHealthBar;
     private Image sideHealthBar;
 
@@ -22,8 +23,13 @@ public class EnemyHealthManager : MonoBehaviour {
 
     void Start()
     {
+        // Instantiate the health bar prefab and keep a reference
+        enemyHealth = Instantiate(enemyHealthPrefab, enemy.transform.position + healthBarOffset, Quaternion.identity);
+
+        // Get health bar images from the instance
         mainHealthBar = enemyHealth.transform.Find("Health").GetComponent<Image>();
         sideHealthBar = enemyHealth.transform.Find("SideHealth").GetComponent<Image>();
+
         healthAmount = maxHealth;  // Initialize health
         targetHealth = healthAmount;
 
@@ -35,21 +41,26 @@ public class EnemyHealthManager : MonoBehaviour {
 
     void Update()
     {
-        // Make health bar follow the enemy in world space if not boss
-        if (enemy != null && !isBoss)
+        if (enemyHealth != null)
         {
-            enemyHealth.transform.position = enemy.transform.position + healthBarOffset;
-        }
+            // Make health bar follow the enemy in world space if not boss
+            if (enemy != null && !isBoss)
+            {
+                enemyHealth.transform.position = enemy.transform.position + healthBarOffset;
+            }
 
-        // When health reaches 0
-        if (healthAmount <= 0) {
-             Destroy(enemy);  // Destroy the enemy object instead of just the health script
-             Destroy(enemyHealth.gameObject); // Also remove the health bar
-        }
+            // When health reaches 0
+            if (healthAmount <= 0)
+            {
+                Destroy(enemy);  // Destroy the enemy object instead of just the health script
+                Destroy(enemyHealth.gameObject); // Also remove the health bar
+            }
 
-        // Smoothly slide the side health bar down to match the main health bar
-        if (sideHealthBar.fillAmount > mainHealthBar.fillAmount) {
-            sideHealthBar.fillAmount = Mathf.Lerp(sideHealthBar.fillAmount, mainHealthBar.fillAmount, Time.deltaTime * sideBarSpeed);
+            // Smoothly slide the side health bar down to match the main health bar
+            if (sideHealthBar.fillAmount > mainHealthBar.fillAmount)
+            {
+                sideHealthBar.fillAmount = Mathf.Lerp(sideHealthBar.fillAmount, mainHealthBar.fillAmount, Time.deltaTime * sideBarSpeed);
+            }
         }
     }
 

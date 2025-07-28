@@ -20,7 +20,7 @@ public class PlayerShootState : PlayerState
 
     private IEnumerator Blast()
     {
-        player.audioEmitter.PlaySFX(player.shootSFX, 0.65f, 0.1f);
+        player.audioEmitter.PlaySFX(player.shootSFX, 0.65f, 0f);
         yield return new WaitForSeconds(player.shootChargeTime);
 
         // Shoot

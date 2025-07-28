@@ -43,6 +43,7 @@ public class BasicEnemyLeapState : BasicEnemyState
 
         // Animation
         enemy.animator.SetTrigger("Leap");
+        enemy.audioEmitter.PlaySFX(enemy.leapSFX, 0.7f, 0f);
 
         // Calculate leap velocity
         float timeToTarget = 0.3f;
@@ -54,6 +55,7 @@ public class BasicEnemyLeapState : BasicEnemyState
 
         // Enable hitbox at peak jump
         yield return new WaitUntil(() => enemy.rb.linearVelocity.y <= 0);
+        enemy.audioEmitter.PlaySFX(enemy.slamSFX, 0.7f, 0f);
         enemy.leapHitbox.enabled = true;
 
         // Timeout failsafe
@@ -90,7 +92,7 @@ public class BasicEnemyLeapState : BasicEnemyState
         // Pause on landing
         enemy.rb.linearVelocity = Vector2.zero; // Stop movement
         enemy.rb.gravityScale = 1f;
-        yield return new WaitForSeconds(0.5f); // Pause before state change
+        yield return new WaitForSeconds(enemy.leapPauseDuration); // Pause before state change
 
         isLeaping = false;
         enemy.ChangeState(new BasicEnemyChaseState(enemy));

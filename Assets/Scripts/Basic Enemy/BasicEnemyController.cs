@@ -15,6 +15,7 @@ public class BasicEnemyController : MonoBehaviour
     public float slashFreezeDuration;
     public float leapChance;
     public float leapCheckInterval;
+    public float leapPauseDuration;
     private bool shouldLeap = false;
     public float leapDmg = 40f;
     public float leapFreezeDuration;
@@ -61,6 +62,10 @@ public class BasicEnemyController : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip footstepSFX;
+    public AudioClip slamSFX;
+    public AudioClip leapSFX;
+    public AudioClip thrustSFX;
+    public AudioClip backSFX;
 
     [Header("Misc")]
     public Animator animator;

@@ -17,10 +17,11 @@ public class BasicEnemySlashState : BasicEnemyState
     private IEnumerator PerformSlash() {
         // Animation
         enemy.animator.SetTrigger("Thrust");
+        enemy.audioEmitter.PlaySFX(enemy.thrustSFX, 0.5f, 0.1f);
 
         //Debug.Log("Charging up my slash, delay: " + delay);
         yield return new WaitForSeconds(enemy.slashChargeTime); // Delay before attack hitbox activates
-        
+
         // Enabling hitbox and attack
         enemy.slashHitbox.enabled = true;
 

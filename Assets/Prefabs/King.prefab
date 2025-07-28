@@ -865,7 +865,7 @@ MonoBehaviour:
   maxHealth: 1000
   healthAmount: 1000
   sideBarSpeed: 2
-  enemyHealth: {fileID: 0}
+  enemyHealthPrefab: {fileID: 5467184241209717198, guid: 2e79da357d9f48b40ac43b3ec156342b, type: 3}
   enemy: {fileID: 7319855750297570190}
   isBoss: 1
   healthBarOffset: {x: 0, y: 2, z: 0}

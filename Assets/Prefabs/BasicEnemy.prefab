@@ -5428,6 +5428,7 @@ MonoBehaviour:
   slashFreezeDuration: 0.1
   leapChance: 0.15
   leapCheckInterval: 1
+  leapPauseDuration: 1
   leapDmg: 40
   leapFreezeDuration: 0.1
   backAtkChance: 0.6
@@ -5457,6 +5458,10 @@ MonoBehaviour:
   distanceFromPlayer: 0
   vectorFromPlayer: {x: 0, y: 0}
   footstepSFX: {fileID: 8300000, guid: efaf009810ae1e44fb2d73f8e4aab970, type: 3}
+  slamSFX: {fileID: 8300000, guid: abde131b085fb0c4db451b502d9df954, type: 3}
+  leapSFX: {fileID: 8300000, guid: 9d8ebe743e75c1c4ab064fdd5395f14d, type: 3}
+  thrustSFX: {fileID: 8300000, guid: 7bfb60a70ee2d974f9afb45b9a91ac50, type: 3}
+  backSFX: {fileID: 8300000, guid: 3b8ba8542b33aca419a48da693197de9, type: 3}
   animator: {fileID: 1411463909317305908}
   hitstop: {fileID: 0}
   leapVFX: {fileID: 6668403773828595800}
@@ -5476,7 +5481,7 @@ MonoBehaviour:
   maxHealth: 150
   healthAmount: 150
   sideBarSpeed: 2
-  enemyHealth: {fileID: 0}
+  enemyHealthPrefab: {fileID: 5168169415057426508, guid: 11b7929a35a977f4fac530bc88b73138, type: 3}
   enemy: {fileID: 8570029115460829731}
   isBoss: 0
   healthBarOffset: {x: 0, y: 1.5, z: 0}
