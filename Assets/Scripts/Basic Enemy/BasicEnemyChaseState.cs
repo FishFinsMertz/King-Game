@@ -10,6 +10,7 @@ public class BasicEnemyChaseState : BasicEnemyState
     public override void Enter()
     {
         enemy.animator.SetBool("isWalking", true);
+        enemy.audioEmitter.PlaySFXLoop(enemy.footstepSFX, 0.5f, 0f);
     }
 
     public override void Update()
@@ -75,8 +76,9 @@ public class BasicEnemyChaseState : BasicEnemyState
         }
     }
 
-    public override void Exit() 
+    public override void Exit()
     {
         enemy.animator.SetBool("isWalking", false);
+        enemy.audioEmitter.StopSFX();
     }
 }

@@ -18,8 +18,15 @@ public class AudioEmitter : MonoBehaviour
         audioSource.Play();
     }
 
+    public void PlaySFXLoop(AudioClip clip, float volume = 1f, float pitchRange = 1f)
+    {
+        audioSource.loop = true;
+        PlaySFX(clip, volume, pitchRange);
+    }
+
     public void StopSFX()
     {
+        audioSource.loop = false;
         audioSource.Stop();
     }
 }

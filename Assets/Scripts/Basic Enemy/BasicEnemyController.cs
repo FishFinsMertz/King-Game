@@ -59,16 +59,23 @@ public class BasicEnemyController : MonoBehaviour
     public float distanceFromPlayer;
     public Vector2 vectorFromPlayer;
 
+    [Header("Audio")]
+    public AudioClip footstepSFX;
+
     [Header("Misc")]
     public Animator animator;
     public HitStop hitstop;
     public ParticleSystem leapVFX;
+
+    // Hidden or private variables
+    [HideInInspector] public AudioEmitter audioEmitter;
       
     void Start() {
         nonParryWarning.SetActive(false);
         slashHitbox.enabled = false;
         leapHitbox.enabled = false;
         rb = GetComponent<Rigidbody2D>();
+        audioEmitter = GetComponent<AudioEmitter>();
 
         cameraController = FindAnyObjectByType<CameraController>();
 
