@@ -29,7 +29,7 @@ public class EnemyHealthManager : MonoBehaviour {
         // Get health bar images from the instance
         mainHealthBar = enemyHealth.transform.Find("Health").GetComponent<Image>();
         sideHealthBar = enemyHealth.transform.Find("SideHealth").GetComponent<Image>();
-
+        
         healthAmount = maxHealth;  // Initialize health
         targetHealth = healthAmount;
 
@@ -52,7 +52,7 @@ public class EnemyHealthManager : MonoBehaviour {
             // When health reaches 0
             if (healthAmount <= 0)
             {
-                Destroy(enemy);  // Destroy the enemy object instead of just the health script
+                Destroy(enemy);  
                 Destroy(enemyHealth.gameObject); // Also remove the health bar
             }
 

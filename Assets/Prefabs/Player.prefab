@@ -198,8 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9269fb301c674040b036c99e669a17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainHealthBar: {fileID: 0}
-  sideHealthBar: {fileID: 0}
+  healthBarPrefab: {fileID: 8931961507406404920, guid: 0a0cc85b0ac4fbc44943a08d2525e10d, type: 3}
   healthAmount: 100
   sideBarSpeed: 2
   player: {fileID: 0}
@@ -215,8 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9866c3d5f58b1e24c9a9c523d5a9c543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainStaminaBar: {fileID: 0}
-  sideStaminaBar: {fileID: 0}
+  staminaBarPrefab: {fileID: 5464144132667312589, guid: 7f9f82cd21ae98345937976182d1e4e6, type: 3}
   staminaAmount: 100
   sideBarSpeed: 2
   recoverySpeed: 20
@@ -233,8 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6932242e3e543cf40b6f7c553420edce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainEnergyBar: {fileID: 0}
-  sideEnergyBar: {fileID: 0}
+  energyBarPrefab: {fileID: 2252722085585900958, guid: 27987f2c4c27ca5458a0489b447ac104, type: 3}
   energyAmount: 100
   sideBarSpeed: 2
   player: {fileID: 0}

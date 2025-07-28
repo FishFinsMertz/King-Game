@@ -5,34 +5,47 @@ using UnityEngine.UI;
 
 public class PlayerStaminaManager : MonoBehaviour
 {
-    public Image mainStaminaBar;
-    public Image sideStaminaBar;
+    public Canvas staminaBarPrefab;
+    private Canvas staminaBar;
+    private Image mainStaminaBar;
+    private Image sideStaminaBar;
 
     public float staminaAmount = 100f;
     private float targetStamina; // Target stamina value for smooth animation
     public float sideBarSpeed; // Speed of the side bar animation
     public float recoverySpeed; // Speed at which stamina recovers
 
-    public GameObject player;
+    [HideInInspector] public GameObject player;
 
     void Start()
     {
+        // Instantiate the health bar prefab and keep a reference
+        staminaBar = Instantiate(staminaBarPrefab);
+
+        // Get health bar images from the instance
+        mainStaminaBar = staminaBar.transform.Find("Stamina").GetComponent<Image>();
+        sideStaminaBar = staminaBar.transform.Find("SideStamina").GetComponent<Image>();
+
         targetStamina = staminaAmount;
         player = GameObject.FindWithTag("Player");
     }
 
     void Update()
     {
-        // Hard cap for negative stamina
-        if (staminaAmount <= -30) {
-            staminaAmount = -30;
+        if (staminaBar != null)
+        {
+            // Hard cap for negative stamina
+            if (staminaAmount <= -30)
+            {
+                staminaAmount = -30;
+            }
+
+            // Stamina recovery
+            refillStamina();
+
+            // Lerp the side stamina bar smoothly to match the main stamina bar
+            sideStaminaLerp();
         }
-
-        // Stamina recovery
-        refillStamina();
-
-        // Lerp the side stamina bar smoothly to match the main stamina bar
-        sideStaminaLerp();
     }
 
     public void DecreaseStamina(float amount)

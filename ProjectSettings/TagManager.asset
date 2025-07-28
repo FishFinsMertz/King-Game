@@ -55,5 +55,8 @@ TagManager:
   - name: UI
     uniqueID: 1197914407
     locked: 0
+  - name: Fade
+    uniqueID: 322900229
+    locked: 0
   m_RenderingLayers:
   - Default

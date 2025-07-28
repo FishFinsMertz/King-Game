@@ -10,17 +10,26 @@ public class PlayerHealthManager : MonoBehaviour
 {
     private FlashFX flashScript;
 
-    public Image mainHealthBar;
-    public Image sideHealthBar;
+    public Canvas healthBarPrefab;
+    private Canvas healthBar;
+    private Image mainHealthBar;
+    private Image sideHealthBar;
 
     public float healthAmount = 100f;
     private float targetHealth; // Target health value for smooth animation
     public float sideBarSpeed = 2f; // Speed of the side bar animation
 
-    public GameObject player;
+    [HideInInspector] public GameObject player;
 
     void Start()
     {
+        // Instantiate the health bar prefab and keep a reference
+        healthBar = Instantiate(healthBarPrefab);
+
+        // Get health bar images from the instance
+        mainHealthBar = healthBar.transform.Find("Health").GetComponent<Image>();
+        sideHealthBar = healthBar.transform.Find("SideHealth").GetComponent<Image>();
+
         targetHealth = healthAmount;
         player = GameObject.FindWithTag("Player");
         flashScript = player.GetComponentInChildren<FlashFX>();
@@ -28,26 +37,29 @@ public class PlayerHealthManager : MonoBehaviour
 
     void Update()
     {
-        // When health reaches 0
-        if (healthAmount <= 0)
+        if (healthBar != null)
         {
-            Death();
-        }
+            // When health reaches 0
+            if (healthAmount <= 0)
+            {
+                Death();
+            }
 
-        // TESTING PURPOSES
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Heal(50);
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            TakeDamage(30f, Vector2.up, 20f);
-        }
+            // TESTING PURPOSES
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                Heal(50);
+            }
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                TakeDamage(30f, Vector2.up, 20f);
+            }
 
-        // Smoothly slide the side health bar down to match the main health bar
-        if (sideHealthBar.fillAmount > mainHealthBar.fillAmount)
-        {
-            sideHealthBar.fillAmount = Mathf.Lerp(sideHealthBar.fillAmount, mainHealthBar.fillAmount, Time.deltaTime * sideBarSpeed);
+            // Smoothly slide the side health bar down to match the main health bar
+            if (sideHealthBar.fillAmount > mainHealthBar.fillAmount)
+            {
+                sideHealthBar.fillAmount = Mathf.Lerp(sideHealthBar.fillAmount, mainHealthBar.fillAmount, Time.deltaTime * sideBarSpeed);
+            }
         }
     }
 
