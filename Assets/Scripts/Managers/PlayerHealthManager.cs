@@ -15,6 +15,9 @@ public class PlayerHealthManager : MonoBehaviour
     private Image mainHealthBar;
     private Image sideHealthBar;
 
+    public AudioEmitter audioEmitter;
+    public AudioClip damageSFX;
+
     public float healthAmount = 100f;
     private float targetHealth; // Target health value for smooth animation
     public float sideBarSpeed = 2f; // Speed of the side bar animation
@@ -66,6 +69,12 @@ public class PlayerHealthManager : MonoBehaviour
     public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce)
     {
         //Debug.Log("Player Damaged: " + damage);
+
+        if (damageSFX != null && audioEmitter != null)
+        {
+            audioEmitter.PlaySFX(damageSFX, 0.3f, 0.1f);
+        }
+
         healthAmount -= damage;
         targetHealth = healthAmount;
         mainHealthBar.fillAmount = targetHealth / 100f;

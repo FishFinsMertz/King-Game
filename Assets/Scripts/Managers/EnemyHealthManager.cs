@@ -11,6 +11,9 @@ public class EnemyHealthManager : MonoBehaviour {
     private float targetHealth; // Target health value for smooth animation
     public float sideBarSpeed = 2f; // Speed of the side bar animation
 
+    public AudioEmitter audioEmitter;
+    public AudioClip damageSFX;
+
     public Canvas enemyHealthPrefab;
     private Canvas enemyHealth;
     private Image mainHealthBar;
@@ -66,6 +69,10 @@ public class EnemyHealthManager : MonoBehaviour {
 
     public void TakeDamage(float damage) {
         //Debug.Log("Enemy Damaged: " + damage);
+        if (damageSFX != null && audioEmitter != null) {
+            audioEmitter.PlaySFX(damageSFX, 0.7f, 0.1f);
+        }
+
         healthAmount -= damage;
         targetHealth = Mathf.Clamp(healthAmount, 0, maxHealth);
 

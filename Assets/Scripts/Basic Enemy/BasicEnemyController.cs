@@ -66,6 +66,7 @@ public class BasicEnemyController : MonoBehaviour
     public AudioClip leapSFX;
     public AudioClip thrustSFX;
     public AudioClip backSFX;
+    public AudioClip gruntSFX;
 
     [Header("Misc")]
     public Animator animator;
