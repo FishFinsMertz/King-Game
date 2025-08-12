@@ -97,6 +97,16 @@ public class KingController : MonoBehaviour
     [Header("Audio")]
     public AudioEmitter audioEmitter;
     public AudioClip footstepSFX;
+    public AudioClip thrustSFX;
+    public AudioClip megaSlamSFX;
+    public AudioClip hoverSFX;
+    public AudioClip flyStrikeSFX;
+    public AudioClip rushSFX;
+    public AudioClip rushSlashSFX;
+    public AudioClip spikeSFX;
+    public AudioClip rumbleSFX;
+    public AudioClip swordBarrageSFX;
+    public AudioClip damagedSFX;
 
     [Header("Misc")]
     public GameObject nonParryWarning;
@@ -239,6 +249,11 @@ public class KingController : MonoBehaviour
             }
         }
         return hitPlayer ? 0 : 1;
+    }
+    // Events
+    public void OnTakeDamage()
+    {
+        audioEmitter.PlaySFX(damagedSFX, 0.7f, 0.1f);
     }
 
     // Attack Utility

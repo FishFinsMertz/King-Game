@@ -31,6 +31,7 @@ public class PlayerKnockbackState : PlayerState
         // Animation
         player.animator.SetBool("isDamaged", true);
         player.animator.SetTrigger("Knockback");
+        player.audioEmitter.PlaySFX(player.damagedSFX, 0.3f, 0.1f);
     }
 
     public override void Exit()

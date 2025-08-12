@@ -66,7 +66,7 @@ public class BasicEnemyController : MonoBehaviour
     public AudioClip leapSFX;
     public AudioClip thrustSFX;
     public AudioClip backSFX;
-    public AudioClip gruntSFX;
+    public AudioClip damagedSFX;
 
     [Header("Misc")]
     public Animator animator;
@@ -169,8 +169,16 @@ public class BasicEnemyController : MonoBehaviour
         return shouldBackAtk;
     }
 
-    public void Flip() {
-        if (distanceFromPlayer > minThreshold) {
+    // Damage and death
+    public void OnTakeDamage()
+    {
+        audioEmitter.PlaySFX(damagedSFX, 0.7f, 0.1f);
+    }
+
+    public void Flip()
+    {
+        if (distanceFromPlayer > minThreshold)
+        {
             if ((isFacingRight == 1 && vectorFromPlayer.x < 0f) || (isFacingRight == -1 && vectorFromPlayer.x > 0f))
             {
                 isFacingRight *= (-1);

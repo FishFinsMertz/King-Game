@@ -838,6 +838,16 @@ MonoBehaviour:
   rumbleFreezeDuration: 0.125
   audioEmitter: {fileID: 2520958001948774300}
   footstepSFX: {fileID: 8300000, guid: 837fd3f4e30c4e8449717db89b686ceb, type: 3}
+  thrustSFX: {fileID: 8300000, guid: f8916478354ae3f4c9487ce68685c95a, type: 3}
+  megaSlamSFX: {fileID: 0}
+  hoverSFX: {fileID: 0}
+  flyStrikeSFX: {fileID: 0}
+  rushSFX: {fileID: 0}
+  rushSlashSFX: {fileID: 0}
+  spikeSFX: {fileID: 0}
+  rumbleSFX: {fileID: 0}
+  swordBarrageSFX: {fileID: 0}
+  damagedSFX: {fileID: 8300000, guid: 43dd4a1ce3c90dd45a7cafc27fc06abd, type: 3}
   nonParryWarning: {fileID: 2237481433777694426}
   rb: {fileID: 0}
   groundCheck: {fileID: 8425695460245440660}
@@ -869,12 +879,28 @@ MonoBehaviour:
   maxHealth: 1000
   healthAmount: 1000
   sideBarSpeed: 2
-  audioEmitter: {fileID: 2520958001948774300}
-  damageSFX: {fileID: 8300000, guid: 43dd4a1ce3c90dd45a7cafc27fc06abd, type: 3}
   enemyHealthPrefab: {fileID: 5467184241209717198, guid: 2e79da357d9f48b40ac43b3ec156342b, type: 3}
   enemy: {fileID: 7319855750297570190}
   isBoss: 1
   healthBarOffset: {x: 0, y: 2, z: 0}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1297108872617302399}
+        m_TargetAssemblyTypeName: KingController, Assembly-CSharp
+        m_MethodName: OnTakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &8431238699634989452
 AudioSource:
   m_ObjectHideFlags: 0

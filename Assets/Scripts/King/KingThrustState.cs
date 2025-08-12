@@ -21,6 +21,7 @@ public class KingThrustState : KingState
         king.Flip();
 
         king.animator.SetTrigger("Thrust");
+        king.audioEmitter.PlaySFX(king.thrustSFX, 0.5f, 0.1f);
 
         yield return new WaitForSeconds(king.thrustChargeTime); // Delay before attack hitbox activates
 

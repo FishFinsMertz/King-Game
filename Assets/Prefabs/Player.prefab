@@ -179,6 +179,7 @@ MonoBehaviour:
   dashSFX: {fileID: 8300000, guid: 4d8c7ce474514c742aa0db0893862b23, type: 3}
   jumpSFX: {fileID: 8300000, guid: c41658983f3d45f4fba2c1c4d7617ccc, type: 3}
   shootSFX: {fileID: 8300000, guid: 4bc774db26bca1a4bbe33ff97abc0e1c, type: 3}
+  damagedSFX: {fileID: 8300000, guid: 82251d7de16a56b4386141ef868ae9c5, type: 3}
   cameraController: {fileID: 0}
   animator: {fileID: 1288362814603606461}
   hitStop: {fileID: 0}
@@ -198,8 +199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 8931961507406404920, guid: 0a0cc85b0ac4fbc44943a08d2525e10d, type: 3}
-  audioEmitter: {fileID: 719165706254174730}
-  damageSFX: {fileID: 8300000, guid: 82251d7de16a56b4386141ef868ae9c5, type: 3}
   healthAmount: 100
   sideBarSpeed: 2
   player: {fileID: 0}

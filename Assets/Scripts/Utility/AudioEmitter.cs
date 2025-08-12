@@ -13,15 +13,16 @@ public class AudioEmitter : MonoBehaviour
     public void PlaySFX(AudioClip clip, float volume = 1f, float pitchRange = 1f)
     {
         audioSource.pitch = Random.Range(1f - pitchRange, 1f + pitchRange);
-        audioSource.clip = clip;
-        audioSource.volume = volume;
-        audioSource.Play();
+        audioSource.PlayOneShot(clip, volume); 
     }
 
     public void PlaySFXLoop(AudioClip clip, float volume = 1f, float pitchRange = 1f)
     {
+        audioSource.pitch = Random.Range(1f - pitchRange, 1f + pitchRange);
+        audioSource.clip = clip;  
+        audioSource.volume = volume;
         audioSource.loop = true;
-        PlaySFX(clip, volume, pitchRange);
+        audioSource.Play();
     }
 
     public void StopSFX()

@@ -5462,7 +5462,7 @@ MonoBehaviour:
   leapSFX: {fileID: 8300000, guid: 9d8ebe743e75c1c4ab064fdd5395f14d, type: 3}
   thrustSFX: {fileID: 8300000, guid: 7bfb60a70ee2d974f9afb45b9a91ac50, type: 3}
   backSFX: {fileID: 8300000, guid: 3b8ba8542b33aca419a48da693197de9, type: 3}
-  gruntSFX: {fileID: 0}
+  damagedSFX: {fileID: 8300000, guid: 9f7c10303fd6e4046b8d7af90ece36e2, type: 3}
   animator: {fileID: 1411463909317305908}
   hitstop: {fileID: 0}
   leapVFX: {fileID: 6668403773828595800}
@@ -5482,12 +5482,28 @@ MonoBehaviour:
   maxHealth: 150
   healthAmount: 150
   sideBarSpeed: 2
-  audioEmitter: {fileID: 5622526521307718634}
-  damageSFX: {fileID: 8300000, guid: 9f7c10303fd6e4046b8d7af90ece36e2, type: 3}
   enemyHealthPrefab: {fileID: 5168169415057426508, guid: 11b7929a35a977f4fac530bc88b73138, type: 3}
   enemy: {fileID: 8570029115460829731}
   isBoss: 0
   healthBarOffset: {x: 0, y: 1.5, z: 0}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6907193972395755822}
+        m_TargetAssemblyTypeName: BasicEnemyController, Assembly-CSharp
+        m_MethodName: OnTakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &8725220511044263229
 AudioSource:
   m_ObjectHideFlags: 0

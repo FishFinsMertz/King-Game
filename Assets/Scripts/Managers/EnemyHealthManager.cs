@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class EnemyHealthManager : MonoBehaviour {
 
@@ -11,9 +12,6 @@ public class EnemyHealthManager : MonoBehaviour {
     private float targetHealth; // Target health value for smooth animation
     public float sideBarSpeed = 2f; // Speed of the side bar animation
 
-    public AudioEmitter audioEmitter;
-    public AudioClip damageSFX;
-
     public Canvas enemyHealthPrefab;
     private Canvas enemyHealth;
     private Image mainHealthBar;
@@ -22,6 +20,9 @@ public class EnemyHealthManager : MonoBehaviour {
     public GameObject enemy;
     public bool isBoss;
     public Vector3 healthBarOffset = new Vector3(0, 2f, 0); // Adjust height above the enemy
+
+    public UnityEvent OnTakeDamage;
+    public UnityEvent OnDeath;
 
 
     void Start()
@@ -38,7 +39,6 @@ public class EnemyHealthManager : MonoBehaviour {
 
         //Flash FX
         flashScript = enemy.GetComponentInChildren<FlashFX>();
-
         UpdateHealthBar(); // Ensure the bar starts full
     }
 
@@ -55,6 +55,7 @@ public class EnemyHealthManager : MonoBehaviour {
             // When health reaches 0
             if (healthAmount <= 0)
             {
+                OnDeath?.Invoke();
                 Destroy(enemy);  
                 Destroy(enemyHealth.gameObject); // Also remove the health bar
             }
@@ -69,9 +70,7 @@ public class EnemyHealthManager : MonoBehaviour {
 
     public void TakeDamage(float damage) {
         //Debug.Log("Enemy Damaged: " + damage);
-        if (damageSFX != null && audioEmitter != null) {
-            audioEmitter.PlaySFX(damageSFX, 0.7f, 0.1f);
-        }
+        OnTakeDamage?.Invoke();
 
         healthAmount -= damage;
         targetHealth = Mathf.Clamp(healthAmount, 0, maxHealth);

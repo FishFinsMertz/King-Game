@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip dashSFX;
     public AudioClip jumpSFX;
     public AudioClip shootSFX;
+    public AudioClip damagedSFX;
 
     [Header("Misc")]
     public CameraController cameraController;
