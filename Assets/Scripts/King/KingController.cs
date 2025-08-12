@@ -94,6 +94,10 @@ public class KingController : MonoBehaviour
     public float rumbleDmg;
     public float rumbleFreezeDuration;
 
+    [Header("Audio")]
+    public AudioEmitter audioEmitter;
+    public AudioClip footstepSFX;
+
     [Header("Misc")]
     public GameObject nonParryWarning;
     [HideInInspector] public Rigidbody2D rb;
