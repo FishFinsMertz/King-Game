@@ -22,6 +22,7 @@ public class KingMegaSlamState : KingState
 
         king.nonParryWarning.SetActive(true);
         king.animator.SetTrigger("MegaSlam");
+        king.audioEmitter.PlaySFX(king.megaSlamSFX, 0.5f, 0.1f);
 
         yield return new WaitForSeconds(king.megaSlamChargeTime);
 

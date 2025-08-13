@@ -17,6 +17,7 @@ public class KingRumbleState : KingState
     {
         king.nonParryWarning.SetActive(true);
         king.animator.SetTrigger("Rumble");
+        king.audioEmitter.PlaySFX(king.rumbleSFX, 0.7f, 0.1f);
         yield return new WaitForSeconds(king.rumbleChargeTime);
         king.rumbleHitbox.enabled = true;
 

@@ -8,7 +8,7 @@ public class KingWalkState : KingState
     public override void Enter()
     {
         king.animator.SetBool("isWalking", true);
-        king.audioEmitter.PlaySFXLoop(king.footstepSFX, 0.7f, 0f);
+        king.audioEmitter.PlaySFXLoop(king.footstepSFX, 0.5f, 0f);
     }
 
     public override void FixedUpdate()

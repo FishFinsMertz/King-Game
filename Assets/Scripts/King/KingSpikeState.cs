@@ -17,6 +17,7 @@ public class KingSpikeState : KingState
     private IEnumerator PerformSpike()
     {
         king.animator.SetTrigger("Spike");
+        king.audioEmitter.PlaySFX(king.spikeSFX, 0.75f, 0.1f);
         yield return new WaitForSeconds(king.spikeChargeTime);
 
         king.spikeHitbox.enabled = true;

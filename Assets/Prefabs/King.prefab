@@ -839,13 +839,13 @@ MonoBehaviour:
   audioEmitter: {fileID: 2520958001948774300}
   footstepSFX: {fileID: 8300000, guid: 837fd3f4e30c4e8449717db89b686ceb, type: 3}
   thrustSFX: {fileID: 8300000, guid: f8916478354ae3f4c9487ce68685c95a, type: 3}
-  megaSlamSFX: {fileID: 0}
+  megaSlamSFX: {fileID: 8300000, guid: a4a8bac2ab3b8cc40a50fdb0c8c6546d, type: 3}
   hoverSFX: {fileID: 0}
   flyStrikeSFX: {fileID: 0}
   rushSFX: {fileID: 0}
   rushSlashSFX: {fileID: 0}
-  spikeSFX: {fileID: 0}
-  rumbleSFX: {fileID: 0}
+  spikeSFX: {fileID: 8300000, guid: 305a25620663a464a9228948cbb2ab24, type: 3}
+  rumbleSFX: {fileID: 8300000, guid: 101cde951020ff64db58af7957387e2f, type: 3}
   swordBarrageSFX: {fileID: 0}
   damagedSFX: {fileID: 8300000, guid: 43dd4a1ce3c90dd45a7cafc27fc06abd, type: 3}
   nonParryWarning: {fileID: 2237481433777694426}
@@ -925,7 +925,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -958,7 +958,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
