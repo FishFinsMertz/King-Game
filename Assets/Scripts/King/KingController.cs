@@ -105,7 +105,6 @@ public class KingController : MonoBehaviour
     public AudioClip rushSlashSFX;
     public AudioClip spikeSFX;
     public AudioClip rumbleSFX;
-    public AudioClip swordBarrageSFX;
     public AudioClip damagedSFX;
 
     [Header("Misc")]

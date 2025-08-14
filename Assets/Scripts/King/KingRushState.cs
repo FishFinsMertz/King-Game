@@ -17,6 +17,7 @@ public class KingRushState : KingState
     private IEnumerator StartRush()
     {
         king.animator.SetTrigger("Rush");
+        king.audioEmitter.PlaySFX(king.rushSFX, 0.8f, 0.1f);
 
         yield return new WaitForSeconds(king.rushChargeTime);
 
@@ -63,6 +64,7 @@ public class KingRushState : KingState
         yield return new WaitForSeconds(king.rushDuration);
         
         king.animator.SetTrigger("RushSlash");
+        king.audioEmitter.PlaySFX(king.rushSlashSFX, 0.5f, 0.1f);
 
         yield return new WaitForSeconds(king.rushSlashChargeTime);
 

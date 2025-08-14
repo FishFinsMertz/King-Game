@@ -20,6 +20,11 @@ public class KingSword : PooledObjects
     [SerializeField] private GameObject spawnVFXPrefab;
     [SerializeField] private Animator animator;
 
+    [Header("Audio")]
+    [SerializeField] private AudioEmitter audioEmitter;
+    [SerializeField] private AudioClip spawnSFX;
+    [SerializeField] private AudioClip breakSFX;
+
     // Private and Hidden Variables
     private ObjPool pool;
     private Rigidbody2D rb;
@@ -64,6 +69,7 @@ public class KingSword : PooledObjects
         rb.linearVelocity = Vector2.zero;
 
         // Hover phase
+        audioEmitter.PlaySFX(spawnSFX, 0.1f, 0.1f);
         yield return new WaitForSeconds(hoverTime);
 
         // Rise phase
@@ -78,6 +84,7 @@ public class KingSword : PooledObjects
 
         // Land
         animator.SetTrigger("Land");
+        audioEmitter.PlaySFX(breakSFX, 0.1f, 0.1f);
 
         // Disable the hitbox when landed
         if (projectileHitbox != null)

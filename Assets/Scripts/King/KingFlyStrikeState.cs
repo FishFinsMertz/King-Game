@@ -22,6 +22,7 @@ public class KingFlyStrikeState : KingState
     {
         // Phase 1: Rise into the air
         king.animator.SetTrigger("Hover");
+        king.audioEmitter.PlaySFX(king.hoverSFX, 0.7f, 0.1f);
 
         Vector2 targetHoverPosition = new Vector2(king.transform.position.x, king.transform.position.y + king.flyHeight);
 
@@ -49,6 +50,7 @@ public class KingFlyStrikeState : KingState
         // Wait until boss lands
         yield return new WaitUntil(() => king.IsGrounded());
         king.animator.SetTrigger("Land");
+        king.audioEmitter.PlaySFX(king.flyStrikeSFX, 0.7f, 0.1f);
         // Slam landed animation
 
         // Enable hitbox
