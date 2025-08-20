@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public Transform Player;
     public Transform Boss;
-    public float smoothing = 0.25f; //125 originally
+    public float smoothing = 0.25f; 
     private Vector3 offset = new Vector3(0, 1, -10);
     private Vector3 velocity = Vector3.zero;
     private Vector3 shakeOffset = Vector3.zero;
@@ -22,20 +22,22 @@ public class CameraController : MonoBehaviour
     public float maxZoom;
     public float zoomSmoothSpeed;
 
-    // Enum for shake levels
-    public enum ShakeLevel
-    {
-        light,
-        medium,
-        heavy
-    }
+    // Camera borders
+    [Header("Camera Borders")]
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
 
-    // Dictionary to map shake levels to magnitude and duration
-    private Dictionary<ShakeLevel, (float magnitude, float duration)> shakeSettings = new Dictionary<ShakeLevel, (float, float)>()
+    // Shake settings
+    public enum ShakeLevel { light, medium, heavy }
+
+    private Dictionary<ShakeLevel, (float magnitude, float duration)> shakeSettings =
+        new Dictionary<ShakeLevel, (float, float)>()
     {
-        { ShakeLevel.light, (0.07f, 0.15f) },   // Light shake
-        { ShakeLevel.medium, (0.15f, 0.4f) },  // Medium shake
-        { ShakeLevel.heavy, (0.2f, 0.6f) }     // Strong shake
+        { ShakeLevel.light, (0.07f, 0.15f) },
+        { ShakeLevel.medium, (0.15f, 0.4f) },
+        { ShakeLevel.heavy, (0.2f, 0.6f) }
     };
 
     void Start()
@@ -47,12 +49,11 @@ public class CameraController : MonoBehaviour
     {
         Vector3 targetPosition;
 
-        // Determine the target position
+        // Zoom calculation
         if (Boss != null)
         {
             targetPosition = (Player.position + Boss.position + offset) / 2f;
 
-            // Adjust zoom based on distance to Boss
             float distance = Vector3.Distance(Player.position, Boss.position);
             float targetZoom = Mathf.Clamp(baseZoom + (distance * zoomFactor), minZoom, maxZoom);
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetZoom, zoomSmoothSpeed * Time.deltaTime);
@@ -63,16 +64,22 @@ public class CameraController : MonoBehaviour
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, minZoom, zoomSmoothSpeed * Time.deltaTime);
         }
 
-        // Smoothly move the camera to the target position
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothing);
+        // Smoothly move camera
+        Vector3 newPos = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothing);
 
-        // Apply shake offset after smoothing
-        transform.position += shakeOffset;
+        // Clamp position based on borders & camera size
+        float camHeight = cam.orthographicSize;
+        float camWidth = camHeight * cam.aspect;
+
+        newPos.x = Mathf.Clamp(newPos.x, minX + camWidth, maxX - camWidth);
+        newPos.y = Mathf.Clamp(newPos.y, minY + camHeight, maxY - camHeight);
+
+        transform.position = newPos + shakeOffset;
     }
 
-
-    // Shake based on strength
-    public void StartShake(ShakeLevel shakeLevel) {
+    // Shake
+    public void StartShake(ShakeLevel shakeLevel)
+    {
         if (!isShaking)
         {
             var shakeData = shakeSettings[shakeLevel];
@@ -87,7 +94,6 @@ public class CameraController : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            // Compute decay factor (1 → 0 over time)
             float decay = 1f - (elapsedTime / duration);
             float currentMagnitude = magnitude * decay;
 
@@ -104,22 +110,18 @@ public class CameraController : MonoBehaviour
         isShaking = false;
     }
 
-
-    // FOR TESTING PURPOSES
-    void Update()
+    // Draw borders in scene view
+    private void OnDrawGizmos()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            StartShake(ShakeLevel.light); // Small shake
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            StartShake(ShakeLevel.medium); // Medium shake
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            StartShake(ShakeLevel.heavy); // Strong shake
-        }
+        Gizmos.color = Color.red;
+        Vector3 bottomLeft = new Vector3(minX, minY, 0);
+        Vector3 bottomRight = new Vector3(maxX, minY, 0);
+        Vector3 topLeft = new Vector3(minX, maxY, 0);
+        Vector3 topRight = new Vector3(maxX, maxY, 0);
+
+        Gizmos.DrawLine(bottomLeft, bottomRight);
+        Gizmos.DrawLine(bottomRight, topRight);
+        Gizmos.DrawLine(topRight, topLeft);
+        Gizmos.DrawLine(topLeft, bottomLeft);
     }
 }
-
