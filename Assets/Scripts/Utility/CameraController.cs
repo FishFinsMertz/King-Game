@@ -49,33 +49,42 @@ public class CameraController : MonoBehaviour
     {
         Vector3 targetPosition;
 
-        // Zoom calculation
+        // --- Calculate target zoom ---
+        float targetZoom = minZoom;
         if (Boss != null)
         {
-            targetPosition = (Player.position + Boss.position + offset) / 2f;
+            targetPosition = (Player.position + Boss.position) / 2f + offset;
 
             float distance = Vector3.Distance(Player.position, Boss.position);
-            float targetZoom = Mathf.Clamp(baseZoom + (distance * zoomFactor), minZoom, maxZoom);
-            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetZoom, zoomSmoothSpeed * Time.deltaTime);
+            targetZoom = Mathf.Clamp(baseZoom + (distance * zoomFactor), minZoom, maxZoom);
         }
         else
         {
             targetPosition = Player.position + offset;
-            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, minZoom, zoomSmoothSpeed * Time.deltaTime);
+            targetZoom = minZoom;
         }
 
-        // Smoothly move camera
-        Vector3 newPos = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothing);
+        // --- Predict next zoom value (before clamping) ---
+        float nextZoom = Mathf.Lerp(cam.orthographicSize, targetZoom, zoomSmoothSpeed * Time.deltaTime);
 
-        // Clamp position based on borders & camera size
-        float camHeight = cam.orthographicSize;
+        // --- Calculate camera bounds with that zoom ---
+        float camHeight = nextZoom;
         float camWidth = camHeight * cam.aspect;
 
+        // --- Smoothly move camera ---
+        Vector3 newPos = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothing);
+
+        // --- Clamp to borders ---
         newPos.x = Mathf.Clamp(newPos.x, minX + camWidth, maxX - camWidth);
         newPos.y = Mathf.Clamp(newPos.y, minY + camHeight, maxY - camHeight);
 
+        // --- Apply position & shake ---
         transform.position = newPos + shakeOffset;
+
+        // --- Apply zoom AFTER clamping ---
+        cam.orthographicSize = nextZoom;
     }
+
 
     // Shake
     public void StartShake(ShakeLevel shakeLevel)
