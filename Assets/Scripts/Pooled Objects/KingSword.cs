@@ -28,6 +28,7 @@ public class KingSword : PooledObjects
     // Private and Hidden Variables
     private ObjPool pool;
     private Rigidbody2D rb;
+    private bool initialized = false;
 
     public override void SetPool(ObjPool objectPool)
     {
@@ -42,6 +43,11 @@ public class KingSword : PooledObjects
 
     private void OnEnable()
     {
+        if (!initialized)
+        {
+            initialized = true;
+            return; // skip first activation during pool warm-up
+        }
 
         if (projectileHitbox != null)
             projectileHitbox.SetActive(true);
@@ -69,7 +75,11 @@ public class KingSword : PooledObjects
         rb.linearVelocity = Vector2.zero;
 
         // Hover phase
-        audioEmitter.PlaySFX(spawnSFX, 0.1f, 0.1f);
+        if (audioEmitter != null && spawnSFX != null)
+        {
+            audioEmitter.PlaySFX(spawnSFX, 0.1f, 0.1f);
+        }
+
         yield return new WaitForSeconds(hoverTime);
 
         // Rise phase
@@ -84,11 +94,14 @@ public class KingSword : PooledObjects
 
         // Land
         animator.SetTrigger("Land");
-        audioEmitter.PlaySFX(breakSFX, 0.1f, 0.1f);
+        if (audioEmitter != null && spawnSFX != null)
+        {
+            audioEmitter.PlaySFX(breakSFX, 0.1f, 0.1f);
+        }
 
         // Disable the hitbox when landed
-        if (projectileHitbox != null)
-            projectileHitbox.SetActive(false);
+            if (projectileHitbox != null)
+                projectileHitbox.SetActive(false);
 
         // Delay before recycling
         yield return new WaitForSeconds(LandingTime);
