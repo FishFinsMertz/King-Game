@@ -5,6 +5,36 @@ TextureImporter:
   - first:
       213: 2018979297700063871
     second: KingBackdrop2_0
+  - first:
+      213: 4945582144851074028
+    second: KingBackdrop2_1
+  - first:
+      213: 8091930411793250451
+    second: KingBackdrop2_2
+  - first:
+      213: -3763606731868504364
+    second: KingBackdrop2_3
+  - first:
+      213: -1589434376586433758
+    second: KingBackdrop2_4
+  - first:
+      213: 6921368526147423631
+    second: KingBackdrop2_5
+  - first:
+      213: -7848500176350261076
+    second: KingBackdrop2_6
+  - first:
+      213: -856797322419840713
+    second: KingBackdrop2_7
+  - first:
+      213: 2307968243280302394
+    second: KingBackdrop2_8
+  - first:
+      213: 7557321173151067012
+    second: KingBackdrop2_9
+  - first:
+      213: -4270054234766319339
+    second: KingBackdrop2_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,7 +168,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: aaae9515931ec6b4bb092a7650456e73
+    spriteID: 2d9d3b0cc03e9b14e903b5d99c905006
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +179,16 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       KingBackdrop2_0: 2018979297700063871
+      KingBackdrop2_1: 4945582144851074028
+      KingBackdrop2_10: -4270054234766319339
+      KingBackdrop2_2: 8091930411793250451
+      KingBackdrop2_3: -3763606731868504364
+      KingBackdrop2_4: -1589434376586433758
+      KingBackdrop2_5: 6921368526147423631
+      KingBackdrop2_6: -7848500176350261076
+      KingBackdrop2_7: -856797322419840713
+      KingBackdrop2_8: 2307968243280302394
+      KingBackdrop2_9: 7557321173151067012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
