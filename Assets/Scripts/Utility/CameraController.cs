@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     private bool isShaking = false;
 
     private Camera cam;
+    
+    public float distanceToBossForZoom;
 
     // Zoom settings
     [Header("Zoom Settings")]
@@ -51,7 +53,7 @@ public class CameraController : MonoBehaviour
 
         // --- Calculate target zoom ---
         float targetZoom = minZoom;
-        if (Boss != null)
+        if (Boss != null && Vector3.Distance(Player.position, Boss.position) < distanceToBossForZoom)
         {
             targetPosition = (Player.position + Boss.position) / 2f + offset;
 
