@@ -255,6 +255,12 @@ public class KingController : MonoBehaviour
         audioEmitter.PlaySFX(damagedSFX, 0.7f, 0.1f);
     }
 
+    public void OnDeath()
+    {
+        Debug.Log("King has been defeated!");
+        MySceneManager.Instance.LoadScene("MenuScene");
+    }
+
     // Attack Utility
 
     public IEnumerator PerformSwordBarrage()
