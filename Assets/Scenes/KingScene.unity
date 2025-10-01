@@ -391,11 +391,11 @@ PrefabInstance:
       objectReference: {fileID: 209759451}
     - target: {fileID: 3388324985833097794, guid: 93360b36de0d1ff44b7013dec391b461, type: 3}
       propertyPath: maxZoom
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3388324985833097794, guid: 93360b36de0d1ff44b7013dec391b461, type: 3}
       propertyPath: minZoom
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3388324985833097794, guid: 93360b36de0d1ff44b7013dec391b461, type: 3}
       propertyPath: baseZoom
@@ -412,6 +412,10 @@ PrefabInstance:
     - target: {fileID: 3388324985833097794, guid: 93360b36de0d1ff44b7013dec391b461, type: 3}
       propertyPath: distanceToBossForZoom
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245318512351248210, guid: 93360b36de0d1ff44b7013dec391b461, type: 3}
+      propertyPath: field of view
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
